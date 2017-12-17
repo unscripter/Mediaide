@@ -5,13 +5,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
-
+import { AboutIndia } from './about.us/about.india/about.india';
 
 @NgModule({
   declarations: [
     AppComponent,
     Header,
-    Footer
+    Footer,
+    AboutIndia
   ],
   imports: [
     BrowserModule,
