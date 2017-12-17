@@ -1,0 +1,48 @@
+#mainLogo {
+    height: 30px;
+}
+
+.mainNavbar {
+    background-color: #e5e5e5;
+    color: #59abb3 !important;
+}
+
+.upperNavBar {
+    background-color: #304770;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.dropdown-menu {
+    background-color: #002449;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #ffa516;
+}
+
+.upperNavBar div span {
+    margin-left: 30%;
+}
+
+.navbar-nav li a {
+    color: #59abb3;
+    font-weight: 600;
+}
+
+.navbar-nav li a:hover {
+    color: #002449;
+}
+
+@media only screen and (max-width: 500px) {
+    .upperNavBar {
+       display: none;
+    }
+}
+
+.telephoneLogo {
+    color: #ffa516;
+}
