@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 
-@NgModule({
+import { Carousel } from './carousel/carousel'
 
+@NgModule({
+    declarations: [
+    Carousel
+  ],
+  imports: [
+  ],
+  providers: []
 })
 export class SharedModule{
 
