@@ -11,9 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class LoginForm {
     private logInData: LogInData;
     constructor(){
-        this.logInData = new LogInData();
+        // this.logInData = new LogInData();
     }
     signIn(){
-        
+
     }
 }

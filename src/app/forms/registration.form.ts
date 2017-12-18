@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class RegistrationForm {
     userData: Registration;
     constructor(){
-        this.userData = new Registration();        
+        // this.userData = new Registration();        
     }
 
 }
