@@ -11,6 +11,7 @@ import { OurCompany } from './about.us/our.company/our.company';
 import { FeaturedServices } from './services/featured.services/featured.services';
 import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
 import { PostCare } from './services/post.care/post.care';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PostCare } from './services/post.care/post.care';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
