@@ -9,6 +9,7 @@ import { AboutIndia } from './about.us/about.india/about.india';
 import { FeaturedServices } from './services/featured.services/featured.services';
 import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
 import { PostCare } from './services/post.care/post.care';
+import { RegistrationForm } from './forms/registration.form';
 
  export const routes: Routes = [
     {path:'', redirectTo: '/home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ import { PostCare } from './services/post.care/post.care';
     {path: 'medicaltreatment', component: MedicalTreatment},
     {path: 'postcare', component: PostCare},
     {path: 'home', loadChildren: './home/home.module#HomeModule'},
+    {path: 'registration', component: RegistrationForm},    
 ];
 
 @NgModule({

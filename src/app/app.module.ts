@@ -12,6 +12,9 @@ import { FeaturedServices } from './services/featured.services/featured.services
 import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
 import { PostCare } from './services/post.care/post.care';
 import { AppRoutingModule } from './app.routing.module';
+import { RegistrationForm } from './forms/registration.form';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
 
 
 @NgModule({
@@ -24,11 +27,14 @@ import { AppRoutingModule } from './app.routing.module';
     OurCompany,
     PostCare,
     FeaturedServices,
-    MedicalTreatment  ],
+    MedicalTreatment,
+    RegistrationForm ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
