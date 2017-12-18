@@ -72,3 +72,14 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.about-right h5 {
+    color: #fff;
+    background: #b71b2b;
+    padding: 5px 8px;
+    font-size: 22px;
+}
+
+.service-num {
+    padding: 0;
+}
