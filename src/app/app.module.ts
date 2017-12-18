@@ -8,6 +8,9 @@ import { Footer } from './shared/footer/footer';
 import { AboutIndia } from './about.us/about.india/about.india';
 import { WhyUs } from './about.us/why.us/why.us';
 import { OurCompany } from './about.us/our.company/our.company';
+import { FeaturedServices } from './services/featured.services/featured.services';
+import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
+import { PostCare } from './services/post.care/post.care';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { OurCompany } from './about.us/our.company/our.company';
     Footer,
     AboutIndia,
     WhyUs,
-    OurCompany
+    OurCompany,
+    PostCare
   ],
   imports: [
     BrowserModule,

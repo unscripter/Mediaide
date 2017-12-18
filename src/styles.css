@@ -31,3 +31,20 @@
 .mr0 {
     margin-right: 0;
 }
+
+.parallax {
+    /* Full height */
+    height: 300px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.lg-text {
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    color: rgb(0, 0, 0);
+}
