@@ -21,7 +21,8 @@ import { PostCare } from './services/post.care/post.care';
     WhyUs,
     OurCompany,
     PostCare,
-    FeaturedServices
+    FeaturedServices,
+    MedicalTreatment
   ],
   imports: [
     BrowserModule,
