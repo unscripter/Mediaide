@@ -7,7 +7,7 @@ import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
 import { AboutIndia } from './about.us/about.india/about.india';
 import { WhyUs } from './about.us/why.us/why.us';
-
+import { OurCompany } from './about.us/our.company/our.company';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { WhyUs } from './about.us/why.us/why.us';
     Header,
     Footer,
     AboutIndia,
-    WhyUs
+    WhyUs,
+    OurCompany
   ],
   imports: [
     BrowserModule,
