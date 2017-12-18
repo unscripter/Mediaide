@@ -6,13 +6,16 @@ import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
 import { AboutIndia } from './about.us/about.india/about.india';
+import { WhyUs } from './about.us/why.us/why.us';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     Header,
     Footer,
-    AboutIndia
+    AboutIndia,
+    WhyUs
   ],
   imports: [
     BrowserModule,
