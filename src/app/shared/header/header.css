@@ -1,19 +1,15 @@
 #mainLogo {
     height: 30px;
+    margin-top: -4px;
 }
 
 .mainNavbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
     background-color: #e5e5e5;
     color: #59abb3 !important;
-}
-
-.upperNavBar {
-    background-color: #304770;
-    color: white;
-    padding: 5px;
-    font-size: 10px;
-    margin-left: 0;
-    margin-right: 0;
+    border-radius: 0;
 }
 
 .dropdown-menu {
@@ -35,14 +31,4 @@
 
 .navbar-nav li a:hover {
     color: #002449;
-}
-
-@media only screen and (max-width: 500px) {
-    .upperNavBar {
-       display: none;
-    }
-}
-
-.telephoneLogo {
-    color: #ffa516;
 }
