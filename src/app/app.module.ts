@@ -7,13 +7,15 @@ import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
 import { routing } from './app.routing.module';
 import { Carousel } from './shared/carousel/carousel'
+import { HomePageTabs } from './home/homepage.tabs/homepage.tabs'
 
 @NgModule({
   declarations: [
     AppComponent,
     Header,
     Footer,
-    Carousel
+    Carousel,
+    HomePageTabs
   ],
   imports: [
     BrowserModule,
