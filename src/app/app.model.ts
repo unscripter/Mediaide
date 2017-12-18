@@ -1,4 +1,4 @@
-import { PassThrough } from "stream";
+// import { PassThrough } from "stream";
 
 export class Registration{
     private name: string;
@@ -19,5 +19,20 @@ export class Registration{
         this.gender = gender ? gender : null;
         this.gender = gender ? gender : null;
         this.gender = gender ? gender : null;        
+    }
+}
+
+export class LogInData {
+    private username: string;
+    private password: string;
+    private keepLoggedIn: boolean;
+
+    constructor(username, password, keepLoggedIn){
+        if(username && password){
+            this.username = username;
+            this.password = password;
+            this.keepLoggedIn = keepLoggedIn;
+        }
+
     }
 }

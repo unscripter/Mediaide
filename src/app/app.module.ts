@@ -14,7 +14,7 @@ import { PostCare } from './services/post.care/post.care';
 import { AppRoutingModule } from './app.routing.module';
 import { RegistrationForm } from './forms/registration.form';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
+import { LoginForm } from './forms/login';
 
 
 @NgModule({
@@ -28,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
     PostCare,
     FeaturedServices,
     MedicalTreatment,
-    RegistrationForm ],
+    RegistrationForm,
+    LoginForm],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
