@@ -8,15 +8,17 @@ import { WhyUs } from './about.us/why.us/why.us';
 import { AboutIndia } from './about.us/about.india/about.india';
 import { FeaturedServices } from './services/featured.services/featured.services';
 import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
-import { PostCare } from './services/post.care/post.care'
+import { PostCare } from './services/post.care/post.care';
 
  export const routes: Routes = [
+    {path:'', redirectTo: '/home', pathMatch: 'full'},
     {path: 'ourcompany', component: OurCompany},
     {path:'whyus',component: WhyUs},
     {path: 'aboutindia', component: AboutIndia},
     {path: 'featuredservices', component: FeaturedServices},
     {path: 'medicaltreatment', component: MedicalTreatment},
-    {path: 'postcare', component: PostCare}
+    {path: 'postcare', component: PostCare},
+    {path: 'home', loadChildren: './home/home.module#HomeModule'},
 ];
 
 @NgModule({
