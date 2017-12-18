@@ -1,24 +1,3 @@
-.paddingTB60 {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-.image-aboutus-para {
-    color: rgb(0, 0, 0);
-}
-
-#about-us-para-img {
-    width: 100%;
-    height: 300px;
-}
-
-@media only screen and (max-width: 500px) {
-    #about-us-para-img {
-        width: 100%;
-        height: 150px;
-    }
-}
-
 .aboutus-hr-heading span {
     font-size: 25px;
     background-color: rgb(255, 255, 255);

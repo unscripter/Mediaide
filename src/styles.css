@@ -48,3 +48,24 @@
     text-transform: none;
     color: rgb(0, 0, 0);
 }
+
+.paddingTB60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.parallax-subHeading {
+    color: rgb(0, 0, 0);
+}
+
+#contentWrap-img {
+    width: 100%;
+    height: 300px;
+}
+
+@media only screen and (max-width: 500px) {
+    #contentWrap-img {
+        width: 100%;
+        height: 150px;
+    }
+}

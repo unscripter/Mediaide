@@ -20,7 +20,8 @@ import { PostCare } from './services/post.care/post.care';
     AboutIndia,
     WhyUs,
     OurCompany,
-    PostCare
+    PostCare,
+    FeaturedServices
   ],
   imports: [
     BrowserModule,
