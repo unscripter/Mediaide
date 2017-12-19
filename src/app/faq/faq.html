@@ -1,15 +1,13 @@
 <div>
-    <section id="contact">
-        <div class="container col-md-12 margin">
-            <div *ngFor="let item of queationData">
-                <ngb-accordion>
-                    <ngb-panel title="{{item.title}}">
-                        <ng-template ngbPanelContent>
-                           {{item.body}}
-                        </ng-template>
-                    </ngb-panel>
-                </ngb-accordion>
-            </div>
+    <div class="container col-md-12 margin">
+        <div *ngFor="let question of faqData">
+            <ngb-accordion>
+                <ngb-panel title="{{question.title}}">
+                    <ng-template ngbPanelContent>
+                        {{question.body}}
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
         </div>
-    </section>
+    </div>
 </div>

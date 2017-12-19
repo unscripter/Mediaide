@@ -22,8 +22,13 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.7",
+    "angular2-notifications": "^0.9.6",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "moment": "^2.20.1",
+    "ng-block-ui": "^0.9.3",
+    "ng-http-interceptor": "^4.0.0",
+    "ngx-cookie-service": "^1.0.9",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },

@@ -1,7 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BlockUIModule, BlockUI, NgBlockUI } from 'ng-block-ui';
+import { CookieService  } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { StartupService } from './startup.service';
+import { CommonService } from './common.service'
+import { HttpModule } from '@angular/http';
+import { HttpInterceptorModule } from 'ng-http-interceptor';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { CommonAPIService } from './app.api.service';
 import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
@@ -13,14 +21,25 @@ import { MedicalTreatment } from './services/medical.treatment/medical.treatment
 import { PostCare } from './services/post.care/post.care';
 import { AppRoutingModule } from './app.routing.module';
 import { RegistrationForm } from './forms/registration/registration.form';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { LoginForm } from './forms/login/login';
 import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
-import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module'
-
+import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module';
+import { from } from 'rxjs/observable/from';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    BlockUIModule,
+    HttpInterceptorModule,
+    HttpModule,
+    NgbModule.forRoot(),
+    SimpleNotificationsModule.forRoot(),
+    AppRoutingModule,
+    FormsModule,
+    ExpressionValidationModule
+  ],
   declarations: [
     AppComponent,
     Header,
@@ -34,17 +53,13 @@ import { ExpressionValidationModule } from './shared/directives/expression.valid
     RegistrationForm,
     LoginForm,
     ContactUs,
-    FAQ],
-
-  imports: [
-    BrowserModule,
-    NgbModule.forRoot(),
-    AppRoutingModule,
-    FormsModule,
-    ExpressionValidationModule
+    FAQ
   ],
-
-  providers: [],
+  providers: [
+    CookieService, 
+    StartupService,
+    StartupService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

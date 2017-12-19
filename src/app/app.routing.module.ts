@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component' 
+import { AppComponent } from './app.component';
 import { Footer } from './shared/footer/footer';
 import { Header } from './shared/header/header';
 import { OurCompany } from './about.us/our.company/our.company';
@@ -23,11 +23,12 @@ import { FAQ } from './faq/faq';
     {path: 'featuredservices', component: FeaturedServices},
     {path: 'medicaltreatment', component: MedicalTreatment},
     {path: 'postcare', component: PostCare},
-    {path: 'home', loadChildren: './home/home.module#HomeModule'},
     {path: 'registration', component: RegistrationForm},  
     {path: 'login', component: LoginForm},
     {path: 'contact', component: ContactUs},
-    {path: 'faq', component: FAQ} 
+    {path: 'faq', component: FAQ},
+    //this is for loading children as lazy loading
+    {path: 'home', loadChildren: './home/home.module#HomeModule'},    
 ];
 
 @NgModule({

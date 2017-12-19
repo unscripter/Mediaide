@@ -5,8 +5,6 @@ import { Router } from '@angular/router';
 import { routing } from './home.routing.module';
 import { HomePageTabs } from './homepage.tabs/homepage.tabs';
 
-
-
 @NgModule({
     declarations: [
     Carousel,
