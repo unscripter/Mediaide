@@ -4,19 +4,19 @@
         <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">Full Name</label>
             <div class="col-sm-9">
-                <input type="text" id="firstName" name="name" placeholder="Full Name" [(ngModel)]='userData.name' class="form-control" autofocus>
+                <input type="text" id="firstName" name="name" patternService="namechk" placeholder="Full Name" [(ngModel)]='userData.name' class="form-control" autofocus>
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-3 control-label">Email</label>
             <div class="col-sm-9">
-                <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]='userData.email' class="form-control">
+                <input type="email" id="email" name="email" placeholder="Email" patternService="emailchk" [(ngModel)]='userData.email' class="form-control">
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">Password</label>
             <div class="col-sm-9">
-                <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]='userData.password' class="form-control">
+                <input type="password" id="password" name="password" placeholder="Password" patternService="passwordchk" [(ngModel)]='userData.password' class="form-control">
             </div>
         </div>
         <div class="form-group">
@@ -28,7 +28,7 @@
         <div class="form-group">
             <label for="country" class="col-sm-3 control-label">Country</label>
             <div class="col-sm-9">
-                <select id="country" [(ngModel)]="userData.country" name="country" [value]="county" class="form-control">
+                <select id="country" [(ngModel)]="userData.country" patternService="namechk" name="country" [value]="county" class="form-control">
                     <option>Afghanistan</option>
                     <option>Bahamas</option>
                     <option>Cambodia</option>
@@ -67,7 +67,7 @@
             <div class="col-sm-9 col-sm-offset-3">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="agree" [(ngModel)]="userData.agree">I accept
+                        <input type="checkbox" name="agree" patternService="alphanumericchk" [(ngModel)]="userData.agree">I accept
                         <a href="#">terms</a>
                     </label>
                 </div>
@@ -75,9 +75,8 @@
         </div>
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <button type="submit" [disabled]="!userData.name && !userData.email && !userData.password && !userData.agree" class="btn btn-primary btn-block" placement="top" ngbTooltip="Tooltip on top">Register</button>
             </div>
         </div>
     </form>
-    {{userData.name}}{{userData.password}}
 </section>

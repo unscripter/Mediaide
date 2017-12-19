@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
@@ -12,9 +12,10 @@ import { FeaturedServices } from './services/featured.services/featured.services
 import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
 import { PostCare } from './services/post.care/post.care';
 import { AppRoutingModule } from './app.routing.module';
-import { RegistrationForm } from './forms/registration.form';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { LoginForm } from './forms/login';
+import { RegistrationForm } from './forms/registration/registration.form';
+import { FormsModule } from '@angular/forms'
+import { LoginForm } from './forms/login/login';
+import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module'
 
 
 @NgModule({
@@ -30,13 +31,15 @@ import { LoginForm } from './forms/login';
     MedicalTreatment,
     RegistrationForm,
     LoginForm],
+
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ExpressionValidationModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

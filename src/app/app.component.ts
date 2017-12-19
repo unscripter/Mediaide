@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Rx'
+import { Observable } from 'rxjs/Rx';
+import { OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+
 
 
 @Component({
@@ -7,6 +10,12 @@ import { Observable } from 'rxjs/Rx'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
+  constructor(private router: Router){
+
+  }
+  ngOnInit(){
+   
+  }
 } 

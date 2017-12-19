@@ -9,15 +9,13 @@ import { AboutIndia } from './about.us/about.india/about.india';
 import { FeaturedServices } from './services/featured.services/featured.services';
 import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
 import { PostCare } from './services/post.care/post.care';
-import { RegistrationForm } from './forms/registration.form';
-import { LoginForm } from './forms/login';
-
-
+import { RegistrationForm } from './forms/registration/registration.form';
+import { LoginForm } from './forms/login/login';
 
  export const routes: Routes = [
-    {path:'', redirectTo: '/home', pathMatch: 'full'},
+    {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: 'ourcompany', component: OurCompany},
-    {path:'whyus',component: WhyUs},
+    {path: 'whyus',component: WhyUs},
     {path: 'aboutindia', component: AboutIndia},
     {path: 'featuredservices', component: FeaturedServices},
     {path: 'medicaltreatment', component: MedicalTreatment},
