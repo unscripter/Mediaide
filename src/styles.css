@@ -37,6 +37,10 @@
     margin-right: 0;
 }
 
+.br0 {
+    border-radius: 0;
+}
+
 .mt20 {
     margin-top: 20px;
 }
