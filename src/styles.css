@@ -18,10 +18,15 @@
     font-size: 14px;
 }
 
-.font16 {
-    font-size: 16px;
+.font15 {
+    font-size: 15px;
+    color: rgb(48, 71, 112);
+}
+
+.font19 {
+    font-size: 19px;
     font-weight: 900;
-    color: rgb(0, 0, 0);
+    color: rgb(48, 71, 112);
 }
 
 .ml0 {
@@ -30,6 +35,10 @@
 
 .mr0 {
     margin-right: 0;
+}
+
+.mt20 {
+    margin-top: 20px;
 }
 
 .parallax {
@@ -46,21 +55,42 @@
     font-size: 52px;
     font-weight: 600;
     text-transform: none;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .paddingTB60 {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.parallax-heading-container {
+    margin-top: 70px;
 }
 
 .parallax-subHeading {
-    color: rgb(0, 0, 0);
+    color: white;
+    font-size: 16px;
 }
 
 #contentWrap-img {
     width: 100%;
     height: 300px;
+}
+
+.contentDiv p {
+    margin-top: 10px;
+}
+
+.customBtn {
+    background-color: rgb(69, 170, 255);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+.customBtn:hover {
+    background-color: rgb(69, 170, 255);
 }
 
 .telephoneLogo {
@@ -72,5 +102,27 @@
         width: 100%;
         height: 150px;
     }
+    .paddingTB60 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .parallax {
+        height: 200px;
+    }
+    .lg-text {
+        font-size: 40px;
+    }
+    .parallax-subHeading {
+        font-size: 16px;
+    }
+    .contentDiv {
+        margin-top: 10px;
+    }
+    .font19 {
+        font-size: 16px;
+    }
 }
-.form-control.invalid {border-bottom:1px solid red;}
+
+.form-control.invalid {
+    border-bottom: 1px solid red;
+}

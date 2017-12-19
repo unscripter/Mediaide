@@ -16,7 +16,7 @@ import { RegistrationForm } from './forms/registration/registration.form';
 import { FormsModule } from '@angular/forms'
 import { LoginForm } from './forms/login/login';
 import { ContactUs } from './contact/contact';
-import { FAQ } from './faq/faq';
+// import { FAQ } from './faq/faq';
 import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module'
 
 
@@ -34,7 +34,8 @@ import { ExpressionValidationModule } from './shared/directives/expression.valid
     RegistrationForm,
     LoginForm,
     ContactUs,
-    FAQ],
+    // FAQ
+    ],
 
   imports: [
     BrowserModule,
