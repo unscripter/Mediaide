@@ -23,8 +23,12 @@
     color: rgb(48, 71, 112);
 }
 
+.font16 {
+    font-size: 16px;
+}
+
 .font19 {
-    font-size: 23px;
+    font-size: 19px;
     font-weight: 900;
     color: rgb(48, 71, 112);
 }
@@ -35,7 +39,7 @@
 }
 
 .font21 {
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 900;
     color: rgb(48, 71, 112);
 }
@@ -58,6 +62,10 @@
 
 .mt20 {
     margin-top: 20px;
+}
+
+.center {
+    text-align: center;
 }
 
 .parallax {
@@ -138,6 +146,12 @@
         margin-top: 10px;
     }
     .font19 {
+        font-size: 16px;
+    }
+    .fontColor {
+        font-size: 24px;
+    }
+    .font21 {
         font-size: 16px;
     }
 }

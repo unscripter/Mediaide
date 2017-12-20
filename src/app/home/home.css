@@ -1,3 +1,26 @@
-.our-company-img {
-    background-image: url("../../assets/aboutus/our_company.png");
+.doctorPicture {
+    background-image: url("../../assets/home/doctor_blue_left.jpg");
+}
+
+.offerView {
+    background-color: rgb(48, 71, 112);
+}
+
+.homePageContainer {
+    position: relative;
+    top: -10px;
+}
+
+@media only screen and (min-width: 500px) {
+    .reviewDiv p {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .doctorPicture {
+        height: 250px;
+    }
 }
