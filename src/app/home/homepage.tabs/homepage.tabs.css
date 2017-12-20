@@ -1,29 +1,31 @@
-.news-section {
-    padding: 4em 0 3.5em;
-}
-
-.news-column h4 {
-    font-size: 1.3em;
-    text-transform: uppercase;
-    color: #000;
-    font-weight: 700;
-    padding: 0.8em 0 0.3em;
-    margin: 0;
-}
-
-.img-shift {
+.homepageDiv {
     position: relative;
-    top: -150px;
+    top: -110px;
 }
 
-.news-column p {
-    color: #777;
-    line-height: 1.7em;
-    padding: 0.1em 0 0em;
-    display: block;
-    font-size: 1em;
+.homepageDiv div div {
+    padding: 20px;
 }
 
-.news-column:hover {
-    background-color: aqua;
+.homepageDiv div div p {
+    color: white;
+    margin-top: 10px;
+}
+
+.homepageDiv div div img {
+    height: 100px;
+}
+
+.homepageDivOdd {
+    background-color: rgb(73, 154, 162);
+}
+
+.homepageDivEven {
+    background-color: rgb(89, 171, 179);
+}
+
+@media only screen and (max-width: 500px) {
+    .homepageDiv {
+        top: -20px;
+    }
 }

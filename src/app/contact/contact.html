@@ -1,40 +1,40 @@
-<div>
-    <section id="contact">
-        <div class="section-content">
-            <h1 class="section-header">Get in
-                <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span>
-            </h1>
-            <h3>Mediaide Solutions enables the patient to take charge of their treatment</h3>
-        </div>
-        <div class="contact-section">
-            <div class="container">
-                <form #ContactForm>
-                    <div class="col-md-6 form-line">
-                        <div class="form-group">
-                            <label for="exampleInputUsername">Your name</label>
-                            <input type="text" class="form-control" id="" name="name"placeholder=" Enter Name" patternService="namechk" [(ngModel)]="contactUs.name" required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail">Email Address</label>
-                            <input type="email" class="form-control" name="email" id="exampleInputEmail" patternService="emailchk" placeholder=" Enter Email id" [(ngModel)]="contactUs.email" required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="telephone">Mobile No.</label>
-                            <input type="tel" class="form-control" name="mobile" id="telephone" patternService="phonechk" placeholder="Enter 10-digit mobile no." [(ngModel)]="contactUs.mobile">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="description"> Message</label>
-                            <textarea class="form-control" id="description" name="message" placeholder="Enter Your Message" patternService="alphanumericchk" [(ngModel)]="contactUs.message" required="true"></textarea>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-default submit" (click)="sendMessage()">
-                            <i class="fa fa-paper-plane" aria-hidden="true"></i> Send Message</button>
-                        </div>
-                    </div>
-                </form>
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h2 class="fontColor">
+                    Get in touch with us
+                </h2>
+                <h4 style="color:rgb(48, 71, 112);;">
+                    Mediaide Solutions enables the patient to take charge of their treatment
+                </h4>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<div class="container mb20">
+    <form role="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control input-lg br0" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control input-lg br0" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="mobile" class="form-control input-lg br0" placeholder="Enter your mobile number">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea class="form-control br0" rows="3" placeholder="Message"></textarea>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" value="Send Message">
+                </div>
+            </div>
+        </div>
+    </form>
 </div>

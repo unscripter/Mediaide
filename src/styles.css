@@ -23,8 +23,23 @@
     color: rgb(48, 71, 112);
 }
 
+.font16 {
+    font-size: 16px;
+}
+
 .font19 {
     font-size: 19px;
+    font-weight: 900;
+    color: rgb(48, 71, 112);
+}
+
+.fontColor {
+    color: rgb(48, 71, 112);
+    font-weight: 900;
+}
+
+.font21 {
+    font-size: 21px;
     font-weight: 900;
     color: rgb(48, 71, 112);
 }
@@ -37,12 +52,24 @@
     margin-right: 0;
 }
 
+.mr20 {
+    margin-right: 20px;
+}
+
 .br0 {
     border-radius: 0;
 }
 
 .mt20 {
     margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
 }
 
 .parallax {
@@ -61,6 +88,7 @@
     text-transform: none;
     color: white;
 }
+
 .md-text {
     font-size: 35px;
     font-weight: 600;
@@ -131,8 +159,36 @@
     .font19 {
         font-size: 16px;
     }
+    .fontColor {
+        font-size: 24px;
+    }
+    .font21 {
+        font-size: 16px;
+    }
 }
 
 .form-control.invalid {
     border-bottom: 1px solid red;
+}
+
+.form-control.invalid {
+    border-bottom: 1px solid red;
+}
+
+.white {
+    color: white
+}
+
+.relative {
+    position: relative;
+}
+
+.margin {
+    top: 80px;
+    left: 200px;
+    position: relative;
+}
+
+.blue {
+    color: #45aaff;
 }
