@@ -98,11 +98,11 @@
                         <input class="form-control input-lg br0" type="password" id="password" name="password" placeholder="Password" patternService="passwordchk" [(ngModel)]='userData.password'>
                     </div>
                     <div class="row">
-                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                             <label class="control-label">DOB</label>
                             <input class="form-control input-lg br0" type="date" id="birthDate" name="dob" [(ngModel)]='userData.dob'>
                         </div>
-                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                             <label class="control-label">Country</label>
                             <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country" [value]="county">
                                 <option>Afghanistan</option>
@@ -117,19 +117,13 @@
                         </div>
                     </div>
                     <div class="form-group font15">
-                        <label class="control-label">Gender</label>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" name="gender" [(ngModel)]="userData.gender" value="Female">Female
-                                </label>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" name="gender" [(ngModel)]="userData.gender" value="Male">Male
-                                </label>
-                            </div>
-                        </div>
+                        <label class="control-label mr20">Gender</label>
+                        <label class="radio-inline">
+                            <input type="radio" id="femaleRadio" name="gender" [(ngModel)]="userData.gender" value="Female">Female
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="maleRadio" name="gender" [(ngModel)]="userData.gender" value="Male">Male
+                        </label>
                     </div>
                     <div class="form-group">
                         <input class="form-control input-lg br0" type="text" id="address" name="address" placeholder="Address" [(ngModel)]='userData.address'>

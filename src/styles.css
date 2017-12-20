@@ -24,6 +24,17 @@
 }
 
 .font19 {
+    font-size: 23px;
+    font-weight: 900;
+    color: rgb(48, 71, 112);
+}
+
+.fontColor {
+    color: rgb(48, 71, 112);
+    font-weight: 900;
+}
+
+.font21 {
     font-size: 19px;
     font-weight: 900;
     color: rgb(48, 71, 112);
@@ -35,6 +46,10 @@
 
 .mr0 {
     margin-right: 0;
+}
+
+.mr20 {
+    margin-right: 20px;
 }
 
 .br0 {
