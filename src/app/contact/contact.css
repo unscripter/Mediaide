@@ -6,11 +6,10 @@
   }
   
   .section-content{
-    text-align: center; 
-  
+    text-align: center;  
   }
-  #contact{
-      
+
+  #contact{    
     font-family: 'Teko', sans-serif;
     padding-top: 60px;
     width: 100%;
@@ -46,8 +45,7 @@
   textarea.form-control {
       height: 135px;
      /* margin-top: px;*/
-  }
-  
+  }  
   .submit{
     font-size: 1.1em;
     float: right;

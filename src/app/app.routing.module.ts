@@ -13,6 +13,8 @@ import { RegistrationForm } from './forms/registration/registration.form';
 import { LoginForm } from './forms/login/login';
 import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
+import { QuotationModule } from './quotation/quotation.module';
+import { UserProfile } from './profile/profile';
 
 
  export const routes: Routes = [
@@ -27,8 +29,10 @@ import { FAQ } from './faq/faq';
     {path: 'login', component: LoginForm},
     {path: 'contact', component: ContactUs},
     {path: 'faq', component: FAQ},
+    {path: 'profile', component: UserProfile},
     //this is for loading children as lazy loading
-    {path: 'home', loadChildren: './home/home.module#HomeModule'},    
+    {path: 'home', loadChildren: './home/home.module#HomeModule'},
+    {path: 'quotation', loadChildren : './quotation/quotation.module#QuotationModule'}    
 ];
 
 @NgModule({

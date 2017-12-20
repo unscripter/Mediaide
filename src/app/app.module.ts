@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BlockUIModule, BlockUI, NgBlockUI } from 'ng-block-ui';
+// import { BlockUIModule, BlockUI, NgBlockUI } from 'ng-block-ui';
 import { CookieService  } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { StartupService } from './startup.service';
@@ -27,18 +27,22 @@ import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
 import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module';
 import { from } from 'rxjs/observable/from';
+import { CommonModule } from "@angular/common";
+import { UserProfile } from './profile/profile'
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    BlockUIModule,
+    // BlockUIModule,
     HttpInterceptorModule,
     HttpModule,
     NgbModule.forRoot(),
     SimpleNotificationsModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    ExpressionValidationModule
+    ExpressionValidationModule,
+    CommonModule
   ],
   declarations: [
     AppComponent,
@@ -53,12 +57,14 @@ import { from } from 'rxjs/observable/from';
     RegistrationForm,
     LoginForm,
     ContactUs,
-    FAQ
+    FAQ,
+    UserProfile
   ],
   providers: [
-    CookieService, 
+    // CookieService, 
     StartupService,
-    StartupService
+    CommonService,
+    CommonAPIService
   ],
   bootstrap: [AppComponent]
 })

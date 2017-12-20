@@ -30,8 +30,9 @@
                                 <label>
                                     <input type="checkbox" name="siggnedIn" [(ngModel)]="logInData.keepLoggedIn"> Stay signed in
                                 </label>
+                                <a class="font15" href="" class="btn btn-link pull-right">Forgot Password?</a>
                             </div>
-                            <button type="button" [disabled]="!logInCondition" class="btn btn-success btn-sm" (click)="signIn()">Sign in</button>
+                            <button type="button" [disabled]="!logInCondition" class="btn btn-success btn-sm" (click)="logIn()">LogIn</button>
                             <button type="button" onclick="window.location.href='http://localhost:4200/registration'" class="btn btn-primary btn-sm"
                                 [ngbTooltip]="tipContent">Register</button>
                         </form>
@@ -40,4 +41,4 @@
             </div>
         </div>
     </div>
-</div>
+ 

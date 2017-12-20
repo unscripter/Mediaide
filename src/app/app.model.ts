@@ -1,7 +1,11 @@
+import { strictEqual } from "assert";
+
 export class UserDetail {
     public name: string;
     public email: string;
     public password: string;
+    public confirmPassword: string;
+    public mobile: number;
     public dob: Date;
     public country: string;
     public gender: string;
@@ -12,11 +16,12 @@ export class UserDetail {
         this.name = '';
         this.email = '';
         this.password = '';
+        this.mobile = null;
         this.dob = new Date();
         this.country = '';
         this.gender = '';
         this.address = '';
-        this.agree = false;        
+        this.agree = false;
     }
 
     setUserDetail(obj: UserDetail) {
@@ -35,14 +40,14 @@ export class LogInData {
     public password: string;
     public keepLoggedIn: boolean;
 
-    constructor(){
+    constructor() {
         {
             this.username = '';
             this.password = '';
             this.keepLoggedIn = false;
         }
     }
-    
+
     setLoginDetails(obj: LogInData) {
         this.username = obj.username;
         this.password = obj.password;
@@ -71,3 +76,59 @@ export class TokenStruct {
         }
     }
 };
+class OtherCost {
+    public airline?: boolean;
+    public food?: boolean;
+    public visa?: boolean;
+    public hotel?: boolean;
+    public other?: boolean;
+
+    constructor() {
+        this.airline = false;
+        this.food = false;
+        this.visa = false;
+        this.hotel = false;
+        this.other = false;
+    }
+}
+
+export class QuotationData {
+    public country: string;
+    public treatmentType: string;
+    public patientNumber: string;
+    public other?: OtherCost;
+
+    constructor() {
+        this.country = '';
+        this.treatmentType = '';
+        this.patientNumber = '';
+        this.other = new OtherCost();
+    }
+}
+
+export const dataList = {
+    'countryList': [
+        'India', 'Australia', 'Paris', 'London', 'UK'
+    ],
+    'treatementList': [
+        'one', 'Two', 'Three', 'Four', 'Five'
+    ],
+    'noOfPateints': [
+        '1', '2', '3', '4'
+    ]
+};
+
+export class contactUsData {
+    name: string;
+    email: string;
+    mobile: string;
+    message: string;
+
+    constructor() {
+        this.name = '';
+        this.email = '';
+        this.mobile = '';
+        this.message = '';
+    }
+}
+export const logInStatus: boolean = true;

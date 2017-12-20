@@ -9,10 +9,9 @@ import { FAQData } from './faq.modle'
 })
 
 export class FAQ {
-    private queationData:any;
+    private faqData:any;
     constructor(){
-        this.queationData = FAQData;
-        console.log("DDDDDDDDDDDD",this.queationData);
+        this.faqData = FAQData;
     }
 
 } 

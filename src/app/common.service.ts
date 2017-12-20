@@ -14,9 +14,8 @@ import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 export class ServiceEndPoints {
     //put your static part of the url here e.g
-    static UserDetailsAPI = 'user/data';
-    static RegisterAPI = 'register';
-    
+    static userRegister = 'api/register';
+    static RegisterAPI = 'register';    
 }
 
 @Injectable() export class CommonService {
@@ -127,7 +126,7 @@ export class ServiceEndPoints {
         return this._startUpSvc.getSignInUrl();
     }
 
-    private setCookie(tknObj: TokenStruct) {
+    setCookie(tknObj: TokenStruct) {
         this._cookieService.set('access_token', tknObj.value);
         this._cookieService.set('token_expires', tknObj.expires);
     }
@@ -186,14 +185,8 @@ export class ServiceEndPoints {
 
     /*common post call*/
     post(endpoint: string, data: any/*, isBlockUI: boolean = true*/): Observable<any> {
-        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
-        const options = new RequestOptions({ headers: headers });
-        this.userDetail = this._startUpSvc.getUserData();
-        data['LoginName'] = this.userDetail.name;
-        data['LoginEmailId'] = this.userDetail.email;
-        data['LoginPassword'] = this.userDetail.password;
         const response$ = this.http
-            .post(endpoint, data, options)
+            .post(endpoint, data)
             .catch(this.handleError);
         return response$;
     };

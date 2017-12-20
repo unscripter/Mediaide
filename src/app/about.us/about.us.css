@@ -3,6 +3,7 @@
     background-color: rgb(255, 255, 255);
     padding: 0px 10px;
     font-weight: 600;
+    color: rgb(48, 71, 112);
 }
 
 .aboutus-hr-heading {
@@ -13,6 +14,11 @@
     margin: auto;
 }
 
+.youtubeFrame {
+    width: 100%;
+    height: 315px;
+}
+
 .our-company-img {
     background-image: url("../../assets/aboutus/our_company.png");
 }
@@ -20,19 +26,43 @@
 .aboutus-footer {
     background-color: rgb(69, 170, 255);
     padding: 20px;
+    margin-top: 20px;
+    color: white;
 }
 
 .aboutus-footer div {
     text-align: center;
 }
 
+.aboutus-footer div h2 {
+    font-weight: bold;
+}
+
+.aboutus-footer div span {
+    font-weight: bold;
+    font-size: 15px;
+}
+
 .about-right h5 {
     color: #fff;
-    background: #b71b2b;
+    background: rgb(69, 170, 255);
     padding: 5px 8px;
     font-size: 22px;
 }
 
 .service-num {
     padding: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    .aboutus-hr-heading {
+        width: 85%;
+        margin-bottom: 16px;
+    }
+    .aboutus-hr-heading span {
+        font-size: 18px;
+    }
+    .youtubeFrame {
+        height: 200px;
+    }
 }

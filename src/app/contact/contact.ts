@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { contactUsData } from '../app.model'
 
 @Component({
   selector: 'contact-us',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class ContactUs {
+  contactUs: contactUsData;
+  constructor(){
+    this.contactUs = new contactUsData();
+  }
+  sendMessage(){
+    //call contact us API to send data with an email to their id
+    console.log("RRRRRRRRRR",this.contactUs);
+  }
 
 } 

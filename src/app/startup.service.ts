@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-// import { Headers, Http, Response, RequestOptions } from '@angular/http';
+import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { UserDetail, TokenStruct } from './app.model';
-// import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 // import * as moment from 'moment';
 // import { BlockUI, NgBlockUI } from 'ng-block-ui';
 // import { Observable } from 'rxjs/Observable';
@@ -13,14 +13,14 @@ import { UserDetail, TokenStruct } from './app.model';
 export class StartupService {
     private userDetail = new UserDetail();
 //     requestsArr = [];
-    private apiUrl = 'http://localhost:8000/';
+    private apiUrl = 'http://192.168.1.8:8000/';
     private signInUrl = 'http://localhost:4200/registration';
 //     public toknObj = new TokenStruct();
 //     public currentUrl: string;
 //     private key = 1;
 //     @BlockUI() blockUI: NgBlockUI;
 
-//     constructor(private http: Http, private _cookieService: CookieService) { }
+    constructor(private http: Http, private _cookieService: CookieService) { }
 
 //     load(): Promise<any> {
 //         this.blockUI.start('Setting Up your application');
@@ -85,21 +85,21 @@ export class StartupService {
 //         }
 //     }
 
-//     setCommonUrlParameters(currentUrl: string) {
-//         const authUrl = 'http://localhost:4200/login';
-//         const localhostUrl = 'http://localhost:4200/';
-//         const liveUrl = '';
+    setCommonUrlParameters(currentUrl: string) {
+        const authUrl = 'http://localhost:4200/login';
+        const localhostUrl = 'http://localhost:4200/';
+        const liveUrl = '';
 
-//         if (this.forceProductionAPIHook()) {
-//             //server path's
-//             this.apiUrl = ''
-//         }
-//     }
+        if (this.forceProductionAPIHook()) {
+            //server path's
+            this.apiUrl = ''
+        }
+    }
 
-//     forceProductionAPIHook() {
-//         return false;   // For default pick
-//         //return true;  // For force Production test
-//     }
+    forceProductionAPIHook() {
+        return false;   // For default pick
+        //return true;  // For force Production test
+    }
 
     getUserData(): UserDetail {
         return this.userDetail;
@@ -113,13 +113,13 @@ export class StartupService {
         return this.signInUrl;
     }
 
-//     getCookie() {
-//         if (this._cookieService.get('access_token')) {
-//             return this._cookieService.get('access_token');
-//         } else {
-//             return null;
-//         }
-//     }
+    getCookie() {
+        if (this._cookieService.get('access_token')) {
+            return this._cookieService.get('access_token');
+        } else {
+            return null;
+        }
+    }
 
 //     getCookieExpires() {
 //         if (this._cookieService.get('token_expires')) {
