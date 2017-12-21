@@ -23,7 +23,7 @@ export class UserRegisterService {
 
   getUserProfileDetails(){
     this.http
-    .get('https://www.google.co.in/')
+    .get('https://api.github.com/gists/public')
     .map((res: Response) => res.json())
     .toPromise()
     .then((data: any) =>console.log("EEEEEEEEEEEE",data))

@@ -61,7 +61,7 @@ import { UserProfile } from './profile/profile'
     UserProfile
   ],
   providers: [
-    // CookieService, 
+    CookieService, 
     StartupService,
     CommonService,
     CommonAPIService

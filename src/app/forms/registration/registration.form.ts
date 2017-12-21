@@ -27,7 +27,7 @@ export class RegistrationForm implements OnInit{
         this.userData = new UserDetail();   
     }
     ngOnInit(){
-        this.signIn();
+        this.apiService.getUserProfileDetails()
     }
     signIn(){
         debugger;
