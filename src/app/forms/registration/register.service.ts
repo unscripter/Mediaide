@@ -11,20 +11,37 @@ import { UserDetail, TokenStruct } from '../../app.model';
 
 @Injectable()
 export class UserRegisterService {
-  constructor(private _commSvc: CommonService, private _apiSvc: CommonAPIService) {
+  constructor(private _commSvc: CommonService, private http: Http, private _apiSvc: CommonAPIService) {
   }
 
-  getUserProfileDetails(data: any): Observable<any> {
-    const url = this._commSvc.getApiUrl() + ServiceEndPoints.userRegister;
-    const response$ = this._apiSvc.post(url, data).subscribe(r => {console.log("RES",r)},
-    e => { console.log("ERR",e)});
-    return ;
-  };
+  // getUserProfileDetails(data: any): Observable<any> {
+  //   const url = this._commSvc.getApiUrl() + ServiceEndPoints.userRegister;
+  //   const response$ = this._apiSvc.post(url, data).subscribe(r => {console.log("RES",r)},
+  //   e => { console.log("ERR",e)});
+  //   return ;
+  // };
 
-  private handleError(error: any) {
-    const errorMsg = error.message || `There was a problem with our hyperdrive device and we couldn't retrieve your data!`;
-    return Observable.throw(errorMsg);
+  getUserProfileDetails(){
+    this.http
+    .get('https://www.google.co.in/')
+    .map((res: Response) => res.json())
+    .toPromise()
+    .then((data: any) =>console.log("EEEEEEEEEEEE",data))
+    .catch((err: any) => {
+        this.handleError(err);
+        // this.blockUI.stop();
+        // window.location.href = this.signInUrl;
+        Promise.resolve();
+    });
   }
+  // private handleError(error: any) {
+  //   const errorMsg = error.message || `There was a problem with our hyperdrive device and we couldn't retrieve your data!`;
+  //   return Observable.throw(errorMsg);
+  // }
+  private handleError(error: Response) {
+    console.log(error);
+    return Observable.throw(error.json().error || 'Server error');
+}
 
 }
 // import { Injectable } from '@angular/core';

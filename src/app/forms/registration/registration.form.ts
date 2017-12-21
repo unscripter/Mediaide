@@ -31,7 +31,7 @@ export class RegistrationForm implements OnInit{
     }
     signIn(){
         debugger;
-        this.apiService.getUserProfileDetails(this.userData);
+        this.apiService.getUserProfileDetails();
     }
     private handleError(error: Response) {
         console.log(error);
