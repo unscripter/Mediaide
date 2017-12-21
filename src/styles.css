@@ -44,6 +44,10 @@
     color: rgb(48, 71, 112);
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .ml0 {
     margin-left: 0;
 }

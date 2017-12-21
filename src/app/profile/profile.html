@@ -1,68 +1,86 @@
-<div class="container" style="margin-bottom: 20%">
-    <div class="span3 well row">
-        <div class="col-md-8">
-                <div class="">
-                    <a href="#aboutModal" data-toggle="modal" data-target="#myModal">
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme"
-                            width="140" height="140" class="img-circle">
-                    </a>
-                    <h3>Joe Sixpack</h3>
-                    <em>click my face for more</em>
-                </div>
-                <div class="col-md-3">
-                    <strong>Name: </strong>
-                    <span>Joe Sixpack</span>
-                    <strong>Age: </strong>
-                    <span>30</span>
-                    <strong>Sex: </strong>
-                    <span>Male</span>
-                    <strong>Country: </strong>
-                    <span>UK</span>
-                </div>
-        </div>
-        <div class="col-md-4 col-sm-8 float-right">
-            <form class="form-group">
-                <div class="col col-md-8">
-                    <h2>Upload CheckUp Files</h2>
-                    <label class="custom-file">
+<div class="container mt20">
+    <div class="center">
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="img-circle"></a>
+        <h3 class="font19">Joe Sixpack</h3>
+        <h5 class="font15">mediaide@gmail.com</h5>
+        <h5 class="font15">2 April 1996</h5>
+        <h5 class="font15">India</h5>
+        <h5 class="font15">B-41 Jawahar Nagar Jaipur</h5>
+    </div>
+
+    <ngb-tabset class="font15">
+        <ngb-tab title="Upload File">
+            <ng-template ngbTabContent>
+                <form class="form-group mt20">
+                    <div class="col col-md-8">
+                        <label class="custom-file">
                         <input type="file" name="checkup" class="form-control" id="file2" [(ngModel)]="checkupDoc" class="custom-file-input" value="checkupDoc">
                         <span class="custom-file-control"></span>
                     </label>
-                    <button class="btn btn-primary btn-md" (click)="checkUp()">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">Joe Sixpack</h4>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme"
-                            width="140" height="140" border="0" class="img-circle">
-                        <h3 class="media-heading">Joe Sixpack
-                            <small>USA</small>
-                        </h3>
+                        <button class="btn btn-primary customBtn btn-md" (click)="checkUp()">Submit</button>
                     </div>
-                    <hr>
-                    <div>
-                        <p class="text-left">
-                            <strong>Bio: </strong>
-                            <br> Intro and info of the user</p>
-                        <br>
+                </form>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Download File">
+            <ng-template ngbTabContent>
+
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Edit Information">
+            <ng-template ngbTabContent>
+                <form class="mt20">
+                    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" placeholder="Full Name">
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <div>
-                        <button type="button" class="btn btn-default btn-md" data-dismiss="modal">close</button>
+                    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email">
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number">
+                    </div>
+                    <div class="form-group col-sm-6 col-xs-12 col-md-6">
+                        <input class="form-control input-lg br0" type="text" id="address" name="address" placeholder="Address">
+                    </div>
+                    <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
+                        <label class="control-label">DOB</label>
+                        <input class="form-control input-lg br0" type="date" id="birthDate" name="dob">
+                    </div>
+                    <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
+                        <label class="control-label">Country</label>
+                        <select class="form-control input-lg br0" id="country" name="country">
+                            <option>Afghanistan</option>
+                            <option>Bahamas</option>
+                            <option>Cambodia</option>
+                            <option>Denmark</option>
+                            <option>Ecuador</option>
+                            <option>Fiji</option>
+                            <option>Gabon</option>
+                            <option>Haiti</option>
+                        </select>
+                    </div>
+                    <div class="form-group font15 col-md-12">
+                        <label class="control-label">Gender</label>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4 col-xs-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" name="gender" value="Female">Female
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" name="gender" value="Male">Male
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" placement="top" value="Update" ngbTooltip="submit">
+                        </div>
+                    </div>
+                </form>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
 </div>

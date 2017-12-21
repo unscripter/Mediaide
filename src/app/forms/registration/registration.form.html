@@ -1,112 +1,3 @@
-<!-- <section class="container" id="register" style="margin-top:20%;">
-    <form #registrationForm class="form-horizontal" role="form" (submit)="signIn()">
-        <h2>Registration Form</h2>
-        <div class="form-group">
-            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
-            <div class="col-sm-9">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-user"></i>
-                    </span>
-                    <input type="text" id="firstName" name="name" patternService="namechk" placeholder="Full Name" [(ngModel)]='userData.name'
-                        class="form-control" autofocus>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">Email</label>
-            <div class="col-sm-9">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-envelope"></i>
-                    </span>
-                    <input type="email" id="email" name="email" placeholder="Email" patternService="emailchk" [(ngModel)]='userData.email' class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Password</label>
-            <div class="col-sm-9">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-lock"></i>
-                    </span>
-                    <input type="password" id="password" name="password" placeholder="Password" patternService="passwordchk" [(ngModel)]='userData.password'
-                        class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
-            <div class="col-sm-9">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                    </span>
-                    <input type="date" id="birthDate" name="dob" [(ngModel)]='userData.dob' class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="country" class="col-sm-3 control-label">Country</label>
-            <div class="col-sm-9">
-                <select id="country" [(ngModel)]="userData.country" patternService="namechk" name="country" [value]="county" class="form-control">
-                    <option>Afghanistan</option>
-                    <option>Bahamas</option>
-                    <option>Cambodia</option>
-                    <option>Denmark</option>
-                    <option>Ecuador</option>
-                    <option>Fiji</option>
-                    <option>Gabon</option>
-                    <option>Haiti</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-3">Gender</label>
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <label class="radio-inline">
-                            <input type="radio" id="femaleRadio" name="gender" [(ngModel)]="userData.gender" value="Female">Female
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" id="maleRadio" name="gender" [(ngModel)]="userData.gender" value="Male">Male
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="address" class="col-sm-3 control-label">Permanant Address</label>
-            <div class="col-sm-9">
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-address-card-o"></i>
-                    </span>
-                    <input type="text" id="address" name="name" placeholder="Address" [(ngModel)]='userData.address' class="form-control" autofocus>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-9 col-sm-offset-3">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="agree" patternService="alphanumericchk" [(ngModel)]="userData.agree">I accept
-                        <a href="#">terms</a>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" [disabled]="!userData.name && !userData.email && !userData.password && !userData.agree" class="btn btn-primary btn-block"
-                    placement="top" ngbTooltip="Tooltip on top">Register</button>
-            </div>
-        </div>
-    </form>
-</section> -->
-
 <div class="container">
     <div class="row mt20">
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -115,24 +6,19 @@
                     <h4 class="font19">Registration Form</h4>
                     <hr class="colorgraph">
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" patternService="namechk" placeholder="Full Name"
-                            [(ngModel)]='userData.name'>
+                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" patternService="namechk" placeholder="Full Name" [(ngModel)]='userData.name'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email" patternService="emailchk"
-                            [(ngModel)]='userData.email'>
+                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email" patternService="emailchk" [(ngModel)]='userData.email'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="password" id="password" name="password" placeholder="Password" patternService="passwordchk"
-                            [(ngModel)]='userData.password'>
+                        <input class="form-control input-lg br0" type="password" id="password" name="password" placeholder="Password" patternService="passwordchk" [(ngModel)]='userData.password'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="cnfPassword" id="cnfPassword" name="cnfPassword" placeholder="Re-enter Password"
-                            patternService="passwordchk" [(ngModel)]='userData.cnfPassword'>
+                        <input class="form-control input-lg br0" type="cnfPassword" id="cnfPassword" name="cnfPassword" placeholder="Re-enter Password" patternService="passwordchk" [(ngModel)]='userData.cnfPassword'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number" patternService="phonechk"
-                            [(ngModel)]='userData.mobile'>
+                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number" patternService="phonechk" [(ngModel)]='userData.mobile'>
                     </div>
                     <div class="row">
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
@@ -141,8 +27,7 @@
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                             <label class="control-label">Country</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country"
-                                [value]="county">
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country" [value]="county">
                                 <option>Afghanistan</option>
                                 <option>Bahamas</option>
                                 <option>Cambodia</option>
@@ -157,7 +42,7 @@
                     <div class="form-group font15">
                         <label class="control-label">Gender</label>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2 col-sm-4 col-xs-4">
                                 <label class="radio-inline">
                                     <input type="radio" id="femaleRadio" name="gender" [(ngModel)]="userData.gender" value="Female">Female
                                 </label>
