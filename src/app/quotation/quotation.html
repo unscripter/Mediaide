@@ -1,13 +1,12 @@
-<div class="container" style="margin-bottom:20%;position:relative">
+<div class="container" style="position:relative">
     <div class="row mt20">
         <div class="col-xs-12 col-sm-8 col-md-10">
             <form #quotationForm role="form">
                 <fieldset>
                     <div class="row">
-                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-4">
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Country</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.country" patternService="namechk" name="country"
-                                [value]="county">
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.country" patternService="namechk" name="country" [value]="county">
                                 <option>India</option>
                                 <option>Bahamas</option>
                                 <option>Cambodia</option>
@@ -18,10 +17,9 @@
                                 <option>Haiti</option>
                             </select>
                         </div>
-                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-4">
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Treatment Type</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.treatmentType" patternService="namechk"
-                                name="country" [value]="county">
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.treatmentType" patternService="namechk" name="country" [value]="county">
                                 <option>One</option>
                                 <option>Two</option>
                                 <option>Three</option>
@@ -32,10 +30,9 @@
                                 <option>Eight</option>
                             </select>
                         </div>
-                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-4">
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Number Of Patient</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.patientNumber" patternService="namechk"
-                                name="country" [value]="county">
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.patientNumber" patternService="namechk" name="country" [value]="county">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -49,27 +46,27 @@
                         <div class="form-group font15 col-md-12">
                             <label class="control-label">Other Expenses</label>
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-2 col-sm-4 col-xs-4">
                                     <label class="radio-inline">
                                         <input type="radio" id="femaleRadio" name="airline" [(ngModel)]="quotationData.other.airline" value="true">Airline
                                     </label>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 col-sm-4 col-xs-4">
                                     <label class="radio-inline">
                                         <input type="radio" id="maleRadio" name="food" [(ngModel)]="quotationData.other.food" value="true">Food
                                     </label>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 col-sm-4 col-xs-4">
                                     <label class="radio-inline">
                                         <input type="radio" id="maleRadio" name="visa" [(ngModel)]="quotationData.other.visa" value="true">Visa
                                     </label>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 col-sm-4 col-xs-4">
                                     <label class="radio-inline">
                                         <input type="radio" id="maleRadio" name="hotel" [(ngModel)]="quotationData.other.hotel" value="true">Hotel
                                     </label>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 col-sm-4 col-xs-4">
                                     <label class="radio-inline">
                                         <input type="radio" id="maleRadio" name="other" [(ngModel)]="quotationData.other.other" value="true">Other
                                     </label>
@@ -79,7 +76,7 @@
                     </div>
                 </fieldset>
             </form>
-            <button class="btn btn-primary" routerLink="/quotation/estimate" (click)="getEstimate()">Get Estimate</button>
+            <button class="btn btn-primary customBtn" routerLink="/quotation/estimate" (click)="getEstimate()">Get Estimate</button>
         </div>
     </div>
 </div>
