@@ -4,26 +4,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { UserRegisterService } from './register.service';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
 import { CommonService, ServiceEndPoints } from '../../common.service';
 import { CommonAPIService } from '../../app.api.service';
-import { Headers, Http, Response, RequestOptions } from '@angular/http';
-import { httpFactory } from '@angular/http/src/http_module';
-import { error } from 'selenium-webdriver';
-import { Subscriber } from 'rxjs/Subscriber';
 
 @Component({
     selector: 'registration',
     templateUrl: './registration.form.html',
-    styleUrls: ['./registration.css'],
     providers: [UserRegisterService]
 })
 
 export class RegistrationForm implements OnInit{
     userData: UserDetail;
-    userData1: any;
     constructor(private apiService: UserRegisterService,){
         this.userData = new UserDetail();   
     }

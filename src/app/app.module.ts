@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { BlockUIModule, BlockUI, NgBlockUI } from 'ng-block-ui';
 import { CookieService  } from 'ngx-cookie-service';
@@ -10,15 +11,10 @@ import { HttpModule } from '@angular/http';
 import { HttpInterceptorModule } from 'ng-http-interceptor';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { CommonAPIService } from './app.api.service';
+import { from } from 'rxjs/observable/from';
 import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
-import { AboutIndia } from './about.us/about.india/about.india';
-import { WhyUs } from './about.us/why.us/why.us';
-import { OurCompany } from './about.us/our.company/our.company';
-import { FeaturedServices } from './services/featured.services/featured.services';
-import { MedicalTreatment } from './services/medical.treatment/medical.treatment';
-import { PostCare } from './services/post.care/post.care';
 import { AppRoutingModule } from './app.routing.module';
 import { RegistrationForm } from './forms/registration/registration.form';
 import { FormsModule } from '@angular/forms';
@@ -27,8 +23,8 @@ import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
 import { UserProfile } from './profile/profile';
 import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module';
-import { from } from 'rxjs/observable/from';
-import { CommonModule } from "@angular/common";
+import { AboutUs } from './about.us/about.us';
+import { OurServices } from './services/services';
 
 
 @NgModule({
@@ -48,12 +44,8 @@ import { CommonModule } from "@angular/common";
     AppComponent,
     Header,
     Footer,
-    AboutIndia,
-    WhyUs,
-    OurCompany,
-    PostCare,
-    FeaturedServices,
-    MedicalTreatment,
+    AboutUs,
+    OurServices,
     RegistrationForm,
     LoginForm,
     ContactUs,
