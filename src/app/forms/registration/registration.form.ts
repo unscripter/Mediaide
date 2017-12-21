@@ -23,18 +23,18 @@ import { Subscriber } from 'rxjs/Subscriber';
 
 export class RegistrationForm implements OnInit{
     userData: UserDetail;
+    userData1: any;
     constructor(private apiService: UserRegisterService,){
         this.userData = new UserDetail();   
     }
     ngOnInit(){
-        this.apiService.getUserProfileDetails()
+    this.apiService.fetch();
+    this.apiService.post();
     }
     signIn(){
         debugger;
-        this.apiService.getUserProfileDetails();
+        // this.apiService.post();
+        this.apiService.setRegistrationDetails(this.userData);
     }
-    private handleError(error: Response) {
-        console.log(error);
-        return Observable.throw(error.json().error || 'Server error');
-    }
+    
 }

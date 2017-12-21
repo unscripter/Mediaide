@@ -5,7 +5,7 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TokenStruct } from '../../app.model'
 import { UserLoginService } from './login.service'
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-
+import { loginData } from './login.model';
 
 @Component({
     selector: 'login',
@@ -14,27 +14,26 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
     providers: [UserLoginService]
 })
 
-export class LoginForm implements OnInit{
-    private logInData: any;
+export class LoginForm implements OnInit {
+    private logInData: loginData;
     private logInCondition: boolean;
     private tokenStruct: TokenStruct;
     logeedIn: boolean;
-   
-    constructor(private loginSvc: UserLoginService){
+
+    constructor(private loginSvc: UserLoginService) {
         this.logInData = new LogInData();
         this.logInCondition = (this.logInData.username && this.logInData.password && this.logInData.keepLoggedIn);
         this.tokenStruct = new TokenStruct();
 
     }
-    ngOnInit(){  
-        this.logeedIn = false; 
+    ngOnInit() {
+        this.logeedIn = false;
     }
-    logInStatus(){
+    logInUser() {
+        this.loginSvc.logIn(this.logInData);
+    }
+    logInStatus() {
         return this.logeedIn;
     }
-    // logIn(){
-    //     this.logInData.setLoginDetails(this.logInData);
-    //     if(this.logInData.keepLoggedIn){
-    //     UserProfileService.keepUserLoggedIn(this.tokenStruct);
-    //     }
-    }
+
+}

@@ -25,10 +25,10 @@ import { FormsModule } from '@angular/forms';
 import { LoginForm } from './forms/login/login';
 import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
+import { UserProfile } from './profile/profile';
 import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module';
 import { from } from 'rxjs/observable/from';
 import { CommonModule } from "@angular/common";
-import { UserProfile } from './profile/profile'
 
 
 @NgModule({
