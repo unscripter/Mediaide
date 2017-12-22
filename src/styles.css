@@ -196,3 +196,13 @@
 .blue {
     color: #45aaff;
 }
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+}
