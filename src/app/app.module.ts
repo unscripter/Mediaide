@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { RegistrationForm } from './forms/registration/registration.form';
 import { FormsModule } from '@angular/forms';
 import { LoginForm } from './forms/login/login';
+import { EnquiryForm } from './forms/enquiry/enquiry';
 import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
 import { UserProfile } from './profile/profile';
@@ -52,6 +53,7 @@ import { MedicalTreatment } from './services/medical.treatment/medical.treatment
     OurServices,
     RegistrationForm,
     LoginForm,
+    EnquiryForm,
     ContactUs,
     FAQ,
     UserProfile,
