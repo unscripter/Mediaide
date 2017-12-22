@@ -10,7 +10,6 @@ import { FAQ } from './faq/faq';
 import { QuotationModule } from './quotation/quotation.module';
 import { UserProfile } from './profile/profile';
 
-
  export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'registration', component: RegistrationForm },  

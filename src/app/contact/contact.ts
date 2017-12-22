@@ -17,4 +17,7 @@ export class ContactUs {
     console.log("RRRRRRRRRR",this.contactUs);
   }
 
+  // lat: number = 51.678418;
+  // lng: number = 7.809007;
+
 } 

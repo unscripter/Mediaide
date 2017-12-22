@@ -25,7 +25,8 @@ import { UserProfile } from './profile/profile';
 import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module';
 import { AboutUs } from './about.us/about.us';
 import { OurServices } from './services/services';
-
+import { MedicalTreatment } from './services/medical.treatment/medical.treatment'
+// import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
@@ -38,7 +39,10 @@ import { OurServices } from './services/services';
     AppRoutingModule,
     FormsModule,
     ExpressionValidationModule,
-    CommonModule
+    CommonModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyDLEd7vZhaPROnUphHN0CYezUbjeZ46h2Y'
+    // })
   ],
   declarations: [
     AppComponent,
@@ -50,7 +54,8 @@ import { OurServices } from './services/services';
     LoginForm,
     ContactUs,
     FAQ,
-    UserProfile
+    UserProfile,
+    // MedicalTreatment
   ],
   providers: [
     CookieService, 
