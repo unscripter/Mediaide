@@ -22,13 +22,14 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     { path: 'faq', component: FAQ },
     { path: 'profile', component: UserProfile },
     { path: 'forgotpassword', component: ForgotPassword},
+    { path: 'enquiry' , component: EnquiryForm} ,
+    { path: 'reconfirm', component: PasswordReconfirmation },
     //this is for loading children as lazy loading
     { path: 'home', loadChildren: './home/home.module#HomeModule' },
     { path: 'quotation', loadChildren : './quotation/quotation.module#QuotationModule' } ,
     { path: 'about', loadChildren: './about.us/about.us.module#AboutUsModule' },
     { path: 'services', loadChildren: './services/services.module#OurServicesModule' },
-    { path: 'enquiry' , component: EnquiryForm} ,
-    { path: 'reconfirm', component: PasswordReconfirmation }  
+
     ];
 
 @NgModule({

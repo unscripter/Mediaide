@@ -26,7 +26,8 @@ export class ServiceEndPoints {
     static UserEnquiry = 'api/user-enquiry/';
     static ContactUs = 'api/contact-us/';
     static GetAQuote = 'api/get-estimate/';
-    static ForgotPassword = 'api/forgot-password/'
+    static ForgotPassword = 'api/forgot-password/';
+    static ReconfirmPassword = 'api/reconfirm';
 }
 
 @Injectable() export class CommonService {
@@ -141,11 +142,10 @@ export class ServiceEndPoints {
 
     getCookieExpires() {
         if (this._CookieService.get('token_expires')) {
-            return this._CookieService.get('token_expires');
-        } else {
-            return null;
-        }
+        return this._CookieService.get('token_expires');} 
+        else { return null; }
     };
+
     deleteCookie() {
         this._CookieService.deleteAll();
     }
@@ -159,29 +159,13 @@ export class ServiceEndPoints {
     }
 
     getFromSessionStorage(key: string) {
-        if (sessionStorage.getItem(key)) {
-            return sessionStorage.getItem(key);
-        }
-        else {
-            this.notificationMessage('something went wrong please try to reload', false);
-        }
+        if (sessionStorage.getItem(key)) { return sessionStorage.getItem(key); }
+        else { this.notificationMessage('something went wrong please try to reload', false); }
     }
 
     clearSessionStorage() {
         sessionStorage.clear();
     }
-
-    // setDefaultURL(URL) {
-    //     localStorage.setItem('homePage', URL);
-    // };
-
-    // getDefaultURL() {
-    //     return localStorage.getItem('homePage');
-    // };
-
-    alertCheck(e: any) {
-        window.alert(e);
-    };
 
     getGreetings() {
         let greeting = 'Good Morning';
@@ -200,22 +184,6 @@ export class ServiceEndPoints {
         const errorMsg = error.message || `There was a problem with our hyperdrive device and we couldn't retrieve your data!`;
         return Observable.throw(errorMsg);
     }
-
-    get(endpoint: string, isBlockUI: boolean = true): Observable<any> {
-        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
-        const options = new RequestOptions({ headers: headers });
-        return this.http
-            .get(endpoint, options)
-            .catch(this.handleError);
-    }
-
-    post(endpoint: string, data: any/*, isBlockUI: boolean = true*/): Observable<any> {
-        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
-        const options = new RequestOptions({ headers: headers });
-        return this.http
-            .post(endpoint, data, options)
-            .catch(this.handleError);
-    };
 
     scrollToTop() {
         this.router.events.subscribe((evt) => {

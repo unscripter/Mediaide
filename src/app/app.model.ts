@@ -80,35 +80,35 @@ export class TokenStruct {
     }
 };
 
-class OtherCost {
-    public airline?: boolean;
-    public food?: boolean;
-    public visa?: boolean;
-    public hotel?: boolean;
-    public other?: boolean;
+// class OtherCost {
+//     public airline?: boolean;
+//     public food?: boolean;
+//     public visa?: boolean;
+//     public hotel?: boolean;
+//     public other?: boolean;
 
-    constructor() {
-        this.airline = false;
-        this.food = false;
-        this.visa = false;
-        this.hotel = false;
-        this.other = false;
-    }
-}
+//     constructor() {
+//         this.airline = false;
+//         this.food = false;
+//         this.visa = false;
+//         this.hotel = false;
+//         this.other = false;
+//     }
+// }
 
-export class QuotationData {
-    public country: string;
-    public treatmentType: any;
-    public patientNumber: string;
-    public other?: OtherCost;
+// export class QuotationData {
+//     public country: string;
+//     public treatmentType: any;
+//     public patientNumber: string;
+//     public other?: OtherCost;
 
-    constructor() {
-        this.country = '';
-        this.treatmentType = '';
-        this.patientNumber = '';
-        this.other = new OtherCost();
-    }
-}
+//     constructor() {
+//         this.country = '';
+//         this.treatmentType = '';
+//         this.patientNumber = '';
+//         this.other = new OtherCost();
+//     }
+// }
 
 export class Password {
     password: string
