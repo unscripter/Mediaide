@@ -3,10 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-// import { CookieService } from 'ngx-cookie-service';
 import { StartupService } from './startup.service';
-// import { HttpInterceptorService } from 'ng-http-interceptor';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import * as moment from 'moment';
 import { CookieService } from 'ngx-cookie-service';
 import { TokenStruct } from './app.model'
@@ -29,12 +27,12 @@ export class ServiceEndPoints {
     static ContactUs = 'api/contact-us/';
     static GetAQuote = 'api/get-estimate/';
     static ForgotPassword = 'api/forgot-password/'
- }
+}
 
 @Injectable() export class CommonService {
     private blockUiCount = 0;
     @BlockUI() blockUI: NgBlockUI;
-    
+
     constructor(
         private _startUpSvc: StartupService,
         private _CookieService: CookieService,
@@ -76,29 +74,19 @@ export class ServiceEndPoints {
         this.incrementBlockUICount();
         const countBeforeStart = this.getBlockUICount();
         this.blockUI.start(message);
-        setTimeout( () => {
+        setTimeout(() => {
             const currentBlockUiCount = this.getBlockUICount();
-                if ( currentBlockUiCount !== 0 && countBeforeStart === currentBlockUiCount) {
-                    this.blockUI.update('Be patient ... Its taking a while');
-                    setTimeout( () => {
-                        const currentBlockUiCountL = this.getBlockUICount();
-                        if (currentBlockUiCountL !== 0 && countBeforeStart === currentBlockUiCountL) {
-                            this.blockUI.update('Its taking longer than expected ...');
-                        }
-                    }, 10000);
-                }
+            if (currentBlockUiCount !== 0 && countBeforeStart === currentBlockUiCount) {
+                this.blockUI.update('Be patient ... Its taking a while');
+                setTimeout(() => {
+                    const currentBlockUiCountL = this.getBlockUICount();
+                    if (currentBlockUiCountL !== 0 && countBeforeStart === currentBlockUiCountL) {
+                        this.blockUI.update('Its taking longer than expected ...');
+                    }
+                }, 10000);
+            }
         }, 10000);
     }
-
-
-
-    // isLoggedIn(logInStatus){
-    //     if(logInStatus)
-    //     {
-
-    //     }
-
-    // }
 
     getNotificationOption() {
         const options = {
@@ -138,7 +126,7 @@ export class ServiceEndPoints {
     }
 
     setCookie(tknObj: any) {
-        console.log("TOKEN",tknObj)
+        console.log("TOKEN", tknObj)
         this._CookieService.set('access_token', tknObj);
         // this._CookieService.set('token_expires', tknObj.expires);
     };
@@ -158,21 +146,29 @@ export class ServiceEndPoints {
             return null;
         }
     };
-
-    storeInLocalStorage(key: string, value: any){
-        localStorage.setItem(key, value)
+    deleteCookie() {
+        this._CookieService.deleteAll();
     }
 
-    clearFromLocalStorage(key: string){
-        localStorage.removeItem(key);
+    storeInSessionStorage(key: string, value: any) {
+        sessionStorage.setItem(key, JSON.stringify(value));
     }
 
-    getFromLocalStorage(key: string){
-        localStorage.getItem(key)
+    clearFromSessionStorage(key: string) {
+        sessionStorage.removeItem(key);
     }
 
-    clearLocalStorage(){
-        localStorage.clear();
+    getFromSessionStorage(key: string) {
+        if (sessionStorage.getItem(key)) {
+            return sessionStorage.getItem(key);
+        }
+        else {
+            this.notificationMessage('something went wrong please try to reload', false);
+        }
+    }
+
+    clearSessionStorage() {
+        sessionStorage.clear();
     }
 
     // setDefaultURL(URL) {
@@ -221,5 +217,12 @@ export class ServiceEndPoints {
             .catch(this.handleError);
     };
 
-
+    scrollToTop() {
+        this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0)
+        });
+    }
 }

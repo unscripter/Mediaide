@@ -11,6 +11,7 @@ import { FAQ } from './faq/faq';
 import { QuotationModule } from './quotation/quotation.module';
 import { UserProfile } from './profile/profile';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
+import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
 
  export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,7 +27,8 @@ import { ForgotPassword } from './forms/forgot.password/forgot.password';
     { path: 'quotation', loadChildren : './quotation/quotation.module#QuotationModule' } ,
     { path: 'about', loadChildren: './about.us/about.us.module#AboutUsModule' },
     { path: 'services', loadChildren: './services/services.module#OurServicesModule' },
-    { path: 'enquiry' , component: EnquiryForm}   
+    { path: 'enquiry' , component: EnquiryForm} ,
+    { path: 'reconfirm', component: PasswordReconfirmation }  
     ];
 
 @NgModule({

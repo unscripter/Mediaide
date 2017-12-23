@@ -27,6 +27,7 @@ import { ExpressionValidationModule } from './shared/directives/expression.valid
 import { AboutUs } from './about.us/about.us';
 import { OurServices } from './services/services';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
+import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
 
 @NgModule({
   imports: [
@@ -57,7 +58,8 @@ import { ForgotPassword } from './forms/forgot.password/forgot.password';
     FAQ,
     UserProfile,
     ForgotPassword,
-    EnquiryForm
+    EnquiryForm,
+    PasswordReconfirmation
   ],
   providers: [
     CookieService,

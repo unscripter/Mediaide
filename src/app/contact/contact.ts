@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 import { contactUsData } from '../app.model';
 import { ContactUsService } from './contact.service';
 import { options } from '../app.model'
@@ -10,20 +11,19 @@ import { options } from '../app.model'
   providers: [ContactUsService]
 })
 
-export class ContactUs {
+export class ContactUs implements OnInit{
   contactUs: contactUsData;
   private options = options;
-  constructor(private ContactUsService: ContactUsService){
+  constructor(private _commonService: CommonService, private ContactUsService: ContactUsService){
     this.contactUs = new contactUsData();
   }
-
-  sendMessage(){
-    this.ContactUsService.Message(this.contactUs);
-    //call contact us API to send data with an email to their id
-   
-  }
-
-  // lat: number = 51.678418;
-  // lng: number = 7.809007;
-
-} 
+  ngOnInit()
+{
+  this._commonService.scrollToTop();
+}
+sendMessage(){
+  this.ContactUsService.Message(this.contactUs);
+  //call contact us API to send data with an email to their id
+ 
+}
+}

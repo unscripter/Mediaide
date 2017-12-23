@@ -6,7 +6,6 @@ import { GetEstimation } from '../shared/estimation/estimation';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
 
-
 @NgModule({
     declarations: [
     GetAQuote,

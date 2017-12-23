@@ -183,6 +183,11 @@
     color: white
 }
 
+.red {
+    color: red;
+}
+
+
 .relative {
     position: relative;
 }

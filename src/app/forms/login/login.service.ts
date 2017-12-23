@@ -2,32 +2,30 @@ import { Injectable, OnInit } from '@angular/core';
 import { CommonService } from '../../common.service';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { LogInData, TokenStruct, options } from '../../app.model';
+import { LogInData, options, isAuthorized } from '../../app.model';
 import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints } from '../../common.service';
 import { window } from 'rxjs/operator/window';
 import { Router } from '@angular/router'
-// import { read } from 'fs';
 
 @Injectable()
 export class UserLoginService implements OnInit {
-    loginConditionData: any;
-    userSpecificProfileData: any;
+    loginData: LogInData;
     isAuthorized: boolean;
+    keepLoggedInStatus: boolean;
     private options = options
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
-        this.loginConditionData = '';
-        this.userSpecificProfileData = ''
+        this.loginData = new LogInData();
+        this.isAuthorized = isAuthorized;
     }
 
     ngOnInit() {
-        if (this.loginConditionData.keepLoggedIn) {
-            this.keepLoggedIn();
-        }
-        else {
-            this.isAuthorized = false;
-            this.clearUserData('userProfileData');
-        }
+        // if (this.loginData.keepLoggedIn) {
+        //     this.keepLoggedIn();
+        // }
+        // else {
+        //     this.clearUserData('userProfileData');
+        // }
     }
 
     logIn(loginData: LogInData) {
@@ -36,29 +34,25 @@ export class UserLoginService implements OnInit {
         return this._apiService.post(ServiceEndPoints.LoginUser, loginData)
             .subscribe(res => {
                 this._commonService.setCookie(res._body);
-                this.isAuthorized = true;
-                if (this.isAuthorized) {
-                    this.router.navigate(['/profile']);
-                }
-                const tempData = {
-                    'username': res.name,
-                    'email': res.email,
-                    'dob': res.dob,
-                    'address': res.address,
-                    'gender': res.gender,
-                    'phone': res.phone,
-                    'country': res.country,
-                    'id': res.id
-                }
-                this.storeUserData(tempData);
-                this._commonService.notificationMessage("success in login", true);
                 this._commonService.stopBlockUI();
+                //can add other condition for bettter transition
+                if (res._body) {
+                    this.keepLoggedIn()
+                    this._commonService.notificationMessage("success in login, redirecting to user profile", true);
+                    let userData = { 'data': res._body }
+                    this.storeUserData(userData);
+                    setTimeout(this.router.navigate(['/profile']), 3000);
+                    this.keepLoggedInStatus = this.loginData.keepLoggedIn;
+                }
+                else {
+                    this._commonService.notificationMessage("success in login, redirecting to homepage", true);
+                    setTimeout(this.router.navigate(['/home']), 2000)
+                }
             },
             err => {
-                console.log('ERR', err);
                 this._apiService.handleError(err);
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage("sorry something went wrong", false);
+                this._commonService.notificationMessage(err.statusText, false);
             });
     }
 
@@ -67,21 +61,28 @@ export class UserLoginService implements OnInit {
     }
 
     storeUserData(profileData) {
-        this._commonService.storeInLocalStorage('userProfileData', profileData);
+        this._commonService.storeInSessionStorage('userProfileData', profileData);
     }
 
     clearUserData(key: string) {
-        this._commonService.clearFromLocalStorage(key);
+        this._commonService.clearFromSessionStorage(key);
     }
 
     logOut() {
-        if (this.loginConditionData.keepLoggedIn) {
-            this.loginConditionData.keepLoggedIn = false;
-            localStorage.clear();
+        if (this.keepLoggedInStatus) {
+            this._commonService.notificationMessage("logged out successfully", true);
         }
         else {
-            localStorage.clear();
+            sessionStorage.clear();
+            this.clearUserData('userProfileData');
+            this._commonService.deleteCookie();
+            this.router.navigate(['/login'])
+            this._commonService.notificationMessage("logged out successfully", true);          
         }
+    }
+    
+    // setStatusForHomePage(this.keepLoggedInStatus,this.isAuthorized){
+
     }
 
 }
