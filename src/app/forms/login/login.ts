@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LogInData } from '../../app.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { TokenStruct } from '../../app.model'
-import { UserLoginService } from './login.service'
+import { TokenStruct } from '../../app.model';
+import { UserLoginService } from './login.service';
+import { options } from '../../app.model'
 
 @Component({
     selector: 'login',
@@ -13,24 +14,27 @@ import { UserLoginService } from './login.service'
 
 export class LoginForm implements OnInit {
     private logInData: LogInData;
+    private logInResponse: any;
     private logInCondition: boolean;
     private tokenStruct: TokenStruct;
     logeedIn: boolean;
+    public options = options;
 
-    constructor(private loginSvc: UserLoginService) {
+    constructor(private loginService: UserLoginService) {
         this.logInData = new LogInData();
-        this.logInCondition = (this.logInData.username && this.logInData.password && this.logInData.keepLoggedIn);
         this.tokenStruct = new TokenStruct();
+        this.logInResponse = '';
 
     }
     ngOnInit() {
-        this.logeedIn = false;
-    }
-    logInUser() {
-        this.loginSvc.logIn(this.logInData);
-    }
-    logInStatus() {
-        return this.logeedIn;
+        if (this.logInData.keepLoggedIn)
+            this.logeedIn = false;
     }
 
+    logInUser() {
+        this.logInResponse = this.loginService.logIn(this.logInData);
+        this.logInData = new LogInData()
+
+    }
 }
+

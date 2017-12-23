@@ -49,7 +49,7 @@
                 <!-- <li><a routerLink="/login" (click)="changeLogInCondition();">{{ logInStatus }} ? LogIn : LogOut</a></li> -->
                 <li><a routerLink="/login" *ngIf="logInStatus == true" (click)="changeLogInCondition()">LogIn</a></li> 
                 <li><a routerLink="/home" *ngIf="logInStatus == false" (click)="changeLogInCondition()">LogOut</a></li> 
-                <li><a routerLink="/profile" class="btn btn-round">Profile</a></li>
+                <li><a routerLink="/profile" class="btn btn-round"><i class="fa fa-user"></i></a></li>
             </ul>
         </div>
     </div>

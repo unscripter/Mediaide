@@ -12,10 +12,12 @@ import { CommonService } from './common.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public commanService: CommonService;
-  constructor(private router: Router) {
+  constructor(private router: Router, private commanService: CommonService ) {
   }
   ngOnInit(){
+    this.commanService.startBlockUI('Loading');    
     // this.router.navigate(['']);
+    this.commanService.stopBlockUI();
   }
+  
 } 

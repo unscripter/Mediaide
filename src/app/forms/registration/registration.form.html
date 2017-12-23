@@ -128,11 +128,11 @@
                     </div>
                     <div class="form-group">
                         <input class="form-control input-lg br0" type="cnfPassword" id="cnfPassword" name="cnfPassword" placeholder="Re-enter Password"
-                            patternService="passwordchk" [(ngModel)]='userData.cnfPassword'>
+                            patternService="passwordchk" [(ngModel)]='userData.confirm_password'>
                     </div>
                     <div class="form-group">
                         <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number" patternService="phonechk"
-                            [(ngModel)]='userData.mobile'>
+                            [(ngModel)]='userData.phone'>
                     </div>
                     <div class="row">
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
@@ -141,7 +141,7 @@
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                             <label class="control-label">Country</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country"
+                            <select outerLinkclass="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country"
                                 [value]="county">
                                 <option>Afghanistan</option>
                                 <option>Bahamas</option>

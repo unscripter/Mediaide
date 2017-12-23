@@ -2,15 +2,13 @@ import { Injectable } from '@angular/core';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 // import { CookieService } from 'ngx-cookie';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+import { CommonService } from './common.service'
 import { UserDetail } from './app.model';
 
 @Injectable() export class CommonAPIService {
-    public ApiUrl = 'https://api.github.com/gists/';
+    public ApiUrl = 'http://192.168.1.9:8002/';
     userDetail: UserDetail;
-    constructor(private http: Http) { 
+    constructor(private http: Http, private _cmnSvc: CommonService) { 
         this.userDetail = new UserDetail();
     }
 
@@ -20,12 +18,16 @@ import { UserDetail } from './app.model';
     //     );
 
     // }
+    getCookie(){
+        this._cmnSvc.getCookie();
+    }
 
 
-    get(): Observable<any> {
+    get(endpoint: string): Observable<any> {
+        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
+        const options = new RequestOptions({ headers: headers });
         return this.http
-            .get('https://api.github.com/gists/public')
-            .map((res: Response) => res.json());
+            .get(this.ApiUrl + endpoint);
     }
 
     // post(endpoint: string, data: any): Observable<any> {
@@ -35,11 +37,11 @@ import { UserDetail } from './app.model';
     // }
 
     post(endpoint: string, data: any): Observable<any> {
-        debugger;
-        return this.http.post('https://elite-web.slack.com/messages/C8DHQUJ9W/', data).map(res => {
-            res.json()
-        });
-    };
+        // debugger;
+        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
+        const options = new RequestOptions({ headers: headers });
+        return this.http.post(this.ApiUrl + endpoint, data, options);
+    };  
 
     handleError(error: Response) {
         console.log(error);

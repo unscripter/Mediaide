@@ -12,7 +12,7 @@ import { UserDetail, TokenStruct } from '../../app.model';
 @Injectable()
 export class UserRegisterService {
   userData: UserDetail;
-  constructor(private _commSvc: CommonService, private http: Http, private _apiSvc: CommonAPIService) {
+  constructor(private _commanService: CommonService, private http: Http, private _apiService: CommonAPIService) {
   }
 
   // getUserProfileDetails(data: any): Observable<any> {
@@ -22,7 +22,7 @@ export class UserRegisterService {
   //   return ;
   // };
   fetch() {
-    return this._apiSvc.get()
+    return this._apiService.get(ServiceEndPoints.GetUser)
       .subscribe(r => {
         debugger;
         console.log("RES", r);
@@ -34,32 +34,32 @@ export class UserRegisterService {
   }
 
   post() {
-    return this._apiSvc.post(ServiceEndPoints.userRegister, this.userData)
+    return this._apiService.post(ServiceEndPoints.RegisterUser, this.userData)
       .subscribe(res => {
         debugger;
         console.log("RES", res)
       },
       err => {
         console.log('ERR', err);
-        this.handleError(err)
+        this._apiService.handleError(err)
       });
   }
   
   setRegistrationDetails(userData: UserDetail){
-    return this._apiSvc.post(ServiceEndPoints.userRegister, userData)
+    return this._apiService.post(ServiceEndPoints.RegisterUser, userData)
     .subscribe(res => {
-      debugger;
+      // debugger;
       console.log("RES", res)
     },
     err => {
       console.log('ERR', err);
-      this.handleError(err)
+      this._apiService.handleError(err)
     });
   }
-  private handleError(error: Response) {
-    console.log(error);
-    return Observable.throw(error.json().error || 'Server error');
-  }
+  // private handleError(error: Response) {
+  //   console.log(error);
+  //   return Observable.throw(error.json().error || 'Server error');
+  // }
 
 
   // getUserProfileDetails(){

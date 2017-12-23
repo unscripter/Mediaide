@@ -1,0 +1,64 @@
+<simple-notifications [options]="options"></simple-notifications>
+<div class="container">
+    <div class="row mt20">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form #registrationForm role="form" (submit)="makeEnquiry(enquiryData);">
+                <fieldset>
+                    <h4 class="font19">REQUEST AN APPOINTMENT</h4>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" patternService="namechk" placeholder="Full Name"
+                            [(ngModel)]='enquiryData.name'>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email" patternService="emailchk"
+                            [(ngModel)]='enquiryData.email'>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number" patternService="phonechk"
+                            [(ngModel)]='enquiryData.mobile'>
+                    </div>
+                    <div class="row">
+                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
+                            <label class="control-label">DOB</label>
+                            <input class="form-control input-lg br0" type="date" id="birthDate" name="dob" [(ngModel)]='enquiryData.dob'>
+                        </div>
+                        <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
+                            <label class="control-label">APPOINTMENT DATE</label>
+                            <input class="form-control input-lg br0" type="date" id="appointmentdate" name="appointmentdate" [(ngModel)]='enquiryData.appointmentData'>
+                        </div>
+                    </div>
+                    <div class="form-group font15">
+                        <label class="control-label">Gender</label>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4 col-xs-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" name="gender" [(ngModel)]="enquiryData.gender" value="Female">Female
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" name="gender" [(ngModel)]="enquiryData.gender" value="Male">Male
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group font15">
+                        <label class="control-label">Reason for visit</label>
+                        <select [(ngModel)]="enquiryData.reason" class="form-control input-lg br0" id="reason" value="enquiryData.reason" name="reason">
+                            <option *ngFor="let reason of appointmentReason" [value]="reason">{{reason}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group font15">
+                        <textarea style="width:100%" placeholder="Meaasge" name="meaasge" id="meaasge" [(ngModel)]="enquiryData.message" rows="4"></textarea>
+                    </div>
+                    <div class="row" style="margin-bottom:10%">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" placement="top" ngbTooltip="submit">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

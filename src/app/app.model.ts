@@ -4,8 +4,8 @@ export class UserDetail {
     public name: string;
     public email: string;
     public password: string;
-    public confirmPassword: string;
-    public mobile: number;
+    public confirm_password: string;
+    public phone: number;
     public dob: Date;
     public country: string;
     public gender: string;
@@ -16,7 +16,8 @@ export class UserDetail {
         this.name = '';
         this.email = '';
         this.password = '';
-        this.mobile = null;
+        this.confirm_password = '';
+        this.phone = null;
         this.dob = new Date();
         this.country = '';
         this.gender = '';
@@ -36,20 +37,20 @@ export class UserDetail {
 };
 
 export class LogInData {
-    public username: string;
+    public email: string;
     public password: string;
     public keepLoggedIn: boolean;
 
     constructor() {
         {
-            this.username = '';
+            this.email = '';
             this.password = '';
             this.keepLoggedIn = false;
         }
     }
 
     setLoginDetails(obj: LogInData) {
-        this.username = obj.username;
+        this.email = obj.email;
         this.password = obj.password;
         this.keepLoggedIn = obj.keepLoggedIn;
     }
@@ -94,7 +95,7 @@ class OtherCost {
 
 export class QuotationData {
     public country: string;
-    public treatmentType: string;
+    public treatmentType: any;
     public patientNumber: string;
     public other?: OtherCost;
 
@@ -118,17 +119,49 @@ export const dataList = {
     ]
 };
 
+export class Password {
+    password: string
+    confirmPassword: string;
+}
+
 export class contactUsData {
     name: string;
     email: string;
-    mobile: string;
+    phone: string;
     message: string;
 
     constructor() {
         this.name = '';
         this.email = '';
-        this.mobile = '';
+        this.phone = '';
         this.message = '';
     }
 }
-export const logInStatus: boolean = true;
+
+export const forgotPasswordData = {
+    email: ''
+}
+
+export const options = {
+    position: ["bottom", "right"],
+    timeOut: 3000,
+    showProgressBar: true,
+    pauseOnHover: true,
+    clickToClose: true,
+    lastOnBottom: true,    
+} 
+
+export const enquiryFormData = {
+    name: '',
+    email: '',
+    mobile: '',
+    dob: '',
+    appointmentData: '',
+    gender: '',
+    reason: '',
+    message: ''
+}
+
+export const appointmentReason = ['Dental Cleansing','Fluoride','X-ray'];
+   
+export const isAuthorized: boolean = true;

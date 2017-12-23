@@ -11,26 +11,94 @@ import * as moment from 'moment';
 import { CookieService } from 'ngx-cookie-service';
 import { TokenStruct } from './app.model'
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
+import { locale } from 'moment';
+import { NotificationsService } from 'angular2-notifications';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 
 export class ServiceEndPoints {
     //put your static part of the url here e.g
-    static userRegister = 'api/register';
-    static RegisterAPI = 'login';
-}
+    static MedicalPackage = 'api/mediacal-package/';
+    static VisaPage = 'api/country-visa/';
+    static GetUser = 'api/get-user/';
+    static RegisterUser = 'api/register/';
+    static LoginUser = 'api/login/';
+    static LogOut = 'api/logout/';
+    static ResendConfirmation = 'api/resend-confirmation-mail/';
+    static UserEnquiry = 'api/user-enquiry/';
+    static ContactUs = 'api/contact-us/';
+    static GetAQuote = 'api/get-estimate/';
+    static ForgotPassword = 'api/forgot-password/'
+ }
 
 @Injectable() export class CommonService {
-
+    private blockUiCount = 0;
+    @BlockUI() blockUI: NgBlockUI;
+    
     constructor(
         private _startUpSvc: StartupService,
         private _CookieService: CookieService,
         public router: Router,
-        private http: Http
+        private http: Http,
+        private _nofticationService: NotificationsService
     ) { }
 
     getApiUrl() {
         return this._startUpSvc.getApiUrl();
     }
+
+    //Block UI Management 
+
+    incrementBlockUICount() {
+        this.blockUiCount = this.blockUiCount + 1;
+    }
+
+    decrementBlockUICount() {
+        if (this.blockUiCount !== 0 || this.blockUiCount > 0) {
+            this.blockUiCount = this.blockUiCount - 1;
+        }
+    }
+
+    getBlockUICount() {
+        return this.blockUiCount;
+    }
+
+    stopBlockUI() {
+        this.decrementBlockUICount();
+        const count = this.getBlockUICount();
+        if (count === 0) {
+            this.blockUI.stop();
+        }
+    }
+
+    startBlockUI(message: any) {
+        message = 'Loading ...'
+        this.incrementBlockUICount();
+        const countBeforeStart = this.getBlockUICount();
+        this.blockUI.start(message);
+        setTimeout( () => {
+            const currentBlockUiCount = this.getBlockUICount();
+                if ( currentBlockUiCount !== 0 && countBeforeStart === currentBlockUiCount) {
+                    this.blockUI.update('Be patient ... Its taking a while');
+                    setTimeout( () => {
+                        const currentBlockUiCountL = this.getBlockUICount();
+                        if (currentBlockUiCountL !== 0 && countBeforeStart === currentBlockUiCountL) {
+                            this.blockUI.update('Its taking longer than expected ...');
+                        }
+                    }, 10000);
+                }
+        }, 10000);
+    }
+
+
+
+    // isLoggedIn(logInStatus){
+    //     if(logInStatus)
+    //     {
+
+    //     }
+
+    // }
 
     getNotificationOption() {
         const options = {
@@ -41,9 +109,38 @@ export class ServiceEndPoints {
         return options;
     }
 
-    private setCookie(tknObj: TokenStruct) {
-        this._CookieService.set('access_token', tknObj.value);
-        this._CookieService.set('token_expires', tknObj.expires);
+    notificationMessage(message: any, isSuccess: boolean) {
+        if (isSuccess) {
+            this._nofticationService.success(
+                'Success',
+                message,
+                {
+                    showProgressBar: true,
+                    pauseOnHover: true,
+                    clickToClose: true,
+                    maxLength: 100,
+                    timeOut: 3000
+                }
+            )
+        } else {
+            this._nofticationService.error(
+                'Error',
+                message,
+                {
+                    showProgressBar: true,
+                    pauseOnHover: true,
+                    clickToClose: true,
+                    maxLength: 100,
+                    timeOut: 3000
+                }
+            )
+        }
+    }
+
+    setCookie(tknObj: any) {
+        console.log("TOKEN",tknObj)
+        this._CookieService.set('access_token', tknObj);
+        // this._CookieService.set('token_expires', tknObj.expires);
     };
 
     getCookie() {
@@ -62,13 +159,29 @@ export class ServiceEndPoints {
         }
     };
 
-    setDefaultURL(URL) {
-        localStorage.setItem('homePage', URL);
-    };
+    storeInLocalStorage(key: string, value: any){
+        localStorage.setItem(key, value)
+    }
 
-    getDefaultURL() {
-        return localStorage.getItem('homePage');
-    };
+    clearFromLocalStorage(key: string){
+        localStorage.removeItem(key);
+    }
+
+    getFromLocalStorage(key: string){
+        localStorage.getItem(key)
+    }
+
+    clearLocalStorage(){
+        localStorage.clear();
+    }
+
+    // setDefaultURL(URL) {
+    //     localStorage.setItem('homePage', URL);
+    // };
+
+    // getDefaultURL() {
+    //     return localStorage.getItem('homePage');
+    // };
 
     alertCheck(e: any) {
         window.alert(e);

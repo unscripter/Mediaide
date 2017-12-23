@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { BlockUIModule, BlockUI, NgBlockUI } from 'ng-block-ui';
-import { CookieService  } from 'ngx-cookie-service';
+import { BlockUIModule, BlockUI, NgBlockUI } from 'ng-block-ui';
+import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { StartupService } from './startup.service';
-import { CommonService } from './common.service'
+import { CommonService } from './common.service';
 import { HttpModule } from '@angular/http';
 import { HttpInterceptorModule } from 'ng-http-interceptor';
 import { SimpleNotificationsModule } from 'angular2-notifications';
@@ -25,12 +25,13 @@ import { UserProfile } from './profile/profile';
 import { ExpressionValidationModule } from './shared/directives/expression.validation/expression.validation.module';
 import { AboutUs } from './about.us/about.us';
 import { OurServices } from './services/services';
-
+import { ForgotPassword } from './forms/forgot.password/forgot.password';
+import { EnquiryForm } from './forms/enquiry/enquiry';
 
 @NgModule({
   imports: [
     BrowserModule,
-    // BlockUIModule,
+    BlockUIModule,
     HttpInterceptorModule,
     HttpModule,
     NgbModule.forRoot(),
@@ -50,10 +51,12 @@ import { OurServices } from './services/services';
     LoginForm,
     ContactUs,
     FAQ,
-    UserProfile
+    UserProfile,
+    ForgotPassword,
+    EnquiryForm
   ],
   providers: [
-    CookieService, 
+    CookieService,
     StartupService,
     CommonService,
     CommonAPIService

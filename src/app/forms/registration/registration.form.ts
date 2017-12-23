@@ -20,10 +20,10 @@ export class RegistrationForm implements OnInit{
     }
     ngOnInit(){
     this.apiService.fetch();
-    this.apiService.post();
+    // this.apiService.post();
     }
     signIn(){
-        debugger;
+        // debugger;
         // this.apiService.post();
         this.apiService.setRegistrationDetails(this.userData);
     }
