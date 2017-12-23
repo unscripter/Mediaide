@@ -29,17 +29,18 @@ export class UserRegisterService {
   // }
 
   setRegistrationDetails(userData: UserDetail) {
-    this._commanService.startBlockUI('Loading');    
+    this._commanService.startBlockUI('Loading');
     return this._apiService.post(ServiceEndPoints.RegisterUser, userData)
       .subscribe(res => {
-        this._commanService.stopBlockUI();   
-        this._commanService.notificationMessage(res._body, true);
-        this.userData = new UserDetail();        
+        this._commanService.stopBlockUI();
+        this._commanService.notificationMessage("please fill all the fields, mandatory fields", true);
+        this.userData = new UserDetail();
       },
       err => {
+        this._commanService.stopBlockUI();
+        this._commanService.notificationMessage(err.json().confirm_password[0]
+          , false);
         this._apiService.handleError(err);
-        this._commanService.stopBlockUI();  
-        this._commanService.notificationMessage(err.statusText, false);          
       });
   }
 }

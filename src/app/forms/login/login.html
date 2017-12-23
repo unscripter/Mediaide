@@ -15,7 +15,7 @@
                     <span class="button-checkbox">
                         <div class="checkbox">
                                 <label class="font15">
-                                    <input type="checkbox" name="siggnedIn" [(ngModel)]="logInData.keepLoggedIn"> Stay logged in
+                                    <input type="checkbox" name="siggnedIn" [(ngModel)]="logInData.keepLoggedIn"> remember me
                                 </label>
                                 <a class="font15" href="http://localhost:4200/forgotpassword" class="btn btn-link pull-right">Forgot Password?</a>
                             </div>
@@ -23,7 +23,7 @@
                     <hr class="colorgraph">
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" value="LogIn" (click)="logInUser()">
+                            <input type="submit" routerLink="/profile" class="btn btn-lg btn-primary customBtn btn-block" value="LogIn" (click)="logInUser()">
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <a class="btn btn-lg btn-primary customBtn btn-block" routerLink="/register" [ngbTooltip]="tipContent">Register</a>

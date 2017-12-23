@@ -10,7 +10,6 @@ import { CommonModule } from "@angular/common";
     declarations: [
     GetAQuote,
     GetEstimation
-   
   ],
   imports: [routing,
     FormsModule,

@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a routerLink="/home">HOME 
+                    <a routerLink="/home">Home 
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -46,10 +46,8 @@
                 <li><a routerLink="/faq">FAQ</a></li>
                 <li><a routerLink="/contact">Contact</a></li>
                 <li><a routerLink="/registration">Register</a></li>
-                <!-- <li><a routerLink="/login" (click)="changeLogInCondition();">{{ logInStatus }} ? LogIn : LogOut</a></li> -->
-                <li><a routerLink="/login" *ngIf="!keepLoggedInStatus">LogIn</a></li>{{keepLoggedInStatus}}
-                <li><a routerLink="/home" *ngIf="keepLoggedInStatus" (click)="logOut();">LogOut</a></li>
-                {{isAuthorized}}
+                <li><a routerLink="/login" *ngIf="!isAuthorized">LogIn</a></li>
+                <li><a *ngIf="isAuthorized" (click)="logOut();">LogOut</a></li>
                 <li><a *ngIf="isAuthorized" routerLink="/profile" class="btn btn-round"><i class="fa fa-user"></i></a></li>
             </ul>
         </div>

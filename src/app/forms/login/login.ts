@@ -4,7 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { TokenStruct } from '../../app.model';
 import { UserLoginService } from './login.service';
-
+import { Router } from '@angular/router'
+import { CommonService } from '../../common.service'
+import { from } from 'rxjs/observable/from';
 @Component({
     selector: 'login',
     templateUrl: './login.html',
@@ -18,19 +20,18 @@ export class LoginForm implements OnInit {
     logeedIn: boolean;
     public options = options;
 
-    constructor(private loginService: UserLoginService) {
+    constructor(private loginService: UserLoginService, private router: Router, private _commonService: CommonService) {
         this.logInData = new LogInData();
         this.tokenStruct = new TokenStruct();
+
     }
     ngOnInit() {
-        if (this.logInData.keepLoggedIn){
-
-        }
+        this._commonService.scrollToTop();
     }
 
     logInUser() {
         this.loginService.logIn(this.logInData);
-        this.logInData = new LogInData()
+        this.logInData = new LogInData();
     }
 }
 

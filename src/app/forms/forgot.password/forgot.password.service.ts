@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { CommonService } from '../../common.service';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { LogInData, options } from '../../app.model';
+import { forgotPasswordData, options } from '../../app.model';
 import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints } from '../../common.service';
 import { window } from 'rxjs/operator/window';

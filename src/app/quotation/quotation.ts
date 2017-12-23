@@ -26,21 +26,19 @@ export class GetAQuote implements OnInit {
     ngOnInit() {
         this.getEstimateDetails();
         this._commonService.scrollToTop();
-        this.postEstimateDetails('abc');
+        // this.postEstimateDetails('abc');
     }
 
     postEstimateDetails(selectedData) {
         this._commonService.stopBlockUI();
         return this._apiService.post(ServiceEndPoints.GetAQuote, selectedData)
             .subscribe(res => {
-                console.log("RESPONSE",res);
                 this._commonService.stopBlockUI();
                 this._commonService.notificationMessage("Redirecting to Estimation", true);
                 //All the Estimated Data to be shown
                 this.estimatedData = res._body;
             },
             err => {
-                console.log('ERR', err);
                 this._commonService.stopBlockUI();
                 this._commonService.notificationMessage("Failed to load data, try reloading", false);
                 this._apiService.handleError(err)
@@ -53,18 +51,15 @@ export class GetAQuote implements OnInit {
             .subscribe(res => {
                 this._commonService.stopBlockUI();
                 // this._commonService.notificationMessage(res._body, true);
-                console.log("response", res._body);
-                this.countryList = res._body.country;
-                console.log("countryList", this.countryList);
-                this.treatmentType = res._body['treatment'];
-                console.log("treatmentType", this.treatmentType);
-                this.facilitiesList = res._body.facilities;
-                console.log("facilities", this.facilitiesList);
+                this.countryList = res.json().country;
+                console.log(this.countryList);
+                console.log("WWWWWWWWWWWWWWWWWWWWW",this.quotationData);
+                this.treatmentType = res.json().treatment;
+                this.facilitiesList = res.json().facilities;
             },
             err => {
                 this._commonService.stopBlockUI();
                 this._commonService.notificationMessage(err.statusText, false);
-                console.log('ERR', err);
             });
     }
 }

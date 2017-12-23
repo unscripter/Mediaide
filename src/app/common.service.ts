@@ -1,15 +1,12 @@
-import { Injectable, ViewChild } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { StartupService } from './startup.service';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import * as moment from 'moment';
 import { CookieService } from 'ngx-cookie-service';
-import { TokenStruct } from './app.model'
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
-import { locale } from 'moment';
 import { NotificationsService } from 'angular2-notifications';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
@@ -33,6 +30,7 @@ export class ServiceEndPoints {
 @Injectable() export class CommonService {
     private blockUiCount = 0;
     @BlockUI() blockUI: NgBlockUI;
+    private isAuthorized: boolean;
 
     constructor(
         private _startUpSvc: StartupService,
@@ -41,6 +39,11 @@ export class ServiceEndPoints {
         private http: Http,
         private _nofticationService: NotificationsService
     ) { }
+
+    changeisAuthorizedCondition(condition){
+        this.isAuthorized = condition;
+        return this.isAuthorized;
+    }
 
     getApiUrl() {
         return this._startUpSvc.getApiUrl();
@@ -89,15 +92,6 @@ export class ServiceEndPoints {
         }, 10000);
     }
 
-    getNotificationOption() {
-        const options = {
-            position: ['bottom', 'right'],
-            timeOut: 0,
-            lastOnBottom: true,
-        };
-        return options;
-    }
-
     notificationMessage(message: any, isSuccess: boolean) {
         if (isSuccess) {
             this._nofticationService.success(
@@ -106,9 +100,9 @@ export class ServiceEndPoints {
                 {
                     showProgressBar: true,
                     pauseOnHover: true,
-                    clickToClose: true,
+                    clickToClose: false,
                     maxLength: 100,
-                    timeOut: 3000
+                    timeOut: 2000
                 }
             )
         } else {
@@ -118,31 +112,30 @@ export class ServiceEndPoints {
                 {
                     showProgressBar: true,
                     pauseOnHover: true,
-                    clickToClose: true,
+                    clickToClose: false,
                     maxLength: 100,
-                    timeOut: 3000
+                    timeOut: 2000
                 }
             )
         }
     }
 
-    setCookie(tknObj: any) {
-        console.log("TOKEN", tknObj)
-        this._CookieService.set('access_token', tknObj);
+    setCookie(key,tknObj: any) {
+        this._CookieService.set(key, tknObj);
         // this._CookieService.set('token_expires', tknObj.expires);
     };
 
-    getCookie() {
-        if (this._CookieService.get('access_token')) {
-            return this._CookieService.get('access_token');
-        } else {
-            return null;
+    getCookie(key) {
+        if (this._CookieService.get(key)) {
+            return this._CookieService.get(key);
         }
+        else { return null; }
     };
 
     getCookieExpires() {
         if (this._CookieService.get('token_expires')) {
-        return this._CookieService.get('token_expires');} 
+            return this._CookieService.get('token_expires');
+        }
         else { return null; }
     };
 
@@ -160,7 +153,7 @@ export class ServiceEndPoints {
 
     getFromSessionStorage(key: string) {
         if (sessionStorage.getItem(key)) { return sessionStorage.getItem(key); }
-        else { this.notificationMessage('something went wrong please try to reload', false); }
+        // else { this.notificationMessage('Every thing is fine', true); }
     }
 
     clearSessionStorage() {

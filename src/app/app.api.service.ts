@@ -12,7 +12,7 @@ import { UserDetail } from './app.model';
     }
 
     getCookie() {
-        this._cmnSvc.getCookie();
+        this._cmnSvc.getCookie('access_token');
     }
 
     get(endpoint: string): Observable<any> {
