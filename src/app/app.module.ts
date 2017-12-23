@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { RegistrationForm } from './forms/registration/registration.form';
 import { FormsModule } from '@angular/forms';
 import { LoginForm } from './forms/login/login';
+import { EnquiryForm } from './forms/enquiry/enquiry';
 import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
 import { UserProfile } from './profile/profile';
@@ -26,7 +27,6 @@ import { ExpressionValidationModule } from './shared/directives/expression.valid
 import { AboutUs } from './about.us/about.us';
 import { OurServices } from './services/services';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
-import { EnquiryForm } from './forms/enquiry/enquiry';
 
 @NgModule({
   imports: [
@@ -39,7 +39,10 @@ import { EnquiryForm } from './forms/enquiry/enquiry';
     AppRoutingModule,
     FormsModule,
     ExpressionValidationModule,
-    CommonModule
+    CommonModule,
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyDLEd7vZhaPROnUphHN0CYezUbjeZ46h2Y'
+    // })
   ],
   declarations: [
     AppComponent,
@@ -49,6 +52,7 @@ import { EnquiryForm } from './forms/enquiry/enquiry';
     OurServices,
     RegistrationForm,
     LoginForm,
+    EnquiryForm,
     ContactUs,
     FAQ,
     UserProfile,

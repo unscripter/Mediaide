@@ -33,6 +33,7 @@ export class EnquiryForm {
         err => {
           let error = this._apiService.handleError(err);
           this._commonService.notificationMessage(err, false);                      
-        }); 
-    }
+        }
+    });
+}
 }

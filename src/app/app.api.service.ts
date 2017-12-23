@@ -6,7 +6,7 @@ import { CommonService } from './common.service'
 import { UserDetail } from './app.model';
 
 @Injectable() export class CommonAPIService {
-    public ApiUrl = 'http://192.168.1.9:8002/';
+    public ApiUrl = 'http://192.168.1.9:8000/';
     userDetail: UserDetail;
     constructor(private http: Http, private _cmnSvc: CommonService) { 
         this.userDetail = new UserDetail();

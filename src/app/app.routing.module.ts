@@ -5,17 +5,18 @@ import { Footer } from './shared/footer/footer';
 import { Header } from './shared/header/header';
 import { RegistrationForm } from './forms/registration/registration.form';
 import { LoginForm } from './forms/login/login';
+import { EnquiryForm } from './forms/enquiry/enquiry';
 import { ContactUs } from './contact/contact';
 import { FAQ } from './faq/faq';
 import { QuotationModule } from './quotation/quotation.module';
 import { UserProfile } from './profile/profile';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
-import { EnquiryForm } from './forms/enquiry/enquiry';
 
  export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'registration', component: RegistrationForm },  
     { path: 'login', component: LoginForm },
+    { path: 'enquiry', component: EnquiryForm },
     { path: 'contact', component: ContactUs },
     { path: 'faq', component: FAQ },
     { path: 'profile', component: UserProfile },

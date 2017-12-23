@@ -2,18 +2,19 @@ import { Injectable, OnInit } from '@angular/core';
 import { CommonService } from '../../common.service';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { LogInData, TokenStruct } from '../../app.model';
+import { LogInData, TokenStruct, options } from '../../app.model';
 import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints } from '../../common.service';
 import { window } from 'rxjs/operator/window';
 import { Router } from '@angular/router'
-import { read } from 'fs';
+// import { read } from 'fs';
 
 @Injectable()
 export class UserLoginService implements OnInit {
     loginConditionData: any;
     userSpecificProfileData: any;
     isAuthorized: boolean;
+    private options = options
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
         this.loginConditionData = '';
         this.userSpecificProfileData = ''

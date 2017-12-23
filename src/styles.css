@@ -44,6 +44,10 @@
     color: rgb(48, 71, 112);
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .ml0 {
     margin-left: 0;
 }
@@ -191,4 +195,14 @@
 
 .blue {
     color: #45aaff;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
 }
