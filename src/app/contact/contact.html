@@ -1,0 +1,45 @@
+<simple-notifications [options]="options"></simple-notifications>    
+<div *blockUI class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h2 class="fontColor">
+                    Get in touch with us
+                </h2>
+                <h4 style="color:rgb(48, 71, 112);;">
+                    Mediaide Solutions enables the patient to take charge of their treatment
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>-->
+
+<div class="container mb20">
+    <form role="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="name" [(ngModel)]="contactUs.name" class="form-control input-lg br0" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" [(ngModel)]="contactUs.email" class="form-control input-lg br0" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="phone" [(ngModel)]="contactUs.phone" class="form-control input-lg br0" placeholder="Enter your mobile number">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea class="form-control br0" name="message" rows="3" [(ngModel)]="contactUs.message" placeholder="Message"></textarea>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" (click)="sendMessage()" value="Send Message">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

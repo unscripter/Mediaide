@@ -1,0 +1,36 @@
+<div *blockUI class="container">
+    <div class="row mt20 mb20">
+            <simple-notifications [options]="options"></simple-notifications>                
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form role="form">
+                <fieldset>
+                    <h4 class="font19">Please Log In</h4>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-lg br0" patternService="emailchk" [(ngModel)]="logInData.email" id="exampleInputEmail1" placeholder="Enter username or email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg br0" patternService="passwordchk" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="logInData.password" placeholder="Password">
+                    </div>
+                    <span class="button-checkbox">
+                        <div class="checkbox">
+                                <label class="font15">
+                                    <input type="checkbox" name="siggnedIn" [(ngModel)]="logInData.keepLoggedIn"> Stay logged in
+                                </label>
+                                <a class="font15" routerLink="forgotpassword" class="btn btn-link pull-right">Forgot Password?</a>
+                            </div>
+				    </span>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" value="LogIn" (click)="logInUser()">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <a class="btn btn-lg btn-primary customBtn btn-block" onclick="window.location.href='http://localhost:4200/registration'" [ngbTooltip]="tipContent">Register</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

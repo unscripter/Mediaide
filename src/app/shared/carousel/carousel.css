@@ -1,0 +1,30 @@
+#carouselwidth {
+    width: 100%;
+    height: 750px;
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .icon-prev {
+    position: absolute;
+    left: 20px;
+}
+
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-right {
+    position: absolute;
+    right: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    #carouselwidth {
+        height: 350px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .carousel-caption {
+        position: absolute;
+        top: 300px;
+        right: -400px;
+    }
+}

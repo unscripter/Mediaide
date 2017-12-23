@@ -1,3 +1,208 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.font10 {
+    font-size: 10px;
+}
+
+.font12 {
+    font-size: 12px;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.font15 {
+    font-size: 15px;
+    color: rgb(48, 71, 112);
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font19 {
+    font-size: 19px;
+    font-weight: 900;
+    color: rgb(48, 71, 112);
+}
+
+.fontColor {
+    color: rgb(48, 71, 112);
+    font-weight: 900;
+}
+
+.font21 {
+    font-size: 21px;
+    font-weight: 900;
+    color: rgb(48, 71, 112);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ml0 {
+    margin-left: 0;
+}
+
+.mr0 {
+    margin-right: 0;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.br0 {
+    border-radius: 0;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.parallax {
+    /* Full height */
+    height: 300px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.lg-text {
+    font-size: 52px;
+    font-weight: 600;
+    text-transform: none;
+    color: white;
+}
+
+.md-text {
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: none;
+    color: rgb(0, 0, 0);
+}
+
+.paddingTB60 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.parallax-heading-container {
+    margin-top: 70px;
+}
+
+.parallax-subHeading {
+    color: white;
+    font-size: 16px;
+}
+
+#contentWrap-img {
+    width: 100%;
+    height: 300px;
+}
+
+.contentDiv p {
+    margin-top: 10px;
+}
+
+.customBtn {
+    background-color: rgb(69, 170, 255);
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+.customBtn:hover {
+    background-color: rgb(69, 170, 255);
+}
+
+.telephoneLogo {
+    color: #ffa516;
+}
+
+@media only screen and (max-width: 500px) {
+    #contentWrap-img {
+        width: 100%;
+        height: 150px;
+    }
+    .paddingTB60 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .parallax {
+        height: 200px;
+    }
+    .lg-text {
+        font-size: 40px;
+    }
+    .parallax-subHeading {
+        font-size: 16px;
+    }
+    .contentDiv {
+        margin-top: 10px;
+    }
+    .font19 {
+        font-size: 16px;
+    }
+    .fontColor {
+        font-size: 24px;
+    }
+    .font21 {
+        font-size: 16px;
+    }
+}
+
+.form-control.invalid {
+    border-bottom: 1px solid red;
+}
+
+.form-control.invalid {
+    border-bottom: 1px solid red;
+}
+
+.white {
+    color: white
+}
+
+.relative {
+    position: relative;
+}
+
+.margin {
+    top: 80px;
+    left: 200px;
+    position: relative;
+}
+
+.blue {
+    color: #45aaff;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+}

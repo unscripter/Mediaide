@@ -1,0 +1,31 @@
+.homepageDiv {
+    position: relative;
+    top: -110px;
+}
+
+.homepageDiv div div {
+    padding: 20px;
+}
+
+.homepageDiv div div p {
+    color: white;
+    margin-top: 10px;
+}
+
+.homepageDiv div div img {
+    height: 100px;
+}
+
+.homepageDivOdd {
+    background-color: rgb(73, 154, 162);
+}
+
+.homepageDivEven {
+    background-color: rgb(89, 171, 179);
+}
+
+@media only screen and (max-width: 500px) {
+    .homepageDiv {
+        top: -20px;
+    }
+}
