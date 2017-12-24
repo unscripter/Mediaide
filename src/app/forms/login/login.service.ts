@@ -31,7 +31,6 @@ export class UserLoginService implements OnInit {
     }
 
     logIn(loginData: LogInData) {
-        debugger;
         this._commonService.startBlockUI('Loading');
         return this._apiService.post(ServiceEndPoints.LoginUser, loginData)
             .subscribe(res => {

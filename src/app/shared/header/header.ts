@@ -16,9 +16,8 @@ export class Header {
     }
     
     changeLogInCondition(): boolean{ 
-        if(this.logInStatus){ 
-            debugger;
-        this.logInStatus = false;
+        if(this.logInStatus){
+            this.logInStatus = false;
         }
         else{
             this.logInStatus = true;
