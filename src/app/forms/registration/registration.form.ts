@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserDetail} from '../../app.model';
+import { UserDetail } from '../../app.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { UserRegisterService } from './register.service';
@@ -12,18 +12,16 @@ import { CommonAPIService } from '../../app.api.service';
     providers: [UserRegisterService]
 })
 
-export class RegistrationForm{
+export class RegistrationForm {
     userData: UserDetail;
     disableCondition: any;
-    options: any
-    constructor(private apiService: UserRegisterService, private _commonService: CommonService ) {
+    countryList: string[];
+    constructor(private apiService: UserRegisterService, private _commonService: CommonService) {
         this.userData = new UserDetail();
+        this.countryList = ['Afghanistan', 'Bahamas', 'Cambodia', 'Denmark', 'Ecuador', 'Fiji', 'Gabon', 'Haiti']
     }
- 
+
     signIn() {
-        this.apiService.setRegistrationDetails(this.userData);    
+        this.apiService.setRegistrationDetails(this.userData);
     }
-    
-    
-;
 }

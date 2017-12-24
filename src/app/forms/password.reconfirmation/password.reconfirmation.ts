@@ -9,8 +9,7 @@ import { CommonAPIService } from '../../app.api.service';
 })
 
 export class PasswordReconfirmation {
-    private reconfirmation: Password;
-    private options: any
+    reconfirmation: Password;
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService) {
         this.reconfirmation = new Password();
     }

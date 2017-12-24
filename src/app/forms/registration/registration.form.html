@@ -28,15 +28,8 @@
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                             <label class="control-label">Country</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country" [value]="county">
-                                <option>Afghanistan</option>
-                                <option>Bahamas</option>
-                                <option>Cambodia</option>
-                                <option>Denmark</option>
-                                <option>Ecuador</option>
-                                <option>Fiji</option>
-                                <option>Gabon</option>
-                                <option>Haiti</option>
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country">
+                          <option *ngFor="let country of countryList" [value]="country"></option>
                             </select>
                         </div>
                     </div>

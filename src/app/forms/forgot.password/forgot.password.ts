@@ -8,7 +8,7 @@ import { forgotPasswordData } from '../../app.model'
     providers: [ForgotPasswordService]
 })
 export class ForgotPassword {
-    private forgotPassword = forgotPasswordData;
+    forgotPassword = forgotPasswordData;
     constructor(private fgPassword: ForgotPasswordService) {
     }
 

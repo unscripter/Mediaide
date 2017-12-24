@@ -13,7 +13,7 @@ import { Header } from '../../shared/header/header';
 })
 
 export class LoginForm {
-    private logInData: LogInData;
+    logInData: LogInData;
     constructor(private loginService: UserLoginService, private _commonService: CommonService) {
         this.logInData = new LogInData();
     }
