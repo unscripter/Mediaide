@@ -45,9 +45,10 @@ export class GetAQuote implements OnInit {
         return this._apiService.post(ServiceEndPoints.GetAQuote, selectedData)
             .subscribe(res => {
                 const data = res.json();
-                this._commonService.storeInSessionStorage('estimate',data);
+                this._commonService.storeInSessionStorage('estimate', data);
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage("Your cost estimation is available now", true);
+                this._commonService.notificationMessage("Your cost estimation is, available now", true);
+                this.router.navigate(['/quotation/estimate']);                
                 this.estimatedData = res._body;
             },
             err => {
@@ -60,12 +61,11 @@ export class GetAQuote implements OnInit {
         debugger;
         if (this.quotationData.country && this.quotationData.patients && this.quotationData.treatment) {
             debugger;
-            this.postEstimateDetails(selectedData); 
-            this.router.navigate(['/quotation/estimate']);                                    
+            this.postEstimateDetails(selectedData);
         }
         else {
             debugger;
-            this._commonService.notificationMessage("Fill all the details then, try to fetch", false);           
+            this._commonService.notificationMessage("Fill all the details then, try to fetch", false);
         }
     }
 
