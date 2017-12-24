@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-import { OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router} from "@angular/router";
 import { routes } from './app.routing.module';
 import { CommonService } from './common.service';
-
+import { options, isAuthorized } from './app.model';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +10,22 @@ import { CommonService } from './common.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router, private commanService: CommonService ) {
+  private options: any;
+  token: any; 
+  constructor(private router: Router, private _commanService: CommonService ) {
+    this.options = options
   }
   ngOnInit(){
-    this.commanService.startBlockUI('Loading');    
-    // this.router.navigate(['']);
-    this.commanService.stopBlockUI();
+    this._commanService.startBlockUI('Loading');    
+    this._commanService.scrollToTop();
+    this._commanService.stopBlockUI();   
+  }
+  ngOnDestroy(){
+
+  }
+
+  onDeactivate() {
+      window.scrollTo(0, 0);
   }
   
 } 

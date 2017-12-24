@@ -10,8 +10,8 @@ import { CommonService } from './common.service';
 import { HttpModule } from '@angular/http';
 import { HttpInterceptorModule } from 'ng-http-interceptor';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonAPIService } from './app.api.service';
-import { from } from 'rxjs/observable/from';
 import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
@@ -27,6 +27,8 @@ import { ExpressionValidationModule } from './shared/directives/expression.valid
 import { AboutUs } from './about.us/about.us';
 import { OurServices } from './services/services';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
+import { Work } from './work/work';
+import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
 
 @NgModule({
   imports: [
@@ -40,9 +42,7 @@ import { ForgotPassword } from './forms/forgot.password/forgot.password';
     FormsModule,
     ExpressionValidationModule,
     CommonModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyDLEd7vZhaPROnUphHN0CYezUbjeZ46h2Y'
-    // })
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
@@ -57,7 +57,9 @@ import { ForgotPassword } from './forms/forgot.password/forgot.password';
     FAQ,
     UserProfile,
     ForgotPassword,
-    EnquiryForm
+    EnquiryForm,
+    Work,
+    PasswordReconfirmation,
   ],
   providers: [
     CookieService,

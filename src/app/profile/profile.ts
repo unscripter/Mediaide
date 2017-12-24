@@ -1,18 +1,27 @@
-import { Component } from '@angular/core';
-import { debug } from 'util';
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
     selector: 'profile',
     templateUrl: './profile.html',
 })
 
-export class UserProfile {
+export class UserProfile implements OnInit {
+    userProfileData: any;
     checkupDoc: any;
-    constructor() {
-        this.checkupDoc = '';
+    constructor(private _commonService: CommonService) {
+        debugger;
+        if(this._commonService.getFromSessionStorage('userProfileData') && this._commonService.getCookie('access_token')){
+        let userData = this._commonService.getFromSessionStorage('userProfileData');
+        this.userProfileData =JSON.parse(userData).data;    
+    }
+}
+    ngOnInit() {
+        this._commonService.scrollToTop();
     }
     checkUp(){
-        debugger;
-        console.log("EEEEEEEEEE", this.checkupDoc);
+        this.checkupDoc = '';
+
     }
+
 }

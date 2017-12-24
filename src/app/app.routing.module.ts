@@ -7,10 +7,12 @@ import { RegistrationForm } from './forms/registration/registration.form';
 import { LoginForm } from './forms/login/login';
 import { EnquiryForm } from './forms/enquiry/enquiry';
 import { ContactUs } from './contact/contact';
+import { Work } from './work/work';
 import { FAQ } from './faq/faq';
 import { QuotationModule } from './quotation/quotation.module';
 import { UserProfile } from './profile/profile';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
+import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
 
  export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,12 +23,15 @@ import { ForgotPassword } from './forms/forgot.password/forgot.password';
     { path: 'faq', component: FAQ },
     { path: 'profile', component: UserProfile },
     { path: 'forgotpassword', component: ForgotPassword},
+    { path: 'enquiry' , component: EnquiryForm} ,
+    { path: 'reconfirm', component: PasswordReconfirmation },
     //this is for loading children as lazy loading
     { path: 'home', loadChildren: './home/home.module#HomeModule' },
     { path: 'quotation', loadChildren : './quotation/quotation.module#QuotationModule' } ,
     { path: 'about', loadChildren: './about.us/about.us.module#AboutUsModule' },
     { path: 'services', loadChildren: './services/services.module#OurServicesModule' },
-    { path: 'enquiry' , component: EnquiryForm}   
+    { path: 'enquiry' , component: EnquiryForm},
+    { path: 'work', component: Work}   
     ];
 
 @NgModule({

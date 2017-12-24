@@ -4,51 +4,83 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ServiceEndPoints } from '../common.service';
 import { CommonService } from '../common.service';
 import { CommonAPIService } from '../app.api.service';
-
+import { options, QuotationData } from '../app.model';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'quotation',
     templateUrl: './quotation.html',
 })
 export class GetAQuote implements OnInit {
-    quotationData: any;
-    private countryList: any;
+    private quotationData: any;
+    private countryList: string[];
     private treatmentType: any;
     private facilitiesList: any;
     private noOfPeople: string[];
+    private options: any;
+    private estimatedData: any;
 
-    list: any;
-    constructor(private _commonService: CommonService, private _apiService: CommonAPIService) {
-        this.noOfPeople = ['1','2','3','4'];
+    constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
+        this.quotationData = new QuotationData();
+        this.noOfPeople = ['1', '2', '3', '4'];
+        this.options = options;
     }
     ngOnInit() {
         this.getEstimateDetails();
-        // this.postEstimateDetails('abc');
+        this._commonService.scrollToTop();
     }
 
-    postEstimateDetails(selectedData){
+    getValue(item) {
+        var index = this.quotationData.facilities.indexOf(item);
+        if (index != -1) {
+            this.quotationData.facilities.splice(index, 1);
+        } else {
+            this.quotationData.facilities.push(item);
+        }
+    }
+
+    postEstimateDetails(selectedData) {
+        this._commonService.stopBlockUI();
+        debugger;
         return this._apiService.post(ServiceEndPoints.GetAQuote, selectedData)
-        .subscribe( res => {
-        },
-        err => {
-          console.log('ERR', err);
-          this._apiService.handleError(err)
-        }); 
+            .subscribe(res => {
+                const data = res.json();
+                this._commonService.storeInSessionStorage('estimate', data);
+                this._commonService.stopBlockUI();
+                this._commonService.notificationMessage("Your cost estimation is, available now", true);
+                this.router.navigate(['/quotation/estimate']);                
+                this.estimatedData = res._body;
+            },
+            err => {
+                this._commonService.stopBlockUI();
+                this._commonService.notificationMessage("Failed to load data, try reloading", false);
+                this._apiService.handleError(err)
+            });
+    }
+    getEstimation(selectedData) {
+        debugger;
+        if (this.quotationData.country && this.quotationData.patients && this.quotationData.treatment) {
+            debugger;
+            this.postEstimateDetails(selectedData);
+        }
+        else {
+            debugger;
+            this._commonService.notificationMessage("Fill all the details then, try to fetch", false);
+        }
     }
 
     getEstimateDetails() {
+        this._commonService.startBlockUI('Loading');
         return this._apiService.get(ServiceEndPoints.GetAQuote)
-          .subscribe(res => {
-              console.log("response",res._body);
-              this.countryList = res._body.country;
-              console.log("countryList",this.countryList);
-              this.treatmentType = res._body['treatment'];
-              console.log("treatmentType",this.treatmentType);
-              this.facilitiesList = res._body.facilities;
-              console.log("facilities",this.facilitiesList);
-          },
-          e => {
-            console.log('ERR', e);
-          });
-      }
+            .subscribe(res => {
+                this._commonService.stopBlockUI();
+                this.countryList = res.json().country;
+                this.treatmentType = res.json().treatment;
+                this.facilitiesList = res.json().facilities;
+            },
+            err => {
+                this._commonService.stopBlockUI();
+                this._commonService.notificationMessage(err.statusText, false);
+            });
+    }
 }

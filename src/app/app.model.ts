@@ -1,12 +1,14 @@
-import { strictEqual } from "assert";
+export const isAuthorized: boolean = false;
+export const logInStatus: boolean = false;
+export const appointmentReason = ['Dental Cleansing', 'Fluoride', 'X-ray'];
 
 export class UserDetail {
     public name: string;
     public email: string;
     public password: string;
     public confirm_password: string;
-    public phone: number;
-    public dob: Date;
+    public phone: string;
+    public dob: string;
     public country: string;
     public gender: string;
     public address: string;
@@ -17,8 +19,8 @@ export class UserDetail {
         this.email = '';
         this.password = '';
         this.confirm_password = '';
-        this.phone = null;
-        this.dob = new Date();
+        this.phone = '';
+        this.dob = '';
         this.country = '';
         this.gender = '';
         this.address = '';
@@ -77,51 +79,28 @@ export class TokenStruct {
         }
     }
 };
-class OtherCost {
-    public airline?: boolean;
-    public food?: boolean;
-    public visa?: boolean;
-    public hotel?: boolean;
-    public other?: boolean;
-
-    constructor() {
-        this.airline = false;
-        this.food = false;
-        this.visa = false;
-        this.hotel = false;
-        this.other = false;
-    }
-}
 
 export class QuotationData {
     public country: string;
-    public treatmentType: any;
-    public patientNumber: string;
-    public other?: OtherCost;
+    public treatment: any
+    public patients: string;
+    public facilities?: string[];
 
     constructor() {
         this.country = '';
-        this.treatmentType = '';
-        this.patientNumber = '';
-        this.other = new OtherCost();
+        this.patients = '';
+        this.treatment = '';
+        this.facilities = [];
     }
 }
 
-export const dataList = {
-    'countryList': [
-        'India', 'Australia', 'Paris', 'London', 'UK'
-    ],
-    'treatementList': [
-        'one', 'Two', 'Three', 'Four', 'Five'
-    ],
-    'noOfPateints': [
-        '1', '2', '3', '4'
-    ]
-};
-
 export class Password {
     password: string
-    confirmPassword: string;
+    confirm_password: string;
+    constructor() {
+        this.password = '';
+        this.confirm_password = '';
+    }
 }
 
 export class contactUsData {
@@ -144,12 +123,15 @@ export const forgotPasswordData = {
 
 export const options = {
     position: ["bottom", "right"],
-    timeOut: 3000,
+    timeOut: 1000,
     showProgressBar: true,
     pauseOnHover: true,
-    clickToClose: true,
-    lastOnBottom: true,    
-} 
+    clickToClose: false,
+    lastOnBottom: true,
+    preventDuplicates: true,
+    // theClass: 'put any class which is applied to the extenal div
+    ltl: true,
+}
 
 export const enquiryFormData = {
     name: '',
@@ -162,6 +144,6 @@ export const enquiryFormData = {
     message: ''
 }
 
-export const appointmentReason = ['Dental Cleansing','Fluoride','X-ray'];
-   
-export const isAuthorized: boolean = true;
+
+
+
