@@ -9,7 +9,7 @@
     <header></header>
     <simple-notifications [options]="options"></simple-notifications>
     <div id="body" class="mainContainer">
-        <router-outlet></router-outlet>
+        <router-outlet (deactivate)="onDeactivate()"></router-outlet>
     </div>
     <div id="footer">
         <footer></footer>

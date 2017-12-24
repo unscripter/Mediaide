@@ -19,5 +19,9 @@ export class AppComponent implements OnInit {
     // this.router.navigate(['']);
     this.commanService.stopBlockUI();
   }
+
+  onDeactivate() {
+      window.scrollTo(0, 0);
+  }
   
 } 
