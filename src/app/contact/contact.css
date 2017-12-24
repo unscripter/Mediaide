@@ -64,7 +64,17 @@ textarea.form-control {
     color: #fff;
 }
 
+.mapDiv {
+    margin-top: -30px;
+}
 
-/*agm-map {
-    height: 300px;
-}*/
+#mapLocation {
+    width: 100%;
+    height: 500px;
+}
+
+@media only screen and (max-width: 767px) {
+    #mapLocation {
+        height: 300px;
+    }
+}

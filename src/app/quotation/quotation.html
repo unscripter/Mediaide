@@ -12,15 +12,13 @@
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Treatment Type</label>
-                            <select class="form-control input-lg br0" id="treatment" [(ngModel)]="quotationData.treatmentType" patternService="namechk"
-                                name="country" [value]="treatment.id">
+                            <select class="form-control input-lg br0" id="treatment" [(ngModel)]="quotationData.treatmentType" patternService="namechk" name="country" [value]="treatment.id">
                                 <option *ngFor="let treatment of treatmentType" value="treatment.id">{{treatment.name}}</option>
                             </select>
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Number Of Patient</label>
-                            <select class="form-control input-lg br0" id="number" [(ngModel)]="quotationData.patientNumber" patternService="namechk"
-                                name="country" [value]="county">
+                            <select class="form-control input-lg br0" id="number" [(ngModel)]="quotationData.patientNumber" patternService="namechk" name="country" [value]="county">
                                 <option *ngFor="let number of noOfPeople" [value]="number">{{number}}</option>
                             </select>
                         </div>
@@ -58,7 +56,7 @@
                     </div>
                 </fieldset>
             </form>
-            <button class="btn btn-primary" routerLink="/quotation/estimate" (click)="setEstimate()">Get Estimate</button>
+            <button class="btn btn-primary customBtn" routerLink="/quotation/estimate" (click)="setEstimate()">Get Estimate</button>
         </div>
     </div>
 </div>
