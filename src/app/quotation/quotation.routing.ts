@@ -4,8 +4,8 @@ import { GetAQuote } from './quotation';
 import { GetEstimation } from '../shared/estimation/estimation';
 
 const routes: Routes = [
- { path: 'quote', component: GetAQuote },
- { path: 'estimate', component: GetEstimation },
+    { path: 'quote', component: GetAQuote },
+    { path: 'estimate', component: GetEstimation },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

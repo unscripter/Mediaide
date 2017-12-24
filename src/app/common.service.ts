@@ -1,4 +1,4 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -40,7 +40,7 @@ export class ServiceEndPoints {
         private _nofticationService: NotificationsService
     ) { }
 
-    changeisAuthorizedCondition(condition){
+    changeisAuthorizedCondition(condition) {
         this.isAuthorized = condition;
         return this.isAuthorized;
     }
@@ -87,9 +87,9 @@ export class ServiceEndPoints {
                     if (currentBlockUiCountL !== 0 && countBeforeStart === currentBlockUiCountL) {
                         this.blockUI.update('Its taking longer than expected ...');
                     }
-                }, 10000);
+                }, 5000);
             }
-        }, 10000);
+        }, 5000);
     }
 
     notificationMessage(message: any, isSuccess: boolean) {
@@ -100,9 +100,8 @@ export class ServiceEndPoints {
                 {
                     showProgressBar: true,
                     pauseOnHover: true,
-                    clickToClose: false,
                     maxLength: 100,
-                    timeOut: 2000
+                    timeOut: 1000
                 }
             )
         } else {
@@ -112,15 +111,14 @@ export class ServiceEndPoints {
                 {
                     showProgressBar: true,
                     pauseOnHover: true,
-                    clickToClose: false,
                     maxLength: 100,
-                    timeOut: 2000
+                    timeOut: 1000
                 }
             )
         }
     }
 
-    setCookie(key,tknObj: any) {
+    setCookie(key, tknObj: any) {
         this._CookieService.set(key, tknObj);
         // this._CookieService.set('token_expires', tknObj.expires);
     };

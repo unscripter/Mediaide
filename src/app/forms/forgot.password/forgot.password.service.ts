@@ -23,18 +23,17 @@ export class ForgotPasswordService implements OnInit {
     }
 
     setForgotPasswordDetails(forgotPassword: any) {
-        this._commonService.startBlockUI('Loading');        
+        this._commonService.startBlockUI('Loading');
         return this._apiService.post(ServiceEndPoints.ForgotPassword, forgotPassword)
             .subscribe(res => {
                 this.forgotpassword.email = '';
-                this._commonService.stopBlockUI();                                
-                this._commonService.notificationMessage(res._body, true);
-                
+                this._commonService.stopBlockUI();
+                this._commonService.notificationMessage(res.json(), true);
+
             },
             err => {
-                this._commonService.stopBlockUI();  
-                this._commonService.notificationMessage(err.statusText, false);                
-                this._apiService.handleError(err);
+                this._commonService.stopBlockUI();
+                this._commonService.notificationMessage(err.statusText, false);
             });
     }
 

@@ -7,11 +7,11 @@ import { VisaInformation } from './visa.info/visa.info';
 import { TermsAndCondition } from './termsandcondition/termsandcondition';
 
 const routes: Routes = [
-    {path: 'ourcompany', component: OurCompany},
-    {path: 'whyus', component: WhyUs},
-    {path: 'aboutindia', component: AboutIndia},
-    {path: 'visainfo', component: VisaInformation},
-    {path: 'termsandconditions', component: TermsAndCondition},
+    { path: 'ourcompany', component: OurCompany },
+    { path: 'whyus', component: WhyUs },
+    { path: 'aboutindia', component: AboutIndia },
+    { path: 'visainfo', component: VisaInformation },
+    { path: 'termsandconditions', component: TermsAndCondition },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonService } from '../../common.service';
 
 @Component({
@@ -7,10 +7,5 @@ import { CommonService } from '../../common.service';
   styleUrls: ['../about.us.css']
 })
 
-export class AboutIndia implements OnInit{
-  constructor(private _commonService: CommonService){}
-  ngOnInit()
-{
-  this._commonService.scrollToTop();
-}
+export class AboutIndia {
 }

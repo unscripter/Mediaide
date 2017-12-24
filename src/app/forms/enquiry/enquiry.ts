@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { enquiryFormData, options, appointmentReason } from '../../app.model'
-import { from } from 'rxjs/observable/from';
+import { enquiryFormData, appointmentReason } from '../../app.model'
 import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints, CommonService } from '../../common.service'
 
@@ -9,34 +8,31 @@ import { ServiceEndPoints, CommonService } from '../../common.service'
     templateUrl: './enquiry.html'
 })
 export class EnquiryForm {
-    private enquiryData = enquiryFormData;
-    private options = options;
-    private appointmentReason = appointmentReason;
-    constructor(private _apiService: CommonAPIService, private _commonService: CommonService){
-
+    enquiryData = enquiryFormData;
+    appointmentReason = appointmentReason;
+    constructor(private _apiService: CommonAPIService, private _commonService: CommonService) {
     }
 
-    makeEnquiry(enquireyData: any){
-        this._commonService.startBlockUI('Loading');        
+    makeEnquiry(enquireyData: any) {
+        this._commonService.startBlockUI('Loading');
         return this._apiService.post(ServiceEndPoints.UserEnquiry, enquireyData)
-        .subscribe( res => {
-            this._commonService.stopBlockUI();                            
-            this._commonService.notificationMessage(res._body, true);
-            this.enquiryData = {
-                name: '',
-                email: '',
-                mobile: '',
-                dob: '',
-                appointmentData: '',
-                gender: '',
-                reason: '',
-                message: '',
-        },
-        err => {
-          let error = this._apiService.handleError(err);
-          this._commonService.stopBlockUI();                          
-          this._commonService.notificationMessage(err.statusText, false);                      
-        }
-    });
-}
+            .subscribe(res => {
+                this._commonService.stopBlockUI();
+                this._commonService.notificationMessage(res.json(), true);
+                this.enquiryData = {
+                    name: '',
+                    email: '',
+                    mobile: '',
+                    dob: '',
+                    appointmentData: '',
+                    gender: '',
+                    reason: '',
+                    message: '',
+                },
+                    err => {
+                        this._commonService.stopBlockUI();
+                        this._commonService.notificationMessage(err.statusText, false);
+                    }
+            });
+    }
 }

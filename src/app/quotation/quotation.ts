@@ -4,7 +4,7 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ServiceEndPoints } from '../common.service';
 import { CommonService } from '../common.service';
 import { CommonAPIService } from '../app.api.service';
-import { options, QuotationData } from '../app.model';
+import { QuotationData } from '../app.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,22 +12,20 @@ import { Router } from '@angular/router';
     templateUrl: './quotation.html',
 })
 export class GetAQuote implements OnInit {
-    private quotationData: any;
-    private countryList: string[];
-    private treatmentType: any;
-    private facilitiesList: any;
-    private noOfPeople: string[];
-    private options: any;
-    private estimatedData: any;
+    quotationData: any;
+    countryList: string[];
+    treatmentType: any;
+    facilitiesList: any;
+    noOfPeople: string[];
+    estimatedData: any;
+    treatment: any;
 
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
         this.quotationData = new QuotationData();
         this.noOfPeople = ['1', '2', '3', '4'];
-        this.options = options;
     }
     ngOnInit() {
         this.getEstimateDetails();
-        this._commonService.scrollToTop();
     }
 
     getValue(item) {

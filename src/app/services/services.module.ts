@@ -8,15 +8,15 @@ import { PostCare } from './post.care/post.care';
 import { InfoPages } from './info.pages/info.page'
 
 @NgModule({
-    declarations: [ 
+    declarations: [
         FeaturedServices,
         MedicalTreatment,
         PostCare,
         InfoPages
-  ],
-  imports: [routing,
+    ],
+    imports: [routing,
     ]
 })
-export class OurServicesModule{
+export class OurServicesModule {
 
 }

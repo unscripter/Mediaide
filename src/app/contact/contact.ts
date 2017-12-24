@@ -11,19 +11,16 @@ import { options } from '../app.model'
   providers: [ContactUsService]
 })
 
-export class ContactUs implements OnInit{
+export class ContactUs {
   contactUs: contactUsData;
-  private options = options;
-  constructor(private _commonService: CommonService, private ContactUsService: ContactUsService){
+  options = options;
+  constructor(private _commonService: CommonService, private ContactUsService: ContactUsService) {
     this.contactUs = new contactUsData();
   }
-  ngOnInit()
-{
-  this._commonService.scrollToTop();
-}
-sendMessage(){
-  this.ContactUsService.Message(this.contactUs);
-  //call contact us API to send data with an email to their id
- 
-}
+
+  sendMessage() {
+    this.ContactUsService.Message(this.contactUs);
+    //call contact us API to send data with an email to their id
+
+  }
 }

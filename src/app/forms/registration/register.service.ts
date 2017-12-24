@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CommonService, ServiceEndPoints } from '../../common.service';
 import { CommonAPIService } from '../../app.api.service';
-import { Headers, Http, Response, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-import { UserDetail, TokenStruct } from '../../app.model';
+import { UserDetail } from '../../app.model';
 
 
 @Injectable()
 export class UserRegisterService {
   userData: UserDetail;
-  constructor(private _commanService: CommonService, private http: Http, private _apiService: CommonAPIService) {
+  constructor(private _commanService: CommonService, private _apiService: CommonAPIService) {
   }
 
   //get list of all users
@@ -38,9 +33,8 @@ export class UserRegisterService {
       },
       err => {
         this._commanService.stopBlockUI();
-        this._commanService.notificationMessage(err.json().confirm_password[0]
+        this._commanService.notificationMessage(err.statusText
           , false);
-        this._apiService.handleError(err);
       });
   }
 }

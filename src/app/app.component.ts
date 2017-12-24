@@ -20,9 +20,6 @@ export class AppComponent implements OnInit {
     this._commanService.scrollToTop();
     this._commanService.stopBlockUI();   
   }
-  ngOnDestroy(){
-
-  }
 
   onDeactivate() {
       window.scrollTo(0, 0);

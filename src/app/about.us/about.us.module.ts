@@ -7,16 +7,16 @@ import { VisaInformation } from './visa.info/visa.info';
 import { TermsAndCondition } from './termsandcondition/termsandcondition';
 
 @NgModule({
-    declarations: [ 
+    declarations: [
         OurCompany,
         WhyUs,
         AboutIndia,
         VisaInformation,
-        TermsAndCondition 
-  ],
-  imports: [routing,
+        TermsAndCondition
+    ],
+    imports: [routing,
     ]
 })
-export class AboutUsModule{
+export class AboutUsModule {
 
 }
