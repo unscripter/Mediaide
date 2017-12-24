@@ -13,12 +13,7 @@ export class UserProfile implements OnInit {
         debugger;
         if(this._commonService.getFromSessionStorage('userProfileData') && this._commonService.getCookie('access_token')){
         let userData = this._commonService.getFromSessionStorage('userProfileData');
-        let userProfile = userData;
-        console.log("SSSSSSSSSSSSSSSSS",typeof(userData));
-        // let userProfile =JSON.parse(JSON.parse(userData));        
-        console.log("USER", this.userProfileData);
-        debugger;
-        this.userProfileData = userProfile;
+        this.userProfileData =JSON.parse(userData).data;    
     }
 }
     ngOnInit() {

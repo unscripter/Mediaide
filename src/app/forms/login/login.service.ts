@@ -7,6 +7,7 @@ import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints } from '../../common.service';
 import { window } from 'rxjs/operator/window';
 import { Router } from '@angular/router'
+import { Header } from '../../shared/header/header';
 
 @Injectable()
 export class UserLoginService implements OnInit {
@@ -28,18 +29,19 @@ export class UserLoginService implements OnInit {
         return this._apiService.post(ServiceEndPoints.LoginUser, loginData)
             .subscribe(res => {
                 //can add other condition for bettter transition
+                
                 if (res.json().token) {
                     this._commonService.setCookie('access_token', res.json().token);
                     this._commonService.setCookie('isAuthorized', true);
                     this._commonService.stopBlockUI();
                     this._commonService.notificationMessage("success in login, redirecting to user profile", true);
                     const r = res.json();
+                    console.log("===================",r,typeof(r),r.name);
                     let userData = { 'data': r }
                     this.storeUserData(userData);
-                    setTimeout(() => {
-                        this.router.navigate(['/profile'])
-                        location.reload();
-                    }, 1);
+                    Header.updateUserStatus.next(true); // here!
+                    this.router.navigate(['/profile']);                
+                
                 }
                 else {
                     this._commonService.notificationMessage("Something went Wrong, redirecting to homepage", false);
@@ -50,7 +52,7 @@ export class UserLoginService implements OnInit {
             err => {
                 this._apiService.handleError(err);
                 this._commonService.stopBlockUI();
-                // this._commonService.notificationMessage(err.statusText, false);
+                this._commonService.notificationMessage(err.statusText, false);
             });
     }
 

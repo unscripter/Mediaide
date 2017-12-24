@@ -7,6 +7,8 @@ import { UserLoginService } from './login.service';
 import { Router } from '@angular/router'
 import { CommonService } from '../../common.service'
 import { from } from 'rxjs/observable/from';
+import { Header } from '../../shared/header/header';
+
 @Component({
     selector: 'login',
     templateUrl: './login.html',

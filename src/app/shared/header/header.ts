@@ -4,6 +4,8 @@ import { UserLoginService } from '../../forms/login/login.service'
 import { CommonService } from '../../common.service';
 import { Router } from '@angular/router'
 import { locale } from 'moment';
+import { Subject } from 'rxjs/Subject';
+
 
 @Component({
     selector: 'header',
@@ -15,9 +17,11 @@ import { locale } from 'moment';
 export class Header implements OnInit {
     token: any;
     isAuthorized: any;
+    public static updateUserStatus: Subject<boolean> = new Subject();    
     constructor(private _commanService: CommonService, private router: Router, private _usrLogin: UserLoginService) {
-        
-        this.isAuthorized = false;
+        Header.updateUserStatus.subscribe(res => {
+            this.isAuthorized = this._commanService.getCookie('isAuthorized')
+          })
     }
 
     ngOnInit() {

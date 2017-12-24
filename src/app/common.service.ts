@@ -153,7 +153,7 @@ export class ServiceEndPoints {
 
     getFromSessionStorage(key: string) {
         if (sessionStorage.getItem(key)) { return sessionStorage.getItem(key); }
-        // else { this.notificationMessage('Every thing is fine', true); }
+        // else { this.notificationMessage('Something went wrong', false); }
     }
 
     clearSessionStorage() {

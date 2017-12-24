@@ -10,6 +10,7 @@ import { CommonService } from './common.service';
 import { HttpModule } from '@angular/http';
 import { HttpInterceptorModule } from 'ng-http-interceptor';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonAPIService } from './app.api.service';
 import { AppComponent } from './app.component';
 import { Header } from './shared/header/header';
@@ -40,6 +41,7 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     FormsModule,
     ExpressionValidationModule,
     CommonModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
@@ -55,7 +57,7 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     UserProfile,
     ForgotPassword,
     EnquiryForm,
-    PasswordReconfirmation
+    PasswordReconfirmation,
   ],
   providers: [
     CookieService,

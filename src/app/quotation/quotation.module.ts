@@ -5,6 +5,8 @@ import { GetAQuote } from './quotation';
 import { GetEstimation } from '../shared/estimation/estimation';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
 
 @NgModule({
     declarations: [
@@ -13,7 +15,9 @@ import { CommonModule } from "@angular/common";
   ],
   imports: [routing,
     FormsModule,
-    CommonModule
+    CommonModule,
+    SimpleNotificationsModule.forRoot(),    
+    
 ],
 })
 export class QuotationModule{

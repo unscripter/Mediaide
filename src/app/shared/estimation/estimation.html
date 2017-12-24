@@ -3,6 +3,7 @@
         <table class="table table-striped table-condensed">
             <thead>
                 <tr>
+                    <th>Treatment Name</th>
                     <th>Total Days</th>
                     <th>Days in Hospital</th>
                     <th>Days Outside Hospital</th>
@@ -11,10 +12,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>80</td>
-                    <td>19</td>
-                    <td>61</td>
-                    <td>$ 2100 </td>
+                    <td>{{estimateDetails.name_of_treatment}}</td>
+                    <td>{{totalDays}}</td>
+                    <td>{{estimateDetails.no_of_days_in_hospital}}</td>
+                    <td>{{estimateDetails.no_of_days_out_hospital}}</td>
+                    <td>${{estimateDetails.approximate_cost}} </td>
                 </tr>
             </tbody>
         </table>
