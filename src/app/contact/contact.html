@@ -1,8 +1,8 @@
 <simple-notifications [options]="options"></simple-notifications>
 <div *blockUI class="jumbotron jumbotron-sm">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-lg-12">
+            <div class="col-sm-12 col-md-12 col-xs-12">
                 <h2 class="fontColor">
                     Get in touch with us
                 </h2>
@@ -14,33 +14,36 @@
     </div>
 </div>
 
-<div class="mapDiv">
-    <iframe id="mapLocation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.9803228208675!2d75.75594028579329!3d26.897344769568676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x31cf147aa33a63d6!2sMediaide!5e0!3m2!1sen!2sin!4v1514098645068"
-        frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
-
-<div class="container mb20">
-    <form role="form">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" name="name" [(ngModel)]="contactUs.name" class="form-control input-lg br0" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" [(ngModel)]="contactUs.email" class="form-control input-lg br0" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <input type="number" name="phone" [(ngModel)]="contactUs.phone" class="form-control input-lg br0" placeholder="Enter your mobile number">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <textarea class="form-control br0" name="message" rows="3" [(ngModel)]="contactUs.message" placeholder="Message"></textarea>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" (click)="sendMessage()" value="Send Message">
-                </div>
+<div class="container-fluid mb20">
+    <div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="mapDiv">
+                <iframe id="mapLocation" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.9803228208675!2d75.75594028579329!3d26.897344769568676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x31cf147aa33a63d6!2sMediaide!5e0!3m2!1sen!2sin!4v1514098645068"
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
-    </form>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <form role="form">
+                <div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" name="name" [(ngModel)]="contactUs.name" class="form-control input-lg br0" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" [(ngModel)]="contactUs.email" class="form-control input-lg br0" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="phone" [(ngModel)]="contactUs.phone" class="form-control input-lg br0" placeholder="Enter your mobile number">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control br0" name="message" rows="3" [(ngModel)]="contactUs.message" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" (click)="sendMessage()" value="Send Message">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

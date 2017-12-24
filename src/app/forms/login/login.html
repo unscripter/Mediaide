@@ -1,10 +1,10 @@
 <div *blockUI class="container">
     <div class="row mt20 mb20">
-            <simple-notifications [options]="options"></simple-notifications>                
+        <simple-notifications [options]="options"></simple-notifications>
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
             <form role="form">
                 <fieldset>
-                    <h4 class="font19">Please Log In</h4>
+                    <h4 style="font-size:26px;" class="font19">Please Log In</h4>
                     <hr class="colorgraph">
                     <div class="form-group">
                         <input type="email" name="email" id="email" class="form-control input-lg br0" patternService="emailchk" [(ngModel)]="logInData.email" id="exampleInputEmail1" placeholder="Enter username or email">
