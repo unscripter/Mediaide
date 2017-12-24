@@ -1,8 +1,18 @@
-<div *blockUI class="container-fluid">
+<!--<div *blockUI class="container-fluid">
     <header></header>
-    <simple-notifications [options]="options"></simple-notifications>    
+    <simple-notifications [options]="options"></simple-notifications>
     <div class="mainContainer">
         <router-outlet></router-outlet>
     </div>
-    <footer></footer>
+    <footer></footer>-->
+<div *blockUI class="container-fluid" id="container">
+    <header></header>
+    <simple-notifications [options]="options"></simple-notifications>
+    <div id="body" class="mainContainer">
+        <router-outlet></router-outlet>
+    </div>
+    <div id="footer">
+        <footer></footer>
+    </div>
 </div>
+<!--</div>-->

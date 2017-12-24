@@ -2,9 +2,7 @@
     background-color: rgb(48, 71, 112);
     padding: 10px 20px;
     color: rgba(255, 255, 255, 1.00);
-    top: 50px;
-    bottom: 0;
-    position: relative;
+    margin-top: 30px;
 }
 
 #footerLogo {

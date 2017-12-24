@@ -32,3 +32,14 @@
 .navbar-nav li a:hover {
     color: #002449;
 }
+
+@media only screen and (min-width: 1069px) {
+    #mainLogo {
+        position: absolute;
+        left: 8vw;
+    }
+    .navbar-right {
+        position: absolute;
+        right: 8vw;
+    }
+}
