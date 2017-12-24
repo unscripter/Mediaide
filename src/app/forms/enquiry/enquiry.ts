@@ -17,8 +17,10 @@ export class EnquiryForm {
     }
 
     makeEnquiry(enquireyData: any){
+        this._commonService.startBlockUI('Loading');        
         return this._apiService.post(ServiceEndPoints.UserEnquiry, enquireyData)
         .subscribe( res => {
+            this._commonService.stopBlockUI();                            
             this._commonService.notificationMessage(res._body, true);
             this.enquiryData = {
                 name: '',
@@ -32,7 +34,8 @@ export class EnquiryForm {
         },
         err => {
           let error = this._apiService.handleError(err);
-          this._commonService.notificationMessage(err, false);                      
+          this._commonService.stopBlockUI();                          
+          this._commonService.notificationMessage(err.statusText, false);                      
         }
     });
 }

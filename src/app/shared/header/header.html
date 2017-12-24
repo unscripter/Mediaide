@@ -18,14 +18,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
-                        <a routerLink="/home">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
+                        <a routerLink="/home">Home 
+                        <span class="sr-only">(current)</span>
+                    </a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            About Us 
-                            <span class="caret"></span></a>
+                        About Us 
+                        <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a routerLink="/about/ourcompany">Our Company</a></li>
                             <li><a routerLink="/about/whyus">Why Us</a></li>
@@ -34,8 +34,8 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                Services
-                                <span class="caret"></span></a>
+                            Services
+                            <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a routerLink="/services/featuredservices">Featured Services</a></li>
                             <li><a routerLink="/services/medicaltreatment">Medical Treatments</a></li>
@@ -46,10 +46,9 @@
                     <li><a routerLink="/faq">FAQ</a></li>
                     <li><a routerLink="/contact">Contact</a></li>
                     <li><a routerLink="/registration">Register</a></li>
-                    <!-- <li><a routerLink="/login" (click)="changeLogInCondition();">{{ logInStatus }} ? LogIn : LogOut</a></li> -->
-                    <li><a routerLink="/login" *ngIf="logInStatus == true" (click)="changeLogInCondition()">Login</a></li>
-                    <li><a routerLink="/home" *ngIf="logInStatus == false" (click)="changeLogInCondition()">Logout</a></li>
-                    <li><a routerLink="/profile"><i class="fa fa-user"></i></a></li>
+                    <li><a routerLink="/login" *ngIf="!isAuthorized">LogIn</a></li>
+                    <li><a *ngIf="isAuthorized" (click)="logOut();">LogOut</a></li>
+                    <li><a *ngIf="isAuthorized" routerLink="/profile" class="btn btn-round"><i class="fa fa-user"></i></a></li>
                 </ul>
             </div>
         </div>

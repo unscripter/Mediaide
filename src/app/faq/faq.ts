@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { FAQData } from './faq.modle'
 
@@ -8,10 +9,12 @@ import { FAQData } from './faq.modle'
   styleUrls: ['./faq.css']
 })
 
-export class FAQ {
-    private faqData:any;
-    constructor(){
-        this.faqData = FAQData;
-    }
-
-} 
+export class FAQ implements OnInit{
+    private faqData:any;    
+    constructor(private _commonService: CommonService){}
+    ngOnInit()
+  {
+    this._commonService.scrollToTop();
+    this.faqData = FAQData;
+  }
+  }

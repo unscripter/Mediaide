@@ -6,9 +6,9 @@ import { MedicalTreatment } from './medical.treatment/medical.treatment';
 import { PostCare } from './post.care/post.care';
 
 const routes: Routes = [
+    {path: 'postcare', component: PostCare},    
     {path: 'featuredservices', component: FeaturedServices},
     {path: 'medicaltreatment', component: MedicalTreatment},
-    {path: 'postcare', component: PostCare},
     {path: 'medicaltreatment/treatment', loadChildren: './info.pages/info.page.module#OurTreatmentModule'}
 ];
 

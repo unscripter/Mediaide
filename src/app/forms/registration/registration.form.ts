@@ -1,9 +1,8 @@
 import { Component, OnInit} from '@angular/core';
-import { UserDetail } from '../../app.model';
+import { UserDetail, options } from '../../app.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { UserRegisterService } from './register.service';
-import { Observable } from 'rxjs/Observable';
 import { CommonService, ServiceEndPoints } from '../../common.service';
 import { CommonAPIService } from '../../app.api.service';
 
@@ -13,19 +12,23 @@ import { CommonAPIService } from '../../app.api.service';
     providers: [UserRegisterService]
 })
 
-export class RegistrationForm implements OnInit{
+export class RegistrationForm implements OnInit {
     userData: UserDetail;
-    constructor(private apiService: UserRegisterService,){
-        this.userData = new UserDetail();   
+    disableCondition: any;
+    options: any
+    constructor(private apiService: UserRegisterService, private _commonService: CommonService ) {
+        this.userData = new UserDetail();
+        this.options = options;
     }
-    ngOnInit(){
-    this.apiService.fetch();
-    // this.apiService.post();
-    }
-    signIn(){
-        // debugger;
+    ngOnInit() {
+        this._commonService.scrollToTop();
+        // this.apiService.fetch();
         // this.apiService.post();
-        this.apiService.setRegistrationDetails(this.userData);
+    }
+    signIn() {
+        this.apiService.setRegistrationDetails(this.userData);    
     }
     
+    
+;
 }
