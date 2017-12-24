@@ -22,8 +22,4 @@ export class ContactUs {
     //call contact us API to send data with an email to their id
    
   }
-
-  // lat: number = 51.678418;
-  // lng: number = 7.809007;
-
 } 
