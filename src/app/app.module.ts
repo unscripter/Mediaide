@@ -65,7 +65,7 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     CookieService,
     StartupService,
     CommonService,
-    CommonAPIService
+    CommonAPIService,
   ],
   bootstrap: [AppComponent]
 })

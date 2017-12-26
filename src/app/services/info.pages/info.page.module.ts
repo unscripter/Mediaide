@@ -7,16 +7,13 @@ import { IVF } from './ivf/ivf';
 import { Orthopedic } from './orthopedic/orthopedic';
 import { Surgery } from './surgery/surgery';
 
-
-
 @NgModule({
     declarations: [ 
         Cancer,
         Cardiac,
         IVF,
         Orthopedic,
-        Surgery,
-        
+        Surgery,    
   ],
   imports: [routing,
     ]

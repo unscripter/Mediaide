@@ -22,24 +22,24 @@
             </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <form role="form">
+            <form #contactForm role="form">
                 <div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="text" name="name" [(ngModel)]="contactUs.name" class="form-control input-lg br0" placeholder="Enter your name">
+                            <input type="text" name="name" [(ngModel)]="contactUs.name" class="form-control input-lg br0" placeholder="Enter your name" required="true" >
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" [(ngModel)]="contactUs.email" class="form-control input-lg br0" placeholder="Enter your email">
+                            <input type="email" name="email" [(ngModel)]="contactUs.email" class="form-control input-lg br0" placeholder="Enter your email" required="true">
                         </div>
                         <div class="form-group">
-                            <input type="number" name="phone" [(ngModel)]="contactUs.phone" class="form-control input-lg br0" placeholder="Enter your mobile number">
+                            <input type="number" name="phone" [(ngModel)]="contactUs.phone" class="form-control input-lg br0" placeholder="Enter your mobile number" required="true">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control br0" name="message" rows="3" [(ngModel)]="contactUs.message" placeholder="Message"></textarea>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6">
-                        <input type="submit" class="btn btn-lg btn-primary customBtn btn-block" (click)="sendMessage()" value="Send Message">
+                        <input type="submit" [disabled]=" !contactUs.name && !contactUs.email" class="btn btn-lg btn-primary customBtn btn-block" (click)="sendMessage()" value="Send Message">
                     </div>
                 </div>
             </form>

@@ -14,7 +14,7 @@ export class ExpressionValidationDirective {
         'citychk': /([a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$)/,
         'alphanumericchk': /^[a-zA-Z0-9\s,@!'/.{"}#-)~(]*$/,
         'numericchk': /^[a-zA-Z0-9\s]*$/,
-        'passwordchk': /^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?[!#$'()*-,.\/<=>?@\[\]^`{|}~])[a-zA-Z\d!#$'()*-,.\/<=>?@\[\]^`{|}~]+){8,20}$/,
+        'passwordchk': /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$/,
         'fullnamechk': /^[a-zA-Z\s\'\-,]*$/,
         'namechk': /^[a-zA-Z\s\'\-]*$/,
         'emailchk': /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/

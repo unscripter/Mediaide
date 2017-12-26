@@ -87,9 +87,9 @@ export class ServiceEndPoints {
                     if (currentBlockUiCountL !== 0 && countBeforeStart === currentBlockUiCountL) {
                         this.blockUI.update('Its taking longer than expected ...');
                     }
-                }, 5000);
+                }, 3000);
             }
-        }, 5000);
+        }, 3000);
     }
 
     notificationMessage(message: any, isSuccess: boolean) {
