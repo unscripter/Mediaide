@@ -18,7 +18,7 @@ export class EnquiryForm {
         return this._apiService.post(ServiceEndPoints.UserEnquiry, enquireyData)
             .subscribe(res => {
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(res.json(), true);
+                this._commonService.notificationMessage(res._body, true);
                 this.enquiryData = {
                     name: '',
                     email: '',
@@ -31,7 +31,7 @@ export class EnquiryForm {
                 },
                     err => {
                         this._commonService.stopBlockUI();
-                        this._commonService.notificationMessage(err.statusText, false);
+                        this._commonService.notificationMessage("Internal server error, try again", false);
                     }
             });
     }

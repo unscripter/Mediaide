@@ -1,27 +1,40 @@
 <section id="top">
     <div class="smallHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 .col-md-offset-4">
-                    <a routerLink="/enquiry" onclick="window.location.href='http://localhost:4200/enquiry'">
-                        <span class="font12 " title="MAKE AN ENQUIRY ">
-                            MAKE AN ENQUIRY
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-3 .col-md-offset-3 "></div>
-                <div class="col-md-3 .col-md-offset-3 "></div>
-                <div class="col-md-3 .col-md-offset-3 ">
-                    <span class="font12 " title="(+91) 861-983-5393 ">
-                        <i class="fa fa-phone telephoneLogo "></i>
-                        TELEPHONE (+91) 861-983-5393
+        <div class="container-fluid">
+            <div class="col-md-4 col-sm-4 makeEnquiry">
+                <a routerLink="/enquiry" routerLink="/enquiry">
+                    <span class="font12" title="MAKE AN ENQUIRY ">
+                        MAKE AN ENQUIRY
                     </span>
-                </div>
+                </a>
+            </div>
+            <div class="col-md-8 col-sm-8 authDiv">
+                <span style="margin-right:2%;" class="font12" title="(+91) 861-983-5393">
+                    <i class="fa fa-phone telephoneLogo "></i>
+                    TELEPHONE (+91) 861-983-5393
+                </span>
+                <a routerLink="/registration">
+                    <span class="font12" title="REGISTER ">
+                        REGISTER
+                    </span>
+                </a>
+                <span>|</span>
+                <a routerLink="/login" *ngIf="!isAuthorized">
+                    <span class="font12" title="LOGIN">
+                        LOGIN
+                    </span>
+                </a>
+                <a *ngIf="isAuthorized" (click)="logOut();">
+                    <span class="font12" title="LOGOUT">
+                        LOGOUT
+                    </span>
+                </a>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-default mainNavbar container-fluid">
-        <div class="container">
+
+    <nav class="navbar navbar-default mainNavbar">
+        <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -35,8 +48,9 @@
                     <img id="mainLogo" src="./assets/logo/logox.png" alt="MediAide">
                 </a>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" data-toggle="collapse" data-target=".navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
                         <a routerLink="/home">Home
@@ -73,7 +87,7 @@
                                 <a routerLink="/services/medicaltreatment">Medical Treatments</a>
                             </li>
                             <li>
-                                <a href="/services/care">Post Operative Care</a>
+                                <a routerLink="/services/postcare">Post Operative Care</a>
                             </li>
                         </ul>
                     </li>
@@ -87,13 +101,81 @@
                         <a routerLink="/contact">Contact</a>
                     </li>
                     <li>
-                        <a routerLink="/registration">Register</a>
+                        <a *ngIf="isAuthorized" routerLink="/profile" class="btn btn-round">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- <nav class="navbar navbar-default mainNavbar container-fluid">
+        <div class="container">
+            <! Brand and toggle get grouped for better mobile display -->
+    <!-- <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" routerLink="/home">
+                    <img id="mainLogo" src="./assets/logo/logox.png" alt="MediAide">
+                </a>
+            </div> -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- <div class="collapse navbar-collapse" data-toggle="collapse" data-target=".navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a routerLink="/home">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a routerLink="/about/ourcompany">Our Company</a>
+                            </li>
+                            <li>
+                                <a routerLink="/about/whyus">Why Us</a>
+                            </li>
+                            <li>
+                                <a routerLink="/about/aboutindia">About India</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Services
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a routerLink="/services/featuredservices">Featured Services</a>
+                            </li>
+                            <li>
+                                <a routerLink="/services/medicaltreatment">Medical Treatments</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:4200/#/services/postcare">Post Operative Care</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a routerLink="/login" *ngIf="!isAuthorized">LogIn</a>
+                        <a routerLink="/quotation/quote">Get A Quote</a>
                     </li>
                     <li>
-                        <a *ngIf="isAuthorized" (click)="logOut();">LogOut</a>
+                        <a routerLink="/faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a routerLink="/contact">Contact</a>
                     </li>
                     <li>
                         <a *ngIf="isAuthorized" routerLink="/profile" class="btn btn-round">
@@ -103,5 +185,5 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 </section>

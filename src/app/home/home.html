@@ -7,16 +7,16 @@
             <p class="font21">
                 Affordable Integrated State of the Art Healthcare
             </p>
-            <p class="font15">
-                    MediAide Solutions is a company specializing in medical concierge. The company can plan your entire trip, get the visas for
-                    the purpose of seeking medical treatment, set up the appointments and coordinate with the hospitals, manage
-                    the medical records online, customize a package to include flights and hotel accommodation, work with the
-                    government authorities or agencies to facilitate easy transit through immigration and other formalities,
-                    ensure there is easy transportation available when you arrive and attend to your pre-treatment as well as
-                    post treatment care.
+            <p class="font15 mt20">
+                MediAide Solutions is a company specializing in medical concierge. The company can plan your entire trip, get the visas for
+                the purpose of seeking medical treatment, set up the appointments and coordinate with the hospitals, manage
+                the medical records online, customize a package to include flights and hotel accommodation, work with the
+                government authorities or agencies to facilitate easy transit through immigration and other formalities,
+                ensure there is easy transportation available when you arrive and attend to your pre-treatment as well as
+                post treatment care.
             </p>
             <h3 class="font21">QUALITY HEALTH CARE</h3>
-            <p class="font15">
+            <p class="font15 mt20">
                 India is second to none when it comes to state of the art fully integrated healthcare. The fact that there are so many doctors
                 of Indian origin in the United States, the United Kingdom and Singapore among other regions in the world
                 is a testimony to their reliability and expertise. The only reason why medical treatments is more affordable
@@ -24,20 +24,20 @@
                 and $35,000 in the US. The same costs $6,000 in India. From Lasik surgery to in-vitro fertilization, everything
                 is exponentially more affordable.
             </p>
-            <button style="background-color:rgb(48, 71, 112);" type="button" onclick="window.location.href='http://localhost:4200/contact'"
-            class="btn btn-primary customBtn btn-lg">
+            <button style="background-color:rgb(48, 71, 112);" type="button" routerLink="/contact"
+                class="btn btn-primary customBtn btn-lg mt20">
                 <i class="fa fa-hospital-o"></i> Contact Us
             </button>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12">
             <a routerLink="/home" title="" target="">
-                <img src='http://www.mediaide.in/wp-content/uploads/2017/08/logo.png'>
+                <img id="homeLogo" src='http://www.mediaide.in/wp-content/uploads/2017/08/logo.png'>
             </a>
-            <div style="margin-top:20%" class="center">
+            <div class="center visitorGuide">
                 <h4 class="fontColor">PATIENT & VISITOR GUIDE</h4>
                 <span class="font15">Plan your medical travel with us</span>
                 <div class="mt20">
-                    <button routerLink="/home" target="" class="btn btn-xs customBtn btn-primary">
+                    <button routerLink="/enquiry" target="" class="btn btn-xs customBtn btn-primary">
                         <strong>More</strong>
                     </button>
                 </div>
@@ -46,59 +46,102 @@
     </div>
 </div>
 
-<div class="paddingTB60">
-    <div class="container-fluid offerView">
-        <div style="color:white;font-weight:bold;padding:30px;" class="container">
-            <h1 style="color:white;" class="fontColor">
-                OFFERING A PATIENT-FRIENDLY ENVIRONMENT!
-            </h1>
-            <h4>Caring for all your medical assistance needs.</h4>
-            <div class="row">
-                <div class="col-md-3 center">
-                    <a routerLink="/services/featuredservices" title="" target="">
-                        <img src="http://www.mediaide.in/wp-content/uploads/2016/10/health-insurance.png" alt="Featured Services">
-                    </a>
-                    <p class="font16 mt20">Featured Services</p>
-                </div>
-                <div class="col-md-3 center">
-                    <a routerLink="/services/care" title="" target="">
-                        <img src="http://www.mediaide.in/wp-content/uploads/2016/10/prescription-Copy.png" alt="Post Operative Care">
-                    </a>
-                    <p class="font16 mt20">POST OPERATIVE CARE</p>
-                </div>
-                <div class="col-md-3 center">
-                    <a routerLink="/services/medicaltreatment" title="" target="">
-                        <img src="http://www.mediaide.in/wp-content/uploads/2016/10/appointment-request.png" alt="Medical Treatment">
-                    </a>
-                    <p class="font16 mt20">Medical Treatment</p>
-                </div>
-                <div class="col-md-3 center">
-                    <p style="color:white;" class="font19">Caring for all your medical assistance needs.</p>
-                    <p>
-                        We have designed our system for the betterment of both mind and body. We offer a full-spectrum of medical assistance, and
-                        travel services designed to meet your needs. Our team prioritizes care and communication, putting
-                        you at the center.
-                    </p>
-                </div>
+<div class="container-fluid offerView">
+    <div style="color:white;font-weight:bold;padding:30px;" class="container">
+        <h1 style="color:white;" class="fontColor">
+            OFFERING A PATIENT-FRIENDLY ENVIRONMENT!
+        </h1>
+        <h4>Caring for all your medical assistance needs.</h4>
+        <div class="row mt20">
+            <div class="col-md-3 center">
+                <a routerLink="/services/postcare" title="" target="">
+                    <img src="http://www.mediaide.in/wp-content/uploads/2016/10/prescription-Copy.png" alt="Post Operative Care">
+                </a>
+                <p class="font16 mt20">POST OPERATIVE CARE</p>
+            </div>
+            <div class="col-md-3 center">
+                <a routerLink="/services/featuredservices" title="" target="">
+                    <img src="http://www.mediaide.in/wp-content/uploads/2016/10/health-insurance.png" alt="Featured Services">
+                </a>
+                <p class="font16 mt20">FEATURED SERVICES</p>
+            </div>
+            <div class="col-md-3 center">
+                <a routerLink="/services/medicaltreatment" title="" target="">
+                    <img src="http://www.mediaide.in/wp-content/uploads/2016/10/appointment-request.png" alt="Medical Treatment">
+                </a>
+                <p class="font16 mt20">MEDICAL TREATMENT</p>
+            </div>
+            <div class="col-md-3 center">
+                <p style="color:white;" class="font19">INTEGRATIVE HEALTH CARE</p>
+                <p>
+                    We have designed our system for the betterment of both mind and body. We offer a full-spectrum of medical assistance, and
+                    travel services designed to meet your needs. Our team prioritizes care and communication, putting you
+                    at the center.
+                </p>
             </div>
         </div>
     </div>
 </div>
-<div style="padding-top:0;" class="container paddingTB60">
-    <h1 class="fontColor">WE SPECIALIZE IN CONCIERGE HEALTHCARE</h1>
-    <p class="font15">
-        MediAide will guide you to your journey for the best healthcare options across the globe. We also guide and facilitate you
-        to the most logistics aspects for your medical visits to the best clinics and hospitals worldwide.
-        <br>MediAide is a provider of professional intensive care, that deals with the patient’s needs. We aim to offer highly
-        personalized services to our patients and give them packages for their treatment in India. We also provide online
-        medical records up to their post-treatment, including various kinds of Ayurveda packages. Apart from providing various
-        services, we also assist people with travel logistics, visa, transportation and medical treatment. We are also tied
-        up with some of the best hospitals and doctors in India so that you can have a world-class care and affordable charges.
-    </p>
-    <button routerLink="/contact" class=" btn btn-primary customBtn">Request an evaluation Meeting</button>
+
+<div style="padding-top:60px;padding-bottom:60px;" class="paddingTB60 healthcarePicture">
+    <div class="container">
+        <div class="col-md-6 col-xs-12">
+            <h1 class="fontColor">WE SPECIALIZE IN CONCIERGE HEALTHCARE</h1>
+            <p style="margin-top:40px" class="font15">
+                MediAide will guide you to your journey for the best healthcare options across the globe. We also guide and facilitate you
+                to the most logistics aspects for your medical visits to the best clinics and hospitals worldwide.
+                <br>MediAide is a provider of professional intensive care, that deals with the patient’s needs. We aim to offer
+                highly personalized services to our patients and give them packages for their treatment in India. We also
+                provide online medical records up to their post-treatment, including various kinds of Ayurveda packages.
+                Apart from providing various services, we also assist people with travel logistics, visa, transportation
+                and medical treatment. We are also tied up with some of the best hospitals and doctors in India so that you
+                can have a world-class care and affordable charges.
+            </p>
+            <button routerLink="/contact" class=" btn btn-primary mt20 customBtn">Request an evaluation Meeting
+            </button>
+        </div>
+    </div>
 </div>
 
-<div class="container-fluid offerView">
+<div class="offerView textSlider">
+    <h2 style="color:white;" class="fontColor center">WE PROMISED TO TAKE CARE… AND DELIVERED</h2> 
+    <p style="color:white;margin-top:10px;" class="font15 center">Testimonials Slider Feature</p>                
+</div>
+<section id="carousel">
+	<div class="container-fluid offerView">
+		<div style="color:white;padding:20px;">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+				  <!-- Carousel indicators -->
+                  <ol class="carousel-indicators">
+				    <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+				  </ol>
+				  <!-- Carousel items -->
+				  <div class="carousel-inner">
+				    <div class="active item">
+				    	<p class="font16 center mt20">
+                            The hospitals and doctors in India are just as proficient as anywhere else in the world. MediAide helped me throughout my
+                            stay and they made sure that my treatment and my post treatment care went through smoothly. If not for Mediaide,
+                            I would have been lost. They helped me save a lot of my money was well which was cherry on the top
+                        </p>
+                        <p style="color:white;" class="font16 center mt20">Jane Gibson,USA Customer</p>
+				    </div>
+				    <div class="item">
+				    	<p class="font16 center mt20">
+                            MediAide was very helpful with all my documents and post treatment care and they made sure that my treatment undergoes smoothly. The cost of removing my brain tumor was 1/3rd of what I had to pay in my country and that got me to seek the help of MediAide who was my medical travel partner. They provided me with all my necessities and at the apt time. 
+                            Flying back with all smiles, thanks to Mediaide and the medical institutes in India       
+                        </p>
+                        <p style="color:white;" class="font16 center mt20">Danial Campbell,UK Awesome Customer</p>
+				    </div>
+				  </div>
+				</div>
+			</div>							
+		</div>
+	</div>
+</section>
+
+<!-- <div class="container-fluid offerView">
     <div style="color:white;padding:30px;" class="container center reviewDiv">
         <h1 style="color:white;" class="fontColor">
             WE PROMISED TO TAKE CARE… AND DELIVERED
@@ -111,7 +154,7 @@
         </p>
         <p style="color:white;" class="font21 center">TJane Gibson,USA</p>
     </div>
-</div>
+</div> -->
 
 <div class="parallax paddingTB60 doctorPicture">
     <div class="container center">

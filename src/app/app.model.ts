@@ -106,6 +106,37 @@ export const enquiryFormData = {
     message: ''
 }
 
+export class editUserData {
+    name: string;
+    email: string;
+    phone: any;
+    address: any;
+    dob: any;
+    country: string;
+    gender: any;
+    service: string;
+    doctorName: string;
+    hospitalName: string;
+    treatment: string;
+    message: string;
+
+    constructor(){
+        this.name = '',
+        this.email = '',
+        this.phone = '',
+        this.address = '',
+        this.dob = '',
+        this.country = '',
+        this.gender = '',
+        this.service = '',
+        this.doctorName = '';
+        this.hospitalName = '',
+        this.treatment = '',
+        this.message = ''
+    }
+    
+}
+
 
 
 

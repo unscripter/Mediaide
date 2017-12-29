@@ -13,11 +13,11 @@ export class ContactUsService {
         return this._apiService.post(ServiceEndPoints.ContactUs, contactData)
             .subscribe(res => {
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(res.json, true);
+                this._commonService.notificationMessage(res._body, true);
             },
             err => {
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(err, false);
+                this._commonService.notificationMessage("Internal server error", false);
             });
     }
 

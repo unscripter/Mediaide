@@ -15,10 +15,10 @@ export class GetEstimation {
         let estimate = this._commonService.getFromSessionStorage('estimate');
         this.estimateDetails = JSON.parse(estimate);
         this.totalDays = parseInt(this.estimateDetails.no_of_days_in_hospital + this.estimateDetails.no_of_days_out_hospital);
-        this.clearStorageData();
+        // this.clearStorageData();
     }
 
-    clearStorageData() {
-        this._commonService.clearFromSessionStorage('estimate');
-    }
+    // clearStorageData() {
+    //     this._commonService.clearFromSessionStorage('estimate');
+    // }
 }

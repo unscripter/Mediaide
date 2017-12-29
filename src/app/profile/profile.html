@@ -32,26 +32,26 @@
         </ngb-tab>
         <ngb-tab title="Edit Information">
             <ng-template ngbTabContent>
-                <form class="mt20">
+                <form class="mt20" (submit)="submitUserDetails(editUser);">
                     <div class="form-group col-sm-6 col-xs-12 col-md-6">
-                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" placeholder="Full Name">
+                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" placeholder="Full Name" [(ngModel)]="editUser.name">
                     </div>
                     <div class="form-group col-sm-6 col-xs-12 col-md-6">
-                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email">
+                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email" [(ngModel)]="editUser.email">
                     </div>
                     <div class="form-group col-sm-6 col-xs-12 col-md-6">
-                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number">
+                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number" [(ngModel)]="editUser.phone">
                     </div>
                     <div class="form-group col-sm-6 col-xs-12 col-md-6">
-                        <input class="form-control input-lg br0" type="text" id="address" name="address" placeholder="Address">
+                        <input class="form-control input-lg br0" type="text" id="address" name="address" placeholder="Address" [(ngModel)]="editUser.address">
                     </div>
                     <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                         <label class="control-label">DOB</label>
-                        <input class="form-control input-lg br0" type="date" id="birthDate" name="dob">
+                        <input class="form-control input-lg br0" type="date" [(ngModel)]="editUser.dob" id="birthDate" name="dob">
                     </div>
                     <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                         <label class="control-label">Country</label>
-                        <select class="form-control input-lg br0" id="country" name="country">
+                        <select class="form-control input-lg br0" id="country" [(ngModel)]="editUser.country" name="country">
                             <option>Afghanistan</option>
                             <option>Bahamas</option>
                             <option>Cambodia</option>
@@ -67,41 +67,41 @@
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-xs-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" name="gender" value="Female">Female
+                                    <input type="radio" id="femaleRadio" [(ngModel)]="editUser.gender" name="gender" value="Female">Female
                                 </label>
                             </div>
                             <div class="col-md-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" name="gender" value="Male">Male
+                                    <input type="radio" id="maleRadio" name="gender" [(ngModel)]="editUser.gender" value="Male">Male
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                         <label class="control-label">Services Needed</label>
-                        <select class="form-control input-lg br0" id="service" name="service">
+                        <select class="form-control input-lg br0" [(ngModel)]="editUser.service" id="service" name="service">
                             <option>Checkup</option>
                             <option>Consultation</option>
                         </select>
                     </div>
                     <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                         <label class="control-label">Doctor Name</label>
-                        <input class="form-control input-lg br0" type="text" id="doctor_name" name="doctor_name" placeholder="Doctor Name">
+                        <input class="form-control input-lg br0" type="text" id="doctor_name" name="doctor_name" placeholder="Doctor Name" [(ngModel)]="editUser.doctorName">
                     </div>
                     <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                         <label class="control-label">Hospital Name</label>
-                        <input class="form-control input-lg br0" type="text" id="hospital_name" name="hospital_name" placeholder="Hospital Name">
+                        <input class="form-control input-lg br0" type="text" id="hospital_name" name="hospital_name" placeholder="Hospital Name" [(ngModel)]="editUser.hospitalName">
                     </div>
                     <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                         <label class="control-label">Treatment</label>
-                        <select class="form-control input-lg br0" id="treatment" name="treatment">
+                        <select class="form-control input-lg br0" [(ngModel)]="editUser.treatment" id="treatment" name="treatment">
                             <option>Checkup</option>
                             <option>Consultation</option>
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <textarea class="form-control br0" name="message" rows="3" placeholder="Message"></textarea>
+                            <textarea class="form-control br0" name="message" rows="3" placeholder="Message" [(ngModel)]="editUser.message"></textarea>
                         </div>
                     </div>
                     <div>

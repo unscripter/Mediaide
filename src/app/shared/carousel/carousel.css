@@ -24,7 +24,7 @@
 @media only screen and (min-width: 500px) {
     .carousel-caption {
         position: absolute;
-        top: 300px;
+        top: 50px;
         right: -400px;
     }
 }

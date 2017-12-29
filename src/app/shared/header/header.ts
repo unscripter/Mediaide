@@ -34,8 +34,6 @@ export class Header implements OnInit {
 
     logOut() {
         sessionStorage.clear();
-        // this.clearUserData('userProfileData');
-        sessionStorage.setItem('userProfileData', '');
         this._commanService.deleteCookie();
         this._commanService.setCookie('isAuthorized', true);
         this.isAuthorized = this._commanService.getCookie('isAuthorized');

@@ -28,12 +28,12 @@ export class UserRegisterService {
     return this._apiService.post(ServiceEndPoints.RegisterUser, userData)
       .subscribe(res => {
         this._commanService.stopBlockUI();
-        this._commanService.notificationMessage("please fill all the fields, mandatory fields", true);
+        this._commanService.notificationMessage(res._body, true);
         this.userData = new UserDetail();
       },
       err => {
         this._commanService.stopBlockUI();
-        this._commanService.notificationMessage(err.statusText
+        this._commanService.notificationMessage("Internal server error, try again"
           , false);
       });
   }

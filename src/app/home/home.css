@@ -8,7 +8,92 @@
 
 .homePageContainer {
     position: relative;
-    top: -10px;
+    top: -80px;
+}
+
+.textSlider {
+    padding-top:40px;
+}
+
+.textSlider h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.textSlider p {
+    margin-bottom: -1px;
+}
+
+/* Carousel */
+
+#quote-carousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 30px;
+    /* Control buttons  */
+    /* Previous button  */
+    /* Next button  */
+    /* Changes the position of the indicators */
+    /* Changes the color of the indicators */
+}
+#quote-carousel .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+#quote-carousel .carousel-control.left {
+    left: -60px;
+}
+#quote-carousel .carousel-control.right {
+    right: -60px;
+}
+#quote-carousel .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: -25px;
+    margin-right: -19px;
+}
+#quote-carousel .carousel-indicators li {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    border: 4px solid #CCC;
+    border-radius: 50px;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+.carousel-indicators .active {
+    background-color: #ffa516;
+}
+
+#quote-carousel .carousel-indicators .active {
+    background: #333333;
+    width: 128px;
+    height: 128px;
+    border-radius: 100px;
+    border-color: #f33;
+    opacity: 1;
+    overflow: hidden;
+}
+.carousel-inner {
+    min-height: 220px;
+}
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+.visitorGuide {
+    margin-top: 20%;
 }
 
 @media only screen and (min-width: 500px) {
@@ -21,6 +106,33 @@
 
 @media only screen and (max-width: 500px) {
     .doctorPicture {
-        height: 250px;
+        height: 290px;
+    }
+
+    .homePageContainer {
+        top: -15px;
+    }
+    
+    .carousel-indicators {
+        bottom: -25px;
+    }
+
+    .visitorGuide {
+        margin-top: -5%;
+    }
+
+    #homeLogo {
+        margin-top: -10%;
     }
 }
+
+.healthcarePicture {
+    background: url('../../assets/home/BackgroundGrey.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+

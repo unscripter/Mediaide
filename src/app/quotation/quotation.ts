@@ -22,7 +22,7 @@ export class GetAQuote implements OnInit {
 
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
         this.quotationData = new QuotationData();
-        this.noOfPeople = ['1', '2', '3', '4'];
+        this.noOfPeople = ['Patient+1 Attendent', 'Patient+2 Attendent', 'Patient+3 Attendent', 'Patient+4 Attendent'];
     }
     ngOnInit() {
         this.getEstimateDetails();
