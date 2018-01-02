@@ -43,6 +43,5 @@ export class Header implements OnInit {
         if(this._commanService.getCookie('token')){
         location.reload()
         }
-
     }
 }

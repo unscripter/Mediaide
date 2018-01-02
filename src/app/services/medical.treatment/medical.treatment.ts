@@ -28,5 +28,4 @@ export class MedicalTreatment {
     public moveToDental(): void {
         this.Dental.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
     }
-
 }

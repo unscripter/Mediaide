@@ -15,7 +15,7 @@ import { ForgotPassword } from './forms/forgot.password/forgot.password';
 import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
 
  export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: 'registration', component: RegistrationForm },  
     { path: 'login', component: LoginForm },
     { path: 'enquiry', component: EnquiryForm },
