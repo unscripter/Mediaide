@@ -7,23 +7,44 @@
         </div>
     </div>
 </div>
+<div class="container mt20">
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn" (click)="moveToIVF()">
+        <a>IVF</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToCancer()">
+        <a>Cancer</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToCosmetic()">
+        <a>Surgery</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToCardiac()">
+        <a>Cardiac</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToDental()">
+        <a>Dental</a>
+    </button>
+</div>
 <div class="container paddingTB60">
     <p class="font15">
-        MediAide aims to reform integrative healthcare, by providing all the necessary means of support to the patient. We at MediAide, want to ensure that the patient’s treatment and stay in the country is a hassle-free one and returns with all smiles.
+        MediAide aims to reform integrative healthcare, by providing all the necessary means of support to the patient. We at MediAide,
+        want to ensure that the patient’s treatment and stay in the country is a hassle-free one and returns with all smiles.
     </p>
     <div class="container">
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #IVF id="IVF">
             <div class="col-md-6">
                 <h4 class="font19">
                     IVF TREATMENTS
                 </h4>
                 <p class="font15">
-                    After fertilization, the embryo is allowed to grow for a short period of time before being implanted it in a woman’s uterus. A successful pregnancy can be confirmed about 2 week later. IVF treatment is one of the most common and effective techniques available
-                    for improving the chances of pregnancy in women.
+                    After fertilization, the embryo is allowed to grow for a short period of time before being implanted it in a woman’s uterus.
+                    A successful pregnancy can be confirmed about 2 week later. IVF treatment is one of the most common and
+                    effective techniques available for improving the chances of pregnancy in women.
                 </p>
                 <p class="font15">
-                    In Vitro Fertilization also known as IVF is a technique of assisted reproductive technology for infertility treatment. In vitro Fertilization (IVF) involves putting the eggs and sperm together outside the human body, by natural selection the egg will
-                    usually allow only one sperm to enter and this leads to the fertilization process in the laboratory
+                    In Vitro Fertilization also known as IVF is a technique of assisted reproductive technology for infertility treatment. In
+                    vitro Fertilization (IVF) involves putting the eggs and sperm together outside the human body, by natural
+                    selection the egg will usually allow only one sperm to enter and this leads to the fertilization process
+                    in the laboratory
                 </p>
                 <span>
                     <a routerLink="treatment/IVF">Read More</a>
@@ -33,7 +54,7 @@
                 <img id="contentWrap-img" src="../../assets/services/medical_treatment_1.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #Orthopedic id="Orthopedic">
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/medical_treatment_2.jpg" />
             </div>
@@ -42,26 +63,31 @@
                     ORTHOPAEDIC
                 </h4>
                 <p class="font15">
-                    Orthopaedic surgeries and treatments are concerned with the musculoskeletal system. The orthopaedic surgeons use both, surgical and non-surgical means to treat sports injuries, degenerative diseases, tumors, and musculoskeletal trauma.
+                    Orthopaedic surgeries and treatments are concerned with the musculoskeletal system. The orthopaedic surgeons use both, surgical
+                    and non-surgical means to treat sports injuries, degenerative diseases, tumors, and musculoskeletal trauma.
                 </p>
                 <p class="font15">
-                    Numerous surgeries like knee arthroscopy and chondroplasty, removal of support implant, knee arthroscopy and anterior cruciate ligament reconstruction, knee replacement, shoulder replacement, repair of rotator tuff tendons, are performed by a set of highly
-                    trained and experienced doctors under a technologically advanced infrastructure and latest equipments and precision tools.
+                    Numerous surgeries like knee arthroscopy and chondroplasty, removal of support implant, knee arthroscopy and anterior cruciate
+                    ligament reconstruction, knee replacement, shoulder replacement, repair of rotator tuff tendons, are
+                    performed by a set of highly trained and experienced doctors under a technologically advanced infrastructure
+                    and latest equipments and precision tools.
                 </p>
                 <span>
                     <a routerLink="treatment/orthopedic">Read More</a>
                 </span>
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #Cancer id="Cancer">
             <div class="col-md-6">
                 <h4 class="font19">
                     CANCER
                 </h4>
                 <p class="font15">
-                    Cancer surgery is the removal of the tumor and surrounding tissue during an operation. A doctor who specializes in treating cancer using surgery is called a surgical oncologist. The goals of surgery may vary from patient to patient. However, mostly it
-                    is used to remove or diagnose cancer causing cells. It may also be done to find out where the cancer is located or if it has spread or affected the function of any other organs in the body. The cancer surgery restores the body appearance
-                    or function.
+                    Cancer surgery is the removal of the tumor and surrounding tissue during an operation. A doctor who specializes in treating
+                    cancer using surgery is called a surgical oncologist. The goals of surgery may vary from patient to patient.
+                    However, mostly it is used to remove or diagnose cancer causing cells. It may also be done to find out
+                    where the cancer is located or if it has spread or affected the function of any other organs in the body.
+                    The cancer surgery restores the body appearance or function.
                 </p>
                 <span>
                     <a routerLink="treatment/cancer">Read More</a>
@@ -71,7 +97,7 @@
                 <img id="contentWrap-img" src="../../assets/services/medical_treatment_3.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #Dental id="Dental">
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/medical_treatment_4.jpg" />
             </div>
@@ -80,24 +106,33 @@
                     DENTAL CARE
                 </h4>
                 <p class="font15">
-                    Dental Tourism is a part of medical tourism which comprises of medical-dental travel, dental health check-up and global health care. India not only has the most advanced technology with the best dental implantologist and cosmetic dental Surgeon but also
-                    provides an affordable range without any compromise in the quality of service rendered. The Dental Specialists is one of the best dental implant centers in India having world class infrastructure and delivering quality treatment.
+                    Dental Tourism is a part of medical tourism which comprises of medical-dental travel, dental health check-up and global health
+                    care. India not only has the most advanced technology with the best dental implantologist and cosmetic
+                    dental Surgeon but also provides an affordable range without any compromise in the quality of service
+                    rendered. The Dental Specialists is one of the best dental implant centers in India having world class
+                    infrastructure and delivering quality treatment.
                 </p>
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #Cardiac id="Cardiac">
             <div class="col-md-6">
                 <h4 class="font19">
                     CARDIAC TREATMENTS
                 </h4>
                 <p class="font15">
-                    India is emerging as one of the pioneer hub for medical tourism. Over the years, with renowned hospitals and research centres being established, the increase in the number of highly-qualified doctors and their specialties, and not to forget the affordable
-                    treatment costs, as compared to places like the USA or the Europe, India is one the brink of becoming a global medical hub.
+                    India is emerging as one of the pioneer hub for medical tourism. Over the years, with renowned hospitals and research centres
+                    being established, the increase in the number of highly-qualified doctors and their specialties, and
+                    not to forget the affordable treatment costs, as compared to places like the USA or the Europe, India
+                    is one the brink of becoming a global medical hub.
                 </p>
                 <p class="font15">
-                    Numerous numbers of patients pour in each day for several medical treatments, but the majority of them come to India for heart treatments. Not only international patient, but people from different corners of the country prefer to get their heart treated
-                    in India. It is estimated that in India, almost one lakh bye pass heart surgeries are conducted in a year. Let alone a bye-pass surgery, doctors in India, with their 98% success rate in the operation theatres, are so skilful and their
-                    first hand experience combined, allows them to take up surgeries like angioplasty, valve replacement, open heart surgeries invasive heart surgery or any other kind of treatment.
+                    Numerous numbers of patients pour in each day for several medical treatments, but the majority of them come to India for
+                    heart treatments. Not only international patient, but people from different corners of the country prefer
+                    to get their heart treated in India. It is estimated that in India, almost one lakh bye pass heart surgeries
+                    are conducted in a year. Let alone a bye-pass surgery, doctors in India, with their 98% success rate
+                    in the operation theatres, are so skilful and their first hand experience combined, allows them to take
+                    up surgeries like angioplasty, valve replacement, open heart surgeries invasive heart surgery or any
+                    other kind of treatment.
                 </p>
                 <span>
                     <a routerLink="treatment/cardiac">Read More</a>
@@ -107,7 +142,7 @@
                 <img id="contentWrap-img" src="../../assets/services/medical_treatment_5.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #Cosmetic id="Cosmetic">
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/medical_treatment_6.jpg" />
             </div>
@@ -117,10 +152,14 @@
                 </h4>
                 <p class="font15">Indian hospitality at its best</p>
                 <p class="font15">
-                    Cosmetic Surgery or Aesthetic surgery helps to modify or improve the appearance of a physical feature, irregularity, or defect. Cosmetic Surgery can make changes on the functioning parts of your body in order to make that part to look better. Cosmetic
-                    surgery is a form of Plastic surgery. Plastic Surgery is a broader field of surgery primarily concerned with moulding or moving tissues for healing, improving function or to correct the congenital defects or those acquired later by
-                    trauma or surgery. Cosmetic surgery can be performed on all areas of the head, neck and body. Because treated areas function properly but lack aesthetic appeal, cosmetic surgery is elective. Cosmetic surgery is one of the fast evolving
-                    branches of medicine with newer methods, technique and technology coming into this field.
+                    Cosmetic Surgery or Aesthetic surgery helps to modify or improve the appearance of a physical feature, irregularity, or defect.
+                    Cosmetic Surgery can make changes on the functioning parts of your body in order to make that part to
+                    look better. Cosmetic surgery is a form of Plastic surgery. Plastic Surgery is a broader field of surgery
+                    primarily concerned with moulding or moving tissues for healing, improving function or to correct the
+                    congenital defects or those acquired later by trauma or surgery. Cosmetic surgery can be performed on
+                    all areas of the head, neck and body. Because treated areas function properly but lack aesthetic appeal,
+                    cosmetic surgery is elective. Cosmetic surgery is one of the fast evolving branches of medicine with
+                    newer methods, technique and technology coming into this field.
                 </p>
                 <span>
                     <a routerLink="treatment/surgery">Read More</a>

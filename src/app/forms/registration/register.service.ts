@@ -14,12 +14,9 @@ export class UserRegisterService {
   // fetch() {
   //   return this._apiService.get(ServiceEndPoints.GetUser)
   //     .subscribe(r => {
-  //       debugger;
-  //       console.log("RES", r);
   //       this.userData = r;
   //     },
   //     e => {
-  //       console.log('ERR', e);
   //     });
   // }
 

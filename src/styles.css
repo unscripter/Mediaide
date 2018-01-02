@@ -160,6 +160,9 @@ body {
 
 .telephoneLogo {
     color: #ffa516;
+}   
+.ml20{
+    margin-left:20px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -191,6 +194,10 @@ body {
     }
     .font21 {
         font-size: 16px;
+    }
+    .ml20{
+        margin-left:0;
+        margin-top: 5px;
     }
 }
 

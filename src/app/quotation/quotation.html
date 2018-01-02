@@ -20,7 +20,7 @@
                         <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Number Of Patient</label>
                             <select class="form-control input-lg br0" id="number" [(ngModel)]="quotationData.patients" patternService="namechk" name="people" value="people">
-                                <option *ngFor="let item of noOfPeople" value="item">{{item}}</option>
+                                <option *ngFor="let item of noOfPeople" [value]="item.number">{{item.type}}</option>
                             </select>
                         </div>
                         <div class="form-group font19 col-md-12">

@@ -16,13 +16,13 @@ export class GetAQuote implements OnInit {
     countryList: string[];
     treatmentType: any;
     facilitiesList: any;
-    noOfPeople: string[];
+    noOfPeople: [{type: string, number: number}];
     estimatedData: any;
     treatment: any;
 
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
         this.quotationData = new QuotationData();
-        this.noOfPeople = ['Patient+1 Attendent', 'Patient+2 Attendent', 'Patient+3 Attendent', 'Patient+4 Attendent'];
+        this.noOfPeople = [{'type': 'Patient+1 Attendent', 'number': 1}, {'type': 'Patient+2 Attendent', 'number': 2}, {'type': 'Patient+3 Attendent', 'number': 3},{'type': 'Patient+4 Attendent', 'number': 4}];
     }
     ngOnInit() {
         this.getEstimateDetails();
@@ -39,7 +39,8 @@ export class GetAQuote implements OnInit {
 
     postEstimateDetails(selectedData) {
         this._commonService.stopBlockUI();
-        debugger;
+        let parsedData = parseInt(selectedData.patients);
+        selectedData.patients = parsedData;
         return this._apiService.post(ServiceEndPoints.GetAQuote, selectedData)
             .subscribe(res => {
                 const data = res.json();
@@ -56,13 +57,10 @@ export class GetAQuote implements OnInit {
             });
     }
     getEstimation(selectedData) {
-        debugger;
         if (this.quotationData.country && this.quotationData.patients && this.quotationData.treatment) {
-            debugger;
             this.postEstimateDetails(selectedData);
         }
         else {
-            debugger;
             this._commonService.notificationMessage("Fill all the details then, try to fetch", false);
         }
     }
@@ -72,13 +70,14 @@ export class GetAQuote implements OnInit {
         return this._apiService.get(ServiceEndPoints.GetAQuote)
             .subscribe(res => {
                 this._commonService.stopBlockUI();
-                this.countryList = res.json().country;
-                this.treatmentType = res.json().treatment;
-                this.facilitiesList = res.json().facilities;
+                let jsonData = res.json();
+                this.countryList = jsonData.country;
+                this.treatmentType = jsonData.treatment;
+                this.facilitiesList = jsonData.facilities;
             },
             err => {
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(err.statusText, false);
+                this._commonService.notificationMessage("Internal server error", false);
             });
     }
 }

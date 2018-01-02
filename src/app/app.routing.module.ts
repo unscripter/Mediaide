@@ -35,7 +35,7 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { useHash: true } )],
+    imports: [RouterModule.forRoot(routes)],
     exports: [ RouterModule ]
 })
 
