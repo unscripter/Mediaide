@@ -15,10 +15,10 @@
                 <form class="form-group mt20">
                     <div class="col col-md-8">
                         <label class="custom-file">
-                        <input type="file" name="checkup" class="form-control" id="file2" [(ngModel)]="checkupDoc" class="custom-file-input" value="checkupDoc">
+                        <input type="file" name="checkup" class="form-control" id="file2" [(ngModel)]="checkupDoc" class="custom-file-input">
                         <span class="custom-file-control"></span>
                     </label>
-                        <button class="btn btn-primary customBtn btn-md" (click)="checkUp()">Submit</button>
+                        <button class="btn btn-primary customBtn btn-md" (click)="submitDocument(checkupDoc)">Submit</button>
                     </div>
                 </form>
             </ng-template>
@@ -52,14 +52,7 @@
                     <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                         <label class="control-label">Country</label>
                         <select class="form-control input-lg br0" id="country" [(ngModel)]="editUser.country" name="country">
-                            <option>Afghanistan</option>
-                            <option>Bahamas</option>
-                            <option>Cambodia</option>
-                            <option>Denmark</option>
-                            <option>Ecuador</option>
-                            <option>Fiji</option>
-                            <option>Gabon</option>
-                            <option>Haiti</option>
+                            <option *ngFor="let country of countryList">{{country}}</option>
                         </select>
                     </div>
                     <div class="form-group font15 col-md-12">
@@ -95,8 +88,7 @@
                     <div class="form-group font15 col-sm-6 col-xs-12 col-md-6">
                         <label class="control-label">Treatment</label>
                         <select class="form-control input-lg br0" [(ngModel)]="editUser.treatment" id="treatment" name="treatment">
-                            <option>Checkup</option>
-                            <option>Consultation</option>
+                            <option *ngFor="let treatment of treatmentType" [value]="treatment">{{treatment}}</option>
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

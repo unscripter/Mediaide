@@ -6,20 +6,20 @@
                     <h4 style="font-size:26px;" class="font19">Registration Form</h4>
                     <hr class="colorgraph">
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" patternService="namechk" placeholder="Full Name" [(ngModel)]='userData.name'>
+                        <input class="form-control input-lg br0" type="text" id="firstName" name="name" placeholder="Full Name" [(ngModel)]='userData.name'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email (xyz@xyz.com)" patternService="emailchk" [(ngModel)]='userData.email'>
+                        <input class="form-control input-lg br0" type="email" id="email" name="email" placeholder="Email (xyz@xyz.com)"  [(ngModel)]='userData.email'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="password" id="password" name="password" placeholder="Password" patternService="passwordchk" [(ngModel)]='userData.password'>
+                        <input class="form-control input-lg br0" type="password" id="password" name="password" placeholder="Password" [(ngModel)]='userData.password'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="password" id="cnfPassword" name="cnfPassword" placeholder="Re-enter Password" patternService="passwordchk" [(ngModel)]='userData.confirm_password'>
+                        <input class="form-control input-lg br0" type="password" id="cnfPassword" name="cnfPassword" placeholder="Re-enter Password" [(ngModel)]='userData.confirm_password'>
                     </div>
                     <span *ngIf="userData.password != userData.confirm_password && userData.confirm_password" class="red">password does not match</span>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number(e.g 9474647382)" patternService="phonechk" [(ngModel)]='userData.phone'>
+                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number(e.g 9474647382)"  [(ngModel)]='userData.phone'>
                     </div>
                     <div class="row">
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-6 col-md-6">
                             <label class="control-label">Country</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" patternService="namechk" name="country">
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="userData.country" name="country">
                           <option *ngFor="let country of countryList" [value]="country">{{country}}</option>
                             </select>
                         </div>
@@ -54,7 +54,7 @@
                     <span class="button-checkbox">
                         <div class="checkbox">
                             <label class="font15">
-                                <input type="checkbox" name="agree" patternService="alphanumericchk" [(ngModel)]="userData.agree"> I accept all the terms and condition.
+                                <input type="checkbox" name="agree" [(ngModel)]="userData.agree"> I accept all the terms and condition.
                             </label>
                         </div>
                     </span>

@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" routerLink="/home">
-                    <img id="mainLogo" src="./assets/logo/logox.png" alt="MediAide">
+                    <img id="mainLogo" src="./assets/logo/logox.png" alt="MediAide" (click)="scroll()">
                 </a>
             </div>
 
@@ -57,22 +57,8 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            About Us
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a routerLink="/about/ourcompany">Our Company</a>
-                            </li>
-                            <li>
-                                <a routerLink="/about/whyus">Why Us</a>
-                            </li>
-                            <li>
-                                <a routerLink="/about/aboutindia">About India</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a routerLink="/about/ourcompany">About Us</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -100,9 +86,22 @@
                     <li>
                         <a routerLink="/contact">Contact</a>
                     </li>
+                    <li class="visible-xs">
+                        <a class="font14" routerLink="/registration">
+                            REGISTER
+                        </a>
+                    </li>
+                    <li class="visible-xs">
+                        <a class="font14" routerLink="/login" *ngIf="!isAuthorized">
+                            LOGIN
+                        </a>
+                        <a class="font14" *ngIf="isAuthorized" (click)="logOut();">
+                            LOGOUT
+                        </a>
+                    </li>
                     <li>
-                        <a *ngIf="isAuthorized" routerLink="/profile" class="btn btn-round">
-                            <i class="fa fa-user"></i>
+                        <a *ngIf="isAuthorized" routerLink="/profile">
+                            <i class="fa fa-user"></i> Profile
                         </a>
                     </li>
                 </ul>
@@ -111,79 +110,4 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <!-- <nav class="navbar navbar-default mainNavbar container-fluid">
-        <div class="container">
-            <! Brand and toggle get grouped for better mobile display -->
-    <!-- <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" routerLink="/home">
-                    <img id="mainLogo" src="./assets/logo/logox.png" alt="MediAide">
-                </a>
-            </div> -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <!-- <div class="collapse navbar-collapse" data-toggle="collapse" data-target=".navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a routerLink="/home">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            About Us
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a routerLink="/about/ourcompany">Our Company</a>
-                            </li>
-                            <li>
-                                <a routerLink="/about/whyus">Why Us</a>
-                            </li>
-                            <li>
-                                <a routerLink="/about/aboutindia">About India</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Services
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a routerLink="/services/featuredservices">Featured Services</a>
-                            </li>
-                            <li>
-                                <a routerLink="/services/medicaltreatment">Medical Treatments</a>
-                            </li>
-                            <li>
-                                <a href="http://localhost:4200/#/services/postcare">Post Operative Care</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a routerLink="/quotation/quote">Get A Quote</a>
-                    </li>
-                    <li>
-                        <a routerLink="/faq">FAQ</a>
-                    </li>
-                    <li>
-                        <a routerLink="/contact">Contact</a>
-                    </li>
-                    <li>
-                        <a *ngIf="isAuthorized" routerLink="/profile" class="btn btn-round">
-                            <i class="fa fa-user"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
 </section>

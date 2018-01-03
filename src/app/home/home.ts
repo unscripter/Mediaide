@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonService } from '../common.service';
+
 
 @Component({
   selector: 'home',
@@ -8,5 +8,5 @@ import { CommonService } from '../common.service';
 })
 
 export class Home {
-  constructor(private _commonService: CommonService) { }
+  
 }

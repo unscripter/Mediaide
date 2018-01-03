@@ -17,11 +17,11 @@ import { Subject } from 'rxjs/Subject';
 export class Header implements OnInit {
     token: any;
     isAuthorized: any;
-    public static updateUserStatus: Subject<boolean> = new Subject();    
+    public static updateUserStatus: Subject<boolean> = new Subject();
     constructor(private _commanService: CommonService, private router: Router, private _usrLogin: UserLoginService) {
         Header.updateUserStatus.subscribe(res => {
             this.isAuthorized = this._commanService.getCookie('isAuthorized')
-          })
+        })
     }
 
     ngOnInit() {
@@ -31,17 +31,20 @@ export class Header implements OnInit {
             this.isAuthorized = this._commanService.getCookie('isAuthorized');
         }
     }
+    scroll() {
+        window.scrollTo(0, 0)
+    }
 
     logOut() {
-        sessionStorage.clear();
+        this._commanService.clearFromSessionStorage('userProfileData');
         this._commanService.deleteCookie();
         this._commanService.setCookie('isAuthorized', true);
         this.isAuthorized = this._commanService.getCookie('isAuthorized');
         this.router.navigate(['/home']);
         this._commanService.notificationMessage("logged out successfully", true);
         this.isAuthorized = this._commanService.changeisAuthorizedCondition(false);
-        if(this._commanService.getCookie('token')){
-        location.reload()
+        if (this._commanService.getCookie('token')) {
+            location.reload()
         }
     }
 }
