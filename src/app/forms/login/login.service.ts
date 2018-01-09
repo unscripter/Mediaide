@@ -37,7 +37,7 @@ export class UserLoginService {
                 else {
                     this._commonService.stopBlockUI();                    
                     this._commonService.notificationMessage("Something went Wrong, redirecting to homepage", false);
-                    setTimeout(this.router.navigate(['/home']), 1)
+                    setTimeout(this.router.navigate(['/']), 1)
                 }
             },
             err => {

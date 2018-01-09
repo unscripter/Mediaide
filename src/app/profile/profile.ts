@@ -48,6 +48,7 @@ export class UserProfile {
     submitDocument(document){
         this._apiService.post(ServiceEndPoints.UploadDocument, document).subscribe(res => {
             this._commonService.notificationMessage("document submitted successfully", true);
+            this.checkupDoc = '';
         },
             err => {
                 this._commonService.notificationMessage("Something went wrong please try again", false);

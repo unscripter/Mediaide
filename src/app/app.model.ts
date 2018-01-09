@@ -1,6 +1,5 @@
 export const isAuthorized: boolean = false;
 export const logInStatus: boolean = false;
-export const appointmentReason = ['Dental Cleansing', 'Fluoride', 'X-ray'];
 
 export class UserDetail {
     public name: string;
@@ -88,7 +87,7 @@ export const options = {
     timeOut: 1000,
     showProgressBar: true,
     pauseOnHover: true,
-    clickToClose: false,
+    clickToClose: true,
     lastOnBottom: true,
     preventDuplicates: true,
     // theClass: 'put any class which is applied to the extenal div

@@ -29,7 +29,13 @@ import { OurServices } from './services/services';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
 import { Work } from './work/work';
 import { Home } from './home/home';
+import { HomePageTabs } from './home/homepage.tabs/homepage.tabs';
+import { Carousel } from './shared/carousel/carousel';
+import { TravelTips } from './shared/travel/travel';
 import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation';
+import { UploadService } from './upload-service';
+import { UploadFile } from './shared/fileupload';
+
 
 @NgModule({
   imports: [
@@ -60,13 +66,19 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     ForgotPassword,
     EnquiryForm,
     Work,
+    Home,
     PasswordReconfirmation,
+    HomePageTabs,
+    Carousel,
+    TravelTips,
+    UploadFile
   ],
   providers: [
     CookieService,
     StartupService,
     CommonService,
     CommonAPIService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })

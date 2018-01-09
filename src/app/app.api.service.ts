@@ -18,14 +18,14 @@ import { UserDetail } from './app.model';
     }
 
     get(endpoint: string): Observable<any> {
-        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
+        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', crossDomain: true});
         const options = new RequestOptions({ headers: headers });
         return this.http
             .get(this.ApiUrl + endpoint);
     }
 
     post(endpoint: string, data: any): Observable<any> {
-        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json' });
+        const headers = new Headers({ 'AccessToken': this.getCookie(), 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', crossDomain: true});
         const options = new RequestOptions({ headers: headers });
         return this.http.post(this.ApiUrl + endpoint, data, options);
     };
