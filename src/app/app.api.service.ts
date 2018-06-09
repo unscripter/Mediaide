@@ -5,7 +5,7 @@ import { CommonService } from './common.service'
 import { UserDetail } from './app.model';
 
 @Injectable() export class CommonAPIService {
-    public ApiUrl = 'http://52.14.255.120:8000/';
+    public ApiUrl = 'http://mediaide.herokuapp.com/';
     // public ApiUrl = 'http://192.168.43.205:8000/';
 
     userDetail: UserDetail;

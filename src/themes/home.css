@@ -1,5 +1,5 @@
 .doctorPicture {
-    background-image: url("../../assets/home/doctor_blue_left.jpg");
+    background-image: url("../assets/home/doctor_blue_left.jpg");
 }
 
 .offerView {
@@ -110,7 +110,7 @@
 
 @media only screen and (max-width: 500px) {
     .doctorPicture {
-        height: 290px;
+        height: 50px;
     }
 
     .homePageContainer {
@@ -131,11 +131,47 @@
 }
 
 .healthcarePicture {
-    background: url('../../assets/home/BackgroundGrey.jpg') no-repeat center center fixed; 
+    background: url('../assets/home/BackgroundGrey.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+
+
+/* homepage tabs directive css */
+
+.homepageDiv {
+    position: relative;
+    top: -110px;
+}
+
+.homepageDiv div div {
+    padding: 20px;
+}
+
+.homepageDiv div div p {
+    color: white;
+    margin-top: 10px;
+}
+
+.homepageDiv div div img {
+    height: 75px;
+}
+
+.homepageDivOdd {
+    background-color: rgb(73, 154, 162);
+}
+
+.homepageDivEven {
+    background-color: rgb(89, 171, 179);
+}
+
+@media only screen and (max-width: 500px) {
+    .homepageDiv {
+        top: -20px;
+    }
 }
 
 

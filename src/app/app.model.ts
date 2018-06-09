@@ -94,15 +94,26 @@ export const options = {
     ltl: true,
 }
 
-export const enquiryFormData = {
-    name: '',
-    email: '',
-    mobile: '',
-    dob: '',
-    appointmentData: '',
-    gender: '',
-    reason: '',
-    message: ''
+export class enquiryFormData {
+    name: string;
+    email: string;
+    mobile: string;
+    dob: string;
+    appointmentData: string;
+    gender: string;
+    reason: string;
+    message: string;
+
+    constructor()  {
+    this.name = '',
+    this.email = '',
+    this.mobile = '',
+    this.dob = '',
+    this.appointmentData =  '',
+    this.gender = '',
+    this.reason =  '',
+    this.message = ''
+    }
 }
 
 export class editUserData {

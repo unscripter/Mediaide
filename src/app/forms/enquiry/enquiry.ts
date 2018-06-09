@@ -8,7 +8,7 @@ import { ServiceEndPoints, CommonService } from '../../common.service'
     templateUrl: './enquiry.html'
 })
 export class EnquiryForm {
-    enquiryData = enquiryFormData;
+    enquiryData: enquiryFormData;
     constructor(private _apiService: CommonAPIService, private _commonService: CommonService) {
     }
 
@@ -18,16 +18,7 @@ export class EnquiryForm {
             .subscribe(res => {
                 this._commonService.stopBlockUI();
                 this._commonService.notificationMessage(res._body, true);
-                this.enquiryData = {
-                    name: '',
-                    email: '',
-                    mobile: '',
-                    dob: '',
-                    appointmentData: '',
-                    gender: '',
-                    reason: '',
-                    message: '',
-                },
+                this.enquiryData = new enquiryFormData(),
                     err => {
                         this._commonService.stopBlockUI();
                         this._commonService.notificationMessage("Internal server error, try again", false);

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'estimation',
     templateUrl: './estimation.html',
-    styleUrls: ['./estimation.css']
 })
 
 export class GetEstimation {
