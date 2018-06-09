@@ -7,8 +7,8 @@ import { PostCare } from './post.care/post.care';
 const routes: Routes = [
     {path: 'featuredservices', component: FeaturedServices},
     {path: 'medicaltreatment', component: MedicalTreatment},
+    {path: 'postcare', component: PostCare},        
     {path: 'medicaltreatment/treatment', loadChildren: './info.pages/info.page.module#OurTreatmentModule'},
-    {path: 'care', component: PostCare},    
     
 ];
 

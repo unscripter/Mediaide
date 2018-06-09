@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { CommonService } from '../../common.service';
 import { Headers, Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { forgotPasswordData, options } from '../../app.model';
+import { forgotPasswordData } from '../../app.model';
 import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints } from '../../common.service';
 import { window } from 'rxjs/operator/window';
@@ -15,7 +15,6 @@ export class ForgotPasswordService implements OnInit {
     forgotpassword: any;
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
         this.logInStatus = false;
-        this.options = options;
     }
 
     ngOnInit() {
@@ -28,12 +27,12 @@ export class ForgotPasswordService implements OnInit {
             .subscribe(res => {
                 this.forgotpassword.email = '';
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(res.json(), true);
+                this._commonService.notificationMessage(res._body, true);
 
             },
             err => {
                 this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(err.statusText, false);
+                this._commonService.notificationMessage(err.statusTex, false);
             });
     }
 

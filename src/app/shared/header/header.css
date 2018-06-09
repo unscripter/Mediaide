@@ -9,7 +9,7 @@
  }
  
  .smallHeader div span {
-    color: #59abb3 ;
+    color: white ;
     cursor: pointer;
  }
 
@@ -20,6 +20,7 @@
     background-color: #e5e5e5;
     color: #59abb3 !important;
     border-radius: 0;
+    z-index: 20;
     text-transform: uppercase;
 }
 
@@ -44,6 +45,26 @@
     color: #002449;
 }
 
+.makeEnquiry {
+    position: relative;
+    left: 8%;
+}
+
+.makeEnquiry a {
+    text-decoration: none;
+}
+
+.authDiv {
+    text-align: right;
+    margin-left: -7%;
+}
+
+.authDiv a {
+    text-decoration: none;
+    padding: 5px;
+}
+
+
 @media only screen and (min-width: 1069px) {
     #mainLogo {
         position: absolute;
@@ -58,5 +79,8 @@
 @media only screen and (max-width: 500px) {
     .smallHeader {
         display: none;
+    }
+    .navbar-right {
+        margin-left: 0px;
     }
  }

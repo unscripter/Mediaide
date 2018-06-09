@@ -6,21 +6,21 @@
                     <div class="row">
                         <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Country</label>
-                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.country" patternService="namechk" name="country">
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.country" name="country">
                                 <option *ngFor="let country of countryList" [value]="country">{{ country }}</option>
                             </select>
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Treatment Type</label>
-                            <select class="form-control input-lg br0" id="treatment" [(ngModel)]="quotationData.treatment" patternService="namechk" name="treatment" [value]="treatment">
+                            <select class="form-control input-lg br0" id="treatment" [(ngModel)]="quotationData.treatment" name="treatment" [value]="treatment">
                                 <option *ngFor="let treatment of treatmentType" [value]="treatment.id">
                                     {{treatment.name_of_treatment}}</option>
                             </select>
                         </div>
                         <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
                             <label class="control-label">Number Of Patient</label>
-                            <select class="form-control input-lg br0" id="number" [(ngModel)]="quotationData.patients" patternService="namechk" name="people" value="people">
-                                <option *ngFor="let item of noOfPeople" value="item">{{item}}</option>
+                            <select class="form-control input-lg br0" id="number" [(ngModel)]="quotationData.patients" name="people" value="people">
+                                <option *ngFor="let item of noOfPeople" [value]="item.number">{{item.type}}</option>
                             </select>
                         </div>
                         <div class="form-group font19 col-md-12">
@@ -36,7 +36,7 @@
                     </div>
                 </fieldset>
             </form>
-            <button class="btn btn-primary" (click)="getEstimation(quotationData)">Get Estimate</button>
+            <button class="btn btn-primary customBtn" (click)="getEstimation(quotationData)">Get Estimate</button>
         </div>
     </div>
 </div>

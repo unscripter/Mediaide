@@ -7,28 +7,64 @@
         </div>
     </div>
 </div>
+<div class="container mt20 customTabs">
+    <button style="margin-top:5px;" class="col-md-2 col-sm-4 col-xs-12 customBtn" (click)="moveToDoctor()">
+        <a>Doctors and Hospitals</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToQuote()">
+        <a>Medical Quote</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToAppointments()">
+        <a>Appointments</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToTalk()">
+        <a>Talk Befor Arrival</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToIndia()">
+        <a>Assistance in India</a>
+    </button>
+    <button style="margin-top:5px;" class="col-md-2 col-sm-4 col-xs-12 customBtn" (click)="moveTotravel()">
+        <a>Visa & Travel</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToHotel()">
+        <a>Hotel Booking</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToAirport()">
+        <a>Airport Transfers</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToFamily()">
+        <a>Family Update</a>
+    </button>
+    <button class="col-md-2 col-sm-4 col-xs-12 customBtn ml20" (click)="moveToSightseeing()">
+        <a>Local Sightseeing</a>
+    </button>
+</div>
 <div class="container paddingTB60">
     <p class="font15">
-        MediAide aims to reform integrative healthcare, by providing all the necessary means of support to the patient. We at MediAide, want to ensure that the patient’s treatment and stay in the country is a hassle-free one and returns with all smiles.
+        MediAide aims to reform integrative healthcare, by providing all the necessary means of support to the patient. We at MediAide,
+        want to ensure that the patient’s treatment and stay in the country is a hassle-free one and returns with all smiles.
     </p>
     <div class="container">
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #DOCTOR>
             <div class="col-md-6">
                 <h4 class="font19">
                     ASSISTANCE WITH FINDING A DOCTOR AND HOSPITAL
                 </h4>
                 <p class="font15">Because you deserve the best</p>
                 <p class="font15">
-                    We assist you from finding a doctor of the right expertise, to a hospital with state of the the art equipment for your medical condition. There are numerous options available in India, but we believe that getting the right medical treatment under highly
-                    skilled and trained doctors is very essential. Most of them will be cheap, and some may cost more, but we will help you in picking the best options for you, keeping the quality of medical care as our priority. In fact most of our efforts
-                    and time goes in this since we believe that if we get this thing right then most of our job is done.
+                    We assist you from finding a doctor of the right expertise, to a hospital with state of the the art equipment for your medical
+                    condition. There are numerous options available in India, but we believe that getting the right medical
+                    treatment under highly skilled and trained doctors is very essential. Most of them will be cheap, and
+                    some may cost more, but we will help you in picking the best options for you, keeping the quality of
+                    medical care as our priority. In fact most of our efforts and time goes in this since we believe that
+                    if we get this thing right then most of our job is done.
                 </p>
             </div>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_1.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #QUOTE>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_2.jpg" />
             </div>
@@ -38,52 +74,57 @@
                 </h4>
                 <p class="font15">We are your medical advocate</p>
                 <p class="font15">
-                    On the basis of your medical reports and present medical condition, we will help you in getting a free expert medical opinion from some of the best and highly trained doctors across India, and we would also provide you with an estimate of your medical
-                    treatment
+                    On the basis of your medical reports and present medical condition, we will help you in getting a free expert medical opinion
+                    from some of the best and highly trained doctors across India, and we would also provide you with an
+                    estimate of your medical treatment
                 </p>
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #APPOINTMENTS>
             <div class="col-md-6">
                 <h4 class="font19">
                     SCHEDULING APPOINTMENTS
                 </h4>
                 <p class="font15">Running the Extra mile for you</p>
                 <p class="font15">
-                    Once your travel itinerary is confirmed and your arrival date is set, we will be booking your appointments and scheduling your test in advance, so that you wont have to waste your time standing in long queues
+                    Once your travel itinerary is confirmed and your arrival date is set, we will be booking your appointments and scheduling
+                    your test in advance, so that you wont have to waste your time standing in long queues
                 </p>
             </div>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_3.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #TALK>
             <div class="col-md-6">
                 <h4 class="font19">
                     TALK TO YOUR DOCTOR BEFORE ARRIVAL
                 </h4>
                 <p class="font15">We micro manage for you</p>
                 <p class="font15">
-                    We can also arrange for a telephonic conversation or a video calling session with your appointed doctor before you travel to India for your treatment, so that you can resolve any of your medical related query.
+                    We can also arrange for a telephonic conversation or a video calling session with your appointed doctor before you travel
+                    to India for your treatment, so that you can resolve any of your medical related query.
                 </p>
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #INDIA>
             <div class="col-md-6">
                 <h4 class="font19">
                     GROUND ASSISTANCE IN INDIA
                 </h4>
                 <p class="font15">All hands to the deck</p>
                 <p class="font15">
-                    Unlike a few medical travel facilitators, we are based in India, so accordingly we can provide you with a ground assistant in India. During your stay for the medical treatment in India, one of the members of our ground team will be present with you to
-                    ensure your comfort and will be in constant touch with you throughout. They will also ensure that all your concerns and queries are taken care of.
+                    Unlike a few medical travel facilitators, we are based in India, so accordingly we can provide you with a ground assistant
+                    in India. During your stay for the medical treatment in India, one of the members of our ground team
+                    will be present with you to ensure your comfort and will be in constant touch with you throughout. They
+                    will also ensure that all your concerns and queries are taken care of.
                 </p>
             </div>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_4.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #TRAVEL>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_5.jpg" />
             </div>
@@ -97,22 +138,25 @@
                 </p>
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #HOTEL>
             <div class="col-md-6">
                 <h4 class="font19">
                     ASSISTANCE WITH HOTEL BOOKINGS AND INTERNAL TRANSFERS
                 </h4>
                 <p class="font15">Indian hospitality at its best</p>
                 <p class="font15">
-                    After the medical procedure has been successful and your discharge from the hospital has been approved, the doctors would advice you to stay for 7-10 more days, simply for your follow-up and recovery. In such a cases, we will help you book your accommodation
-                    to a place nearby to your hospital. The type of accommodation range from 4-star hotels to privately rented apartments, depending on your budget and preference. We will also provide transfers to and fro between your hospital and accommodation.
+                    After the medical procedure has been successful and your discharge from the hospital has been approved, the doctors would
+                    advice you to stay for 7-10 more days, simply for your follow-up and recovery. In such a cases, we will
+                    help you book your accommodation to a place nearby to your hospital. The type of accommodation range
+                    from 4-star hotels to privately rented apartments, depending on your budget and preference. We will also
+                    provide transfers to and fro between your hospital and accommodation.
                 </p>
             </div>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_6.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #AIRPORT>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_7.jpg" />
             </div>
@@ -122,25 +166,27 @@
                 </h4>
                 <p class="font15">Sit back, We are here for you now</p>
                 <p class="font15">
-                    Airport transfers are a part of our packages and we will pick you up on your day of arrival, with one of our ground staff accompanying you, and we will also drop you off on your day of departure.
+                    Airport transfers are a part of our packages and we will pick you up on your day of arrival, with one of our ground staff
+                    accompanying you, and we will also drop you off on your day of departure.
                 </p>
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #FAMILY>
             <div class="col-md-6">
                 <h4 class="font19">
                     UPDATES FOR YOUR FAMILY
                 </h4>
                 <p class="font15">We take care of your loved ones</p>
                 <p class="font15">
-                    If you wish then we can keep your family updated with your on going treatment or progress or your health condition. We can be in touch with them over phone or email or video call.
+                    If you wish then we can keep your family updated with your on going treatment or progress or your health condition. We can
+                    be in touch with them over phone or email or video call.
                 </p>
             </div>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_8.jpg" />
             </div>
         </div>
-        <div class="row paddingTB60">
+        <div class="row paddingTB60" #SIGHTSEEING>
             <div class="col-md-6">
                 <img id="contentWrap-img" src="../../assets/services/service_9.jpg" />
             </div>
@@ -150,7 +196,9 @@
                 </h4>
                 <p class="font15">Culture, Heritage and Healing</p>
                 <p class="font15">
-                    Once you are discharged from the hospital, we can arrange for local sight seeing or shopping. We can also help you to get local mobile phone connection, currency exchange , taxi services, flight tickets, VISA extension (if required ) etc.
+                    Once you are discharged from the hospital, we can arrange for local sight seeing or shopping. We can also help you to get
+                    local mobile phone connection, currency exchange , taxi services, flight tickets, VISA extension (if
+                    required ) etc.
                 </p>
             </div>
         </div>

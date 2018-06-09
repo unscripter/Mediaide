@@ -25,6 +25,8 @@ export class ServiceEndPoints {
     static GetAQuote = 'api/get-estimate/';
     static ForgotPassword = 'api/forgot-password/';
     static ReconfirmPassword = 'api/reconfirm';
+    static UploadDocument = 'api/upload-document';
+    // static EDITUSER = 'api/edit-user';
 }
 
 @Injectable() export class CommonService {

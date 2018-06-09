@@ -28,7 +28,8 @@ import { AboutUs } from './about.us/about.us';
 import { OurServices } from './services/services';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
 import { Work } from './work/work';
-import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
+import { Home } from './home/home';
+import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation';
 
 @NgModule({
   imports: [
@@ -42,7 +43,7 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     FormsModule,
     ExpressionValidationModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,

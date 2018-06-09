@@ -4,8 +4,9 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ServiceEndPoints } from '../common.service';
 import { CommonService } from '../common.service';
 import { CommonAPIService } from '../app.api.service';
-import { QuotationData } from '../app.model';
+import { QuotationData, countryList, treatmentType } from '../app.model';
 import { Router } from '@angular/router';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
     selector: 'quotation',
@@ -16,16 +17,17 @@ export class GetAQuote implements OnInit {
     countryList: string[];
     treatmentType: any;
     facilitiesList: any;
-    noOfPeople: string[];
+    noOfPeople: [{type: string, number: number}];
     estimatedData: any;
     treatment: any;
+    packageDetails: any;
 
     constructor(private _commonService: CommonService, private _apiService: CommonAPIService, private router: Router) {
         this.quotationData = new QuotationData();
-        this.noOfPeople = ['1', '2', '3', '4'];
+        this.noOfPeople = [{'type': 'Patient+1 Attendent', 'number': 1}, {'type': 'Patient+2 Attendent', 'number': 2}, {'type': 'Patient+3 Attendent', 'number': 3},{'type': 'Only Patient', 'number': 4}];
     }
     ngOnInit() {
-        this.getEstimateDetails();
+        this.setPackageDetails();
     }
 
     getValue(item) {
@@ -39,7 +41,8 @@ export class GetAQuote implements OnInit {
 
     postEstimateDetails(selectedData) {
         this._commonService.stopBlockUI();
-        debugger;
+        let parsedData = parseInt(selectedData.patients);
+        selectedData.patients = parsedData;
         return this._apiService.post(ServiceEndPoints.GetAQuote, selectedData)
             .subscribe(res => {
                 const data = res.json();
@@ -56,29 +59,20 @@ export class GetAQuote implements OnInit {
             });
     }
     getEstimation(selectedData) {
-        debugger;
         if (this.quotationData.country && this.quotationData.patients && this.quotationData.treatment) {
-            debugger;
             this.postEstimateDetails(selectedData);
         }
         else {
-            debugger;
             this._commonService.notificationMessage("Fill all the details then, try to fetch", false);
         }
     }
 
-    getEstimateDetails() {
-        this._commonService.startBlockUI('Loading');
-        return this._apiService.get(ServiceEndPoints.GetAQuote)
-            .subscribe(res => {
-                this._commonService.stopBlockUI();
-                this.countryList = res.json().country;
-                this.treatmentType = res.json().treatment;
-                this.facilitiesList = res.json().facilities;
-            },
-            err => {
-                this._commonService.stopBlockUI();
-                this._commonService.notificationMessage(err.statusText, false);
-            });
+    setPackageDetails(){
+        let data = this._commonService.getFromSessionStorage('package-data');
+        this.packageDetails = JSON.parse(data);
+        this.countryList = this.packageDetails['country'];
+        this.treatmentType = this.packageDetails['treatment'];
+        this.facilitiesList = this.packageDetails['facilities'];
     }
+
 }

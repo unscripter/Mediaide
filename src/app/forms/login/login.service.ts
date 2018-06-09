@@ -47,8 +47,7 @@ export class UserLoginService {
     }
 
     Cookie(key) {
-        this.isAuthorized = this._commonService.getCookie(key);
-        return this.isAuthorized;
+        return this.isAuthorized = this._commonService.getCookie(key);
     }
 
     storeUserData(profileData) {

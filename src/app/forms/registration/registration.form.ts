@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserDetail } from '../../app.model';
+import { UserDetail, countryList } from '../../app.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { UserRegisterService } from './register.service';
@@ -18,7 +18,13 @@ export class RegistrationForm {
     countryList: string[];
     constructor(private apiService: UserRegisterService, private _commonService: CommonService) {
         this.userData = new UserDetail();
-        this.countryList = ['Afghanistan', 'Bahamas', 'Cambodia', 'Denmark', 'Ecuador', 'Fiji', 'Gabon', 'Haiti']
+        this.setPackageDetails();
+    }
+
+    setPackageDetails(){
+        let data = this._commonService.getFromSessionStorage('package-data');
+        let packageDetails = JSON.parse(data);
+        this.countryList = packageDetails['country'];
     }
 
     signIn() {

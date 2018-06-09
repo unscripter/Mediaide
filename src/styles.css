@@ -4,6 +4,7 @@
 html,
 body {
     height: 100%;
+    font-family: Fira Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #container {
@@ -159,9 +160,13 @@ body {
 
 .telephoneLogo {
     color: #ffa516;
+}   
+.ml20{
+    margin-left:20px;
+    margin-top: 5px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1024px) {
     #contentWrap-img {
         width: 100%;
         height: 150px;
@@ -174,7 +179,7 @@ body {
         height: 200px;
     }
     .lg-text {
-        font-size: 40px;
+        font-size: 30px;
     }
     .parallax-subHeading {
         font-size: 16px;
@@ -183,13 +188,16 @@ body {
         margin-top: 10px;
     }
     .font19 {
-        font-size: 16px;
+        font-size: 12px;
     }
     .fontColor {
         font-size: 24px;
     }
     .font21 {
         font-size: 16px;
+    }
+    .ml20{
+        margin-left:0;
     }
 }
 

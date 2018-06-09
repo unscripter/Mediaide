@@ -25,7 +25,7 @@ export class PasswordReconfirmation {
             },
                 err => {
                     this._commonService.stopBlockUI();
-                    this._commonService.notificationMessage(err.statusText, false);
+                    this._commonService.notificationMessage("Internal server error, try again", false);
                 }
         });
 

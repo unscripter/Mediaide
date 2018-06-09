@@ -44,3 +44,7 @@ panel-pricing {
     padding: 20px;
     margin: 0px;
 }
+
+.panel-footer a {
+    color: white;
+}
