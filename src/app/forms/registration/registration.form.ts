@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Registration } from '../app.model'
+import { Registration } from '../../app.model'
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'registration',
@@ -10,8 +11,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 export class RegistrationForm {
     userData: Registration;
+    // filledObj: Registration;
     constructor(){
-        // this.userData = new Registration();        
+        this.userData = new Registration();   
+    }
+    signIn(){
+        debugger;
+        this.userData.setRegistrationDetail(this.userData);
     }
 
 }

@@ -1,3 +1,19 @@
 .our-company-img {
     background-image: url("../../assets/aboutus/our_company.png");
 }
+.our-work-img {
+    background-image: url("../../assets/doctor_blue_left.jpg");
+}
+.logodiv{
+    background-image: url('http://www.mediaide.in/wp-content/uploads/2017/08/logo.png');
+    width: 80px;
+    height: 80px;
+}
+.sidepanel{ 
+    position: relative;
+    left: 10%;
+}
+.specializediv{
+    margin-bottom:10%;
+    background-color: white;
+}

@@ -1,38 +1,53 @@
 // import { PassThrough } from "stream";
 
-export class Registration{
-    private name: string;
-    private email: string;
-    private password: string;
-    private dob: Date;
-    private country: string;
-    private gender: string;
-    private address: string;
-    private agree: boolean;
+export class Registration {
+    public name: string;
+    public email: string;
+    public password: string;
+    public dob: Date;
+    public country: string;
+    public gender: string;
+    public address: string;
+    public agree: boolean;
 
-    constructor(name, email, password, dob, country, gender, address, agree){
-        this.name = name ? name : null;
-        this.email = email ? email : null;
-        this.password = password ? password : null;
-        this.dob = dob ? dob : null;
-        this.country = country ? country : null;
-        this.gender = gender ? gender : null;
-        this.gender = gender ? gender : null;
-        this.gender = gender ? gender : null;        
+    constructor() {
+        this.name = '';
+        this.email = '';
+        this.password = '';
+        this.dob = new Date();
+        this.country = '';
+        this.gender = '';
+        this.address = '';
+        this.agree = false;        
     }
-}
+
+    setRegistrationDetail(obj: Registration) {
+        this.name = obj.name;
+        this.email = obj.email;
+        this.password = obj.password;
+        this.dob = obj.dob;
+        this.country = obj.name;
+        this.gender = obj.gender;
+        this.address = obj.address;
+    }
+};
 
 export class LogInData {
-    private username: string;
-    private password: string;
-    private keepLoggedIn: boolean;
+    public username: string;
+    public password: string;
+    public keepLoggedIn: boolean;
 
-    constructor(username, password, keepLoggedIn){
-        if(username && password){
-            this.username = username;
-            this.password = password;
-            this.keepLoggedIn = keepLoggedIn;
+    constructor(){
+        {
+            this.username = '';
+            this.password = '';
+            this.keepLoggedIn = false;
         }
-
     }
-}
+    
+    setLoginDetails(obj: LogInData) {
+        this.username = obj.username;
+        this.password = obj.password;
+        this.keepLoggedIn = obj.keepLoggedIn;
+    }
+};

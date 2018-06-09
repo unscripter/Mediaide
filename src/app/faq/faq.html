@@ -1,0 +1,15 @@
+<div>
+    <section id="contact">
+        <div class="container col-md-12 margin">
+            <div *ngFor="let item of queationData">
+                <ngb-accordion>
+                    <ngb-panel title="{{item.title}}">
+                        <ng-template ngbPanelContent>
+                           {{item.body}}
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+    </section>
+</div>
