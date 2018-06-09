@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from '../../common.service';
 
 @Component({
   selector: 'about-india',
@@ -7,5 +8,4 @@ import { Component } from '@angular/core';
 })
 
 export class AboutIndia {
-
-} 
+}

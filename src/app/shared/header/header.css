@@ -3,6 +3,16 @@
     margin-top: -4px;
 }
 
+.smallHeader {
+    background-color: #002449 ;
+    padding: 8px;
+ }
+ 
+ .smallHeader div span {
+    color: #59abb3 ;
+    cursor: pointer;
+ }
+
 .mainNavbar {
     position: fixed;
     width: 100%;
@@ -10,6 +20,7 @@
     background-color: #e5e5e5;
     color: #59abb3 !important;
     border-radius: 0;
+    text-transform: uppercase;
 }
 
 .dropdown-menu {
@@ -32,3 +43,20 @@
 .navbar-nav li a:hover {
     color: #002449;
 }
+
+@media only screen and (min-width: 1069px) {
+    #mainLogo {
+        position: absolute;
+        left: 8vw;
+    }
+    .navbar-right {
+        position: absolute;
+        right: 8vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .smallHeader {
+        display: none;
+    }
+ }

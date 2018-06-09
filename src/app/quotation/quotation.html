@@ -1,0 +1,42 @@
+<div class="container" style="position:relative">
+    <div class="row mt20 mb20">
+        <div class="col-xs-12 col-sm-8 col-md-10">
+            <form #quotationForm role="form">
+                <fieldset>
+                    <div class="row">
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
+                            <label class="control-label">Country</label>
+                            <select class="form-control input-lg br0" id="country" [(ngModel)]="quotationData.country" patternService="namechk" name="country">
+                                <option *ngFor="let country of countryList" [value]="country">{{ country }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
+                            <label class="control-label">Treatment Type</label>
+                            <select class="form-control input-lg br0" id="treatment" [(ngModel)]="quotationData.treatment" patternService="namechk" name="treatment" [value]="treatment">
+                                <option *ngFor="let treatment of treatmentType" [value]="treatment.id">
+                                    {{treatment.name_of_treatment}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group font15 col-sm-6 col-xs-12 col-md-4">
+                            <label class="control-label">Number Of Patient</label>
+                            <select class="form-control input-lg br0" id="number" [(ngModel)]="quotationData.patients" patternService="namechk" name="people" value="people">
+                                <option *ngFor="let item of noOfPeople" value="item">{{item}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group font19 col-md-12">
+                            <label class="control-label">Other Expenses</label>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-4 col-xs-4" *ngFor="let item of facilitiesList">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="item" name="item" value="item" (click)="getValue(item)"> {{item}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <button class="btn btn-primary" (click)="getEstimation(quotationData)">Get Estimate</button>
+        </div>
+    </div>
+</div>

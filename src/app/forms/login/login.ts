@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { LogInData } from '../../app.model'
+import { LogInData, options } from '../../app.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-
+import { UserLoginService } from './login.service';
+import { CommonService } from '../../common.service';
+import { Header } from '../../shared/header/header';
 
 @Component({
     selector: 'login',
     templateUrl: './login.html',
-    styleUrls: ['./login.css']
+    providers: [UserLoginService]
 })
 
 export class LoginForm {
-    private logInData: LogInData;
-    private logInCondition: boolean;
-   
-    constructor(){
+    logInData: LogInData;
+    constructor(private loginService: UserLoginService, private _commonService: CommonService) {
         this.logInData = new LogInData();
-        this.logInCondition = (this.logInData.username && this.logInData.password && this.logInData.keepLoggedIn);
     }
-    signIn(){
-        this.logInData.setLoginDetails(this.logInData);
+
+    logInUser() {
+        this.loginService.logIn(this.logInData);
+        this.logInData = new LogInData();
     }
 }
+

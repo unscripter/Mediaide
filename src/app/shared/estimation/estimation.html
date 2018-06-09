@@ -1,0 +1,31 @@
+<!--<br><br><br>-->
+<section id="plans" class="paddingTB60">
+    <div class="container">
+        <div class="row">
+            <!-- item -->
+            <div class="col-md-4 text-center"></div>
+            <div class="col-md-4 text-center">
+                <div class="panel panel-success panel-pricing">
+                    <div class="panel-heading">
+                        <i class="fa fa-hospital-o" aria-hidden="true"></i>
+                        <h3>Estimation</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <p><strong>Total Cost ${{estimateDetails.approximate_cost}}</strong></p>
+                    </div>
+                    <ul class="list-group text-center">
+                        <li class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i> Treatment Name {{estimateDetails.name_of_treatment}}</li>
+                        <li class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i> Total Days {{totalDays}}</li>
+                        <li class="list-group-item">Days in Hospital {{estimateDetails.no_of_days_in_hospital}}</li>
+                        <li class="list-group-item">Days Outside Hospital {{estimateDetails.no_of_days_out_hospital}}</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block customBtn" href="#">Checkout</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /item -->
+        </div>
+    </div>
+</section>
+<!-- /Plans -->

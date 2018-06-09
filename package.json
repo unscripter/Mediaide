@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -22,8 +23,13 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.7",
+    "angular2-notifications": "^0.9.6",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "moment": "^2.20.1",
+    "ng-block-ui": "^0.9.3",
+    "ng-http-interceptor": "^4.0.0",
+    "ngx-cookie-service": "^1.0.9",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
@@ -44,6 +50,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "source-map-explorer": "^1.5.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"

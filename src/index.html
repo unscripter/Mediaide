@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MyApp</title>
+    <title>Mediaide</title>
     <base href="/">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,5 +16,17 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
+
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+            $('.smallHeader').hide();
+        } else if ($(window).width() < 500) {
+            $('.smallHeader').hide();
+        } else {
+            $('.smallHeader').show();
+        }
+    });
+</script>
 
 </html>

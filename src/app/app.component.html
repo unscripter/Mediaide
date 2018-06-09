@@ -1,7 +1,10 @@
-<div class="container-fluid">
+<div *blockUI class="container-fluid" id="container">
     <header></header>
-    <div class="mainContainer">
-        <router-outlet></router-outlet>
+    <simple-notifications [options]="options"></simple-notifications>
+    <div id="body" class="mainContainer">
+        <router-outlet (deactivate)="onDeactivate()"></router-outlet>
     </div>
-    <footer></footer>
+    <div id="footer">
+        <footer></footer>
+    </div>
 </div>
