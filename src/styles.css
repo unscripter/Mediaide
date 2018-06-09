@@ -166,6 +166,14 @@ body {
     margin-top: 5px;
 }
 
+.visa-info {
+    margin-top: 20px;
+}
+
+.visa-info p:first-child {
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 1024px) {
     #contentWrap-img {
         width: 100%;

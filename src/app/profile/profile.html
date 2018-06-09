@@ -14,10 +14,8 @@
             <ng-template ngbTabContent>
                 <form class="form-group mt20">
                     <div class="col col-md-8">
-                        <label class="custom-file">
-                        <input type="file" name="checkup" class="form-control" id="file2" [(ngModel)]="checkupDoc" class="custom-file-input">
-                        <span class="custom-file-control"></span>
-                    </label>
+                        <file-upload></file-upload>
+                        <br>
                         <button class="btn btn-primary customBtn btn-md" (click)="submitDocument(checkupDoc)">Submit</button>
                     </div>
                 </form>

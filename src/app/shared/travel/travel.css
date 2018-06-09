@@ -1,0 +1,12 @@
+.travel{
+    padding: 30px;
+    position: relative; 
+    background: url('../../../assets/home/BackgroundGrey.jpg') no-repeat center center fixed;
+}
+.travel div li{
+    padding : 10px;
+}
+
+.travel div h6 {
+    font-size: 16px;
+}

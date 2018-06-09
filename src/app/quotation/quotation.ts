@@ -49,7 +49,7 @@ export class GetAQuote implements OnInit {
                 this._commonService.storeInSessionStorage('estimate', data);
                 this._commonService.stopBlockUI();
                 this._commonService.notificationMessage("Your cost estimation is, available now", true);
-                this.router.navigate(['/quotation/estimate']);
+                this.router.navigate(['/get-a-quote/estimate']);
                 this.estimatedData = res._body;
             },
             err => {

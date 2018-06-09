@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { enquiryFormData, appointmentReason } from '../../app.model'
+import { enquiryFormData } from '../../app.model'
 import { CommonAPIService } from '../../app.api.service';
 import { ServiceEndPoints, CommonService } from '../../common.service'
 
@@ -9,7 +9,6 @@ import { ServiceEndPoints, CommonService } from '../../common.service'
 })
 export class EnquiryForm {
     enquiryData = enquiryFormData;
-    appointmentReason = appointmentReason;
     constructor(private _apiService: CommonAPIService, private _commonService: CommonService) {
     }
 

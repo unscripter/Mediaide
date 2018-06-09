@@ -40,7 +40,7 @@ export class Header implements OnInit {
         this._commanService.deleteCookie();
         this._commanService.setCookie('isAuthorized', true);
         this.isAuthorized = this._commanService.getCookie('isAuthorized');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
         this._commanService.notificationMessage("logged out successfully", true);
         this.isAuthorized = this._commanService.changeisAuthorizedCondition(false);
         if (this._commanService.getCookie('token')) {

@@ -28,6 +28,9 @@ export class RegistrationForm {
     }
 
     signIn() {
-        this.apiService.setRegistrationDetails(this.userData);
+        let success = this.apiService.setRegistrationDetails(this.userData);
+        if(success){
+        this.userData = new UserDetail();        
     }
+}
 }

@@ -9,13 +9,16 @@ import { EnquiryForm } from './forms/enquiry/enquiry';
 import { ContactUs } from './contact/contact';
 import { Work } from './work/work';
 import { FAQ } from './faq/faq';
+import { Home } from './home/home';
 import { QuotationModule } from './quotation/quotation.module';
 import { UserProfile } from './profile/profile';
 import { ForgotPassword } from './forms/forgot.password/forgot.password';
-import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation'
+import { TravelTips } from './shared/travel/travel';
+import { PasswordReconfirmation } from './forms/password.reconfirmation/password.reconfirmation';
 
  export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full'},
+    { path: '', redirectTo: '/', pathMatch: 'full'},
+    { path: '', component: Home},
     { path: 'registration', component: RegistrationForm },  
     { path: 'login', component: LoginForm },
     { path: 'enquiry', component: EnquiryForm },
@@ -25,13 +28,14 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     { path: 'forgotpassword', component: ForgotPassword},
     { path: 'enquiry' , component: EnquiryForm} ,
     { path: 'reconfirm', component: PasswordReconfirmation },
-    //this is for loading children as lazy loading
-    { path: 'home', loadChildren: './home/home.module#HomeModule' },
-    { path: 'quotation', loadChildren : './quotation/quotation.module#QuotationModule' } ,
-    { path: 'about', loadChildren: './about.us/about.us.module#AboutUsModule' },
-    { path: 'services', loadChildren: './services/services.module#OurServicesModule' },
     { path: 'enquiry' , component: EnquiryForm},
-    { path: 'work', component: Work}   
+    { path: 'how-we-work', component: Work},
+    { path: 'travel-tips', component: TravelTips},    
+    //this is for loading children as lazy loading
+    // { path: 'home', loadChildren: './home/home.module#HomeModule' },
+    { path: 'services', loadChildren: './services/services.module#OurServicesModule' },    
+    { path: 'get-a-quote', loadChildren : './quotation/quotation.module#QuotationModule' } ,
+    { path: 'aboutus', loadChildren: './about.us/about.us.module#AboutUsModule' },
     ];
 
 @NgModule({

@@ -14,7 +14,7 @@
                             [(ngModel)]='enquiryData.email'>
                     </div>
                     <div class="form-group">
-                        <input class="form-control input-lg br0" type="number" id="mobile" name="mobile" placeholder="Mobile Number" 
+                        <input class="form-control input-lg br0" type="text" id="mobile" name="mobile" placeholder="Mobile Number" 
                             [(ngModel)]='enquiryData.mobile'>
                     </div>
                     <div class="row">
@@ -43,10 +43,8 @@
                         </div>
                     </div>
                     <div class="form-group font15">
-                        <label class="control-label">Reason for visit</label>
-                        <select [(ngModel)]="enquiryData.reason" class="form-control input-lg br0" id="reason" value="enquiryData.reason" name="reason">
-                            <option *ngFor="let reason of appointmentReason" [value]="reason">{{reason}}</option>
-                        </select>
+                            <input class="form-control input-lg br0" type="text" id="reason" name="reason" placeholder="Reason for visit"
+                            [(ngModel)]='enquiryData.reason'>
                     </div>
                     <div class="form-group font15">
                         <textarea style="width:100%" placeholder="Meaasge" name="meaasge" id="meaasge" [(ngModel)]="enquiryData.message" rows="4"></textarea>

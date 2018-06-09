@@ -103,7 +103,7 @@ export class ServiceEndPoints {
                     showProgressBar: true,
                     pauseOnHover: true,
                     maxLength: 100,
-                    timeOut: 1000
+                    timeOut: 1000,
                 }
             )
         } else {
