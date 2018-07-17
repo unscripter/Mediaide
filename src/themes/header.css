@@ -4,7 +4,7 @@
 }
 
 .smallHeader {
-    background-color: #002449 ;
+    background-color: #120049 ;
     padding: 8px;
  }
  
@@ -37,7 +37,7 @@
 }
 
 .navbar-nav li a {
-    color: #59abb3;
+    color: #59abb3 !important;
     font-weight: 600;
 }
 

@@ -10,7 +10,6 @@ import { Subject } from 'rxjs/Subject';
 @Component({
     selector: 'header',
     templateUrl: './header.html',
-    styleUrls: ['./header.css'],
     providers: [UserLoginService]
 })
 

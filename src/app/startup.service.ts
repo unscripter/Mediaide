@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StartupService {
-    private apiUrl = 'http://192.168.1.8:8000/';
+    private apiUrl = 'mediaide.herokuapp.com/';
     constructor() { }
 
     getApiUrl() {

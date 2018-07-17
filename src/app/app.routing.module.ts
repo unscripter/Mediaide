@@ -19,7 +19,7 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
  export const routes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full'},
     { path: '', component: Home},
-    { path: 'registration', component: RegistrationForm },  
+    { path: 'registration', component: RegistrationForm },
     { path: 'login', component: LoginForm },
     { path: 'enquiry', component: EnquiryForm },
     { path: 'contact', component: ContactUs },
@@ -30,10 +30,10 @@ import { PasswordReconfirmation } from './forms/password.reconfirmation/password
     { path: 'reconfirm', component: PasswordReconfirmation },
     { path: 'enquiry' , component: EnquiryForm},
     { path: 'how-we-work', component: Work},
-    { path: 'travel-tips', component: TravelTips},    
+    { path: 'travel-tips', component: TravelTips},
     //this is for loading children as lazy loading
     // { path: 'home', loadChildren: './home/home.module#HomeModule' },
-    { path: 'services', loadChildren: './services/services.module#OurServicesModule' },    
+    { path: 'services', loadChildren: './services/services.module#OurServicesModule' },
     { path: 'get-a-quote', loadChildren : './quotation/quotation.module#QuotationModule' } ,
     { path: 'aboutus', loadChildren: './about.us/about.us.module#AboutUsModule' },
     ];

@@ -7,7 +7,6 @@ import { options } from '../app.model'
 @Component({
   selector: 'contact-us',
   templateUrl: './contact.html',
-  styleUrls: ['./contact.css'],
   providers: [ContactUsService]
 })
 
